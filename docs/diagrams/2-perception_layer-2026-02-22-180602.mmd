@@ -1,0 +1,23 @@
+flowchart TB
+%% =====================
+%% PERCEPTION LAYER
+%% =====================
+subgraph Perception["Perception Layer"]
+    Normalize["Input Normalizer"]
+    Vision["Vision Models (Moondream)"]
+    Speech["Speech Models (Whisper)"]
+    Text["Text Understanding"]
+    Attention["Attention / Priority Filtering"]
+end
+
+%% Connections
+Normalize --> Vision
+Normalize --> Speech
+Normalize --> Text
+Vision --> Attention
+Speech --> Attention
+Text --> Attention
+Attention --> EventBus["System Event Bus"]
+
+%% Inputs from Environment
+Environment["Environment Layer"] --> Normalize

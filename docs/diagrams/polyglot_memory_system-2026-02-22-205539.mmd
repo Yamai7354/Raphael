@@ -1,0 +1,60 @@
+flowchart TB
+    %% Memory & DB layers
+    subgraph WM["Working Memory"]
+        Redis["Redis (In-Memory)"]
+    end
+
+    subgraph Episodic["Episodic Memory"]
+        Timescale["TimescaleDB / PostgreSQL (Persistent Logs)"]
+    end
+
+    subgraph OperationalKG["Operational Knowledge Graph"]
+        Neo4jOp["Neo4j / Dgraph (Agent & Task Graph)"]
+    end
+
+    subgraph ResearchKG["Research & Learning Knowledge Graph"]
+        Neo4jRes["Neo4j / ArangoDB"]
+        RDFStore["RDF / GraphDB / Blazegraph (Semantic Reasoning)"]
+    end
+
+    subgraph VectorStore["Vector Store"]
+        Milvus["Milvus / FAISS / Weaviate"]
+    end
+
+    %% Layers
+    L3["Task Understanding (Layer 3)"]
+    L4["System Spine (Layer 4)"]
+    L5["Cognitive Core (Layer 5)"]
+    L6["Swarm Manager (Layer 6)"]
+    L7["Agent Swarm (Layer 7)"]
+    L8["Execution & Integration (Layer 8)"]
+    L9["Evaluation & Testing (Layer 9)"]
+    L10["Learning Engine (Layer 10)"]
+    L11["Autonomous Research (Layer 11)"]
+    L12["Strategic Intelligence (Layer 12)"]
+    L13["Civilization Loop (Layer 13)"]
+
+    %% Connections
+    L3 --> Redis
+    L3 --> Milvus
+    L4 --> Neo4jOp
+    L5 --> Redis
+    L5 --> Milvus
+    L6 --> Neo4jOp
+    L7 --> Neo4jOp
+    L8 --> Redis
+    L8 --> Timescale
+    L9 --> Timescale
+    L10 --> Neo4jRes
+    L10 --> RDFStore
+    L11 --> Neo4jRes
+    L11 --> RDFStore
+    L12 --> Neo4jRes
+    L12 --> RDFStore
+    L13 --> Neo4jRes
+    L13 --> RDFStore
+
+    %% Cross-store references
+    Neo4jOp --> Neo4jRes
+    Milvus --> Neo4jRes
+    RDFStore --> Neo4jRes

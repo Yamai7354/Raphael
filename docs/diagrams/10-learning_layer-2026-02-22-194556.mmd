@@ -1,0 +1,22 @@
+flowchart TB
+    subgraph L10["10. Learning Engine"]
+        SkillLearning["Skill Learning"]
+        PolicyUpdate["Policy Updates"]
+        Reward["Reward Signals"]
+    end
+
+    %% Inputs
+    Critic["Critic Agent (Layer 9)"] --> SkillLearning
+    QA["Quality Assessment (Layer 9)"] --> SkillLearning
+    Reward --> PolicyUpdate
+    Aggregator["Result Aggregator (Layer 5)"] --> SkillLearning
+    Memory["Memory System"] --> SkillLearning
+
+    %% Processing
+    SkillLearning --> PolicyUpdate
+    PolicyUpdate --> Planner["Planner (Layer 5)"]
+    Reward --> SkillLearning
+
+    %% Outputs
+    SkillLearning --> L7["Agent Swarm (Layer 7)"]
+    PolicyUpdate --> L7

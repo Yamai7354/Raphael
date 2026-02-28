@@ -1,0 +1,322 @@
+{
+  "agents": {
+    "Takashi": {
+      "mission": "reduce response latency",
+      "assigned_at": "2026-02-26T14:21:15.916451+00:00",
+      "reason": "manual"
+    },
+    "Aiko": {
+      "mission": "optimize memory compression",
+      "assigned_at": "2026-02-26T14:21:15.916451+00:00",
+      "reason": "manual"
+    },
+    "Kaito": {
+      "mission": "reduce response latency",
+      "assigned_at": "2026-02-26T14:27:32.781335+00:00",
+      "reason": "boredom"
+    },
+    "Mio": {
+      "mission": "discover new models",
+      "assigned_at": "2026-02-26T14:33:41.294867+00:00",
+      "reason": "boredom"
+    },
+    "Sora": {
+      "mission": "discover new models",
+      "assigned_at": "2026-02-26T20:23:17.075929+00:00",
+      "reason": "boredom"
+    },
+    "Shun": {
+      "mission": "design new agents",
+      "assigned_at": "2026-02-26T20:23:17.075929+00:00",
+      "reason": "boredom"
+    },
+    "Kenji": {
+      "mission": "improve retrieval accuracy",
+      "assigned_at": "2026-02-26T20:26:25.435823+00:00",
+      "reason": "boredom"
+    },
+    "Hina": {
+      "mission": "optimize memory compression",
+      "assigned_at": "2026-02-26T20:26:25.435823+00:00",
+      "reason": "boredom"
+    },
+    "Hoang": {
+      "mission": "reduce response latency",
+      "assigned_at": "2026-02-26T20:35:56.799552+00:00",
+      "reason": "boredom"
+    },
+    "Hai_239": {
+      "mission": "discover new models",
+      "assigned_at": "2026-02-26T20:35:56.799552+00:00",
+      "reason": "boredom"
+    },
+    "Hee_871": {
+      "mission": "discover new models",
+      "assigned_at": "2026-02-26T20:39:06.228226+00:00",
+      "reason": "boredom"
+    },
+    "Kook_617": {
+      "mission": "discover new models",
+      "assigned_at": "2026-02-26T20:39:06.228226+00:00",
+      "reason": "boredom"
+    },
+    "Tae_108": {
+      "mission": "improve retrieval accuracy",
+      "assigned_at": "2026-02-26T20:42:23.148638+00:00",
+      "reason": "boredom"
+    },
+    "Hee_249": {
+      "mission": "reduce response latency",
+      "assigned_at": "2026-02-26T20:45:43.356306+00:00",
+      "reason": "boredom"
+    },
+    "Seok_218": {
+      "mission": "optimize memory compression",
+      "assigned_at": "2026-02-26T20:45:43.356306+00:00",
+      "reason": "boredom"
+    },
+    "Kook_775": {
+      "mission": "reduce response latency",
+      "assigned_at": "2026-02-26T20:45:43.356306+00:00",
+      "reason": "boredom"
+    },
+    "Tae_772": {
+      "mission": "optimize memory compression",
+      "assigned_at": "2026-02-26T20:52:33.164980+00:00",
+      "reason": "boredom"
+    },
+    "Hee_359": {
+      "mission": "improve retrieval accuracy",
+      "assigned_at": "2026-02-26T20:56:09.099455+00:00",
+      "reason": "boredom"
+    },
+    "Kook_245": {
+      "mission": "discover new models",
+      "assigned_at": "2026-02-26T20:56:09.099455+00:00",
+      "reason": "boredom"
+    },
+    "Hee_692": {
+      "mission": "optimize memory compression",
+      "assigned_at": "2026-02-26T21:14:14.747677+00:00",
+      "reason": "boredom"
+    }
+  },
+  "history": [
+    {
+      "agent": "Akira",
+      "mission": "improve retrieval accuracy",
+      "assigned_at": "2026-02-26T14:21:15.916451+00:00",
+      "reason": "manual"
+    },
+    {
+      "agent": "Takashi",
+      "mission": "reduce response latency",
+      "assigned_at": "2026-02-26T14:21:15.916451+00:00",
+      "reason": "manual"
+    },
+    {
+      "agent": "Riku",
+      "mission": "discover new models",
+      "assigned_at": "2026-02-26T14:21:15.916451+00:00",
+      "reason": "manual"
+    },
+    {
+      "agent": "Aiko",
+      "mission": "optimize memory compression",
+      "assigned_at": "2026-02-26T14:21:15.916451+00:00",
+      "reason": "manual"
+    },
+    {
+      "agent": "Daiki",
+      "mission": "design new agents",
+      "assigned_at": "2026-02-26T14:21:15.916451+00:00",
+      "reason": "manual"
+    },
+    {
+      "agent": "Kenji",
+      "mission": "improve retrieval accuracy",
+      "assigned_at": "2026-02-26T14:27:32.781335+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Kaito",
+      "mission": "reduce response latency",
+      "assigned_at": "2026-02-26T14:27:32.781335+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Phuc_214",
+      "mission": "improve retrieval accuracy",
+      "assigned_at": "2026-02-26T14:33:41.294867+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Mio",
+      "mission": "discover new models",
+      "assigned_at": "2026-02-26T14:33:41.294867+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Tae_964",
+      "mission": "improve retrieval accuracy",
+      "assigned_at": "2026-02-26T14:36:49.506804+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Tae_840",
+      "mission": "reduce response latency",
+      "assigned_at": "2026-02-26T14:36:49.506804+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Tae_674",
+      "mission": "reduce response latency",
+      "assigned_at": "2026-02-26T14:43:06.860030+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Tae_410",
+      "mission": "reduce response latency",
+      "assigned_at": "2026-02-26T14:46:18.294050+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Hee_106",
+      "mission": "reduce response latency",
+      "assigned_at": "2026-02-26T14:49:35.998535+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Dong_944",
+      "mission": "improve retrieval accuracy",
+      "assigned_at": "2026-02-26T14:49:35.998535+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Hee_730",
+      "mission": "discover new models",
+      "assigned_at": "2026-02-26T14:52:38.230464+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Hee_180",
+      "mission": "optimize memory compression",
+      "assigned_at": "2026-02-26T14:52:38.230464+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Jiho_647",
+      "mission": "reduce response latency",
+      "assigned_at": "2026-02-26T14:54:17.161016+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Jiho_623",
+      "mission": "discover new models",
+      "assigned_at": "2026-02-26T15:00:42.551259+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Seok_308",
+      "mission": "optimize memory compression",
+      "assigned_at": "2026-02-26T15:07:14.284058+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Sora",
+      "mission": "discover new models",
+      "assigned_at": "2026-02-26T20:23:17.075929+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Shun",
+      "mission": "design new agents",
+      "assigned_at": "2026-02-26T20:23:17.075929+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Kenji",
+      "mission": "improve retrieval accuracy",
+      "assigned_at": "2026-02-26T20:26:25.435823+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Hina",
+      "mission": "optimize memory compression",
+      "assigned_at": "2026-02-26T20:26:25.435823+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Hoang",
+      "mission": "reduce response latency",
+      "assigned_at": "2026-02-26T20:35:56.799552+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Hai_239",
+      "mission": "discover new models",
+      "assigned_at": "2026-02-26T20:35:56.799552+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Hee_871",
+      "mission": "discover new models",
+      "assigned_at": "2026-02-26T20:39:06.228226+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Kook_617",
+      "mission": "discover new models",
+      "assigned_at": "2026-02-26T20:39:06.228226+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Tae_108",
+      "mission": "improve retrieval accuracy",
+      "assigned_at": "2026-02-26T20:42:23.148638+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Hee_249",
+      "mission": "reduce response latency",
+      "assigned_at": "2026-02-26T20:45:43.356306+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Seok_218",
+      "mission": "optimize memory compression",
+      "assigned_at": "2026-02-26T20:45:43.356306+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Kook_775",
+      "mission": "reduce response latency",
+      "assigned_at": "2026-02-26T20:45:43.356306+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Tae_772",
+      "mission": "optimize memory compression",
+      "assigned_at": "2026-02-26T20:52:33.164980+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Hee_359",
+      "mission": "improve retrieval accuracy",
+      "assigned_at": "2026-02-26T20:56:09.099455+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Kook_245",
+      "mission": "discover new models",
+      "assigned_at": "2026-02-26T20:56:09.099455+00:00",
+      "reason": "boredom"
+    },
+    {
+      "agent": "Hee_692",
+      "mission": "optimize memory compression",
+      "assigned_at": "2026-02-26T21:14:14.747677+00:00",
+      "reason": "boredom"
+    }
+  ]
+}

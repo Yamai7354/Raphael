@@ -1,0 +1,14 @@
+flowchart TB
+    subgraph L7["7. Agent Swarm"]
+        SystemAgents["System Agents"]
+        Simulation["Simulation Agents"]
+        Research["Research Agents"]
+        Coding["Coding Agents"]
+        Reasoning["Reasoning Agents"]
+    end
+
+    %% Inputs
+    Scheduler["Layer 6 Task Scheduler"] --> SystemAgents & Simulation & Research & Coding & Reasoning
+
+    %% Outputs
+    SystemAgents & Simulation & Research & Coding & Reasoning --> ToolExec["Execution Layer (Layer 8)"]

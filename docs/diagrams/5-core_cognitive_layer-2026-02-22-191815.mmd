@@ -1,0 +1,22 @@
+flowchart TB
+    subgraph L5["5. Core Cognitive System"]
+        Planner["Planner"]
+        Context["Context Builder"]
+        Validator["Reasoning Validator"]
+        Aggregator["Result Aggregator"]
+    end
+
+    %% Inputs
+    Decomp["Task Decomposition (Layer 3)"] --> Planner
+    L4["System Spine"] --> Planner
+    Memory["Memory System"] --> Context
+    WorldModel["World Model"] --> Context
+
+    %% Processing
+    Planner --> Context
+    Planner --> Validator
+    Context --> Validator
+    Validator --> Aggregator
+
+    %% Output
+    Aggregator --> Orchestrator["Swarm Manager (Layer 6)"]

@@ -1,0 +1,26 @@
+// MODELS
+LOAD CSV WITH HEADERS FROM 'file:///models.csv' AS row
+CREATE (:Model {
+id: row.modelId,
+name: row.name,
+provider: row.provider,
+type: row.type,
+local: row.local
+});
+
+// CAPABILITIES
+LOAD CSV WITH HEADERS FROM 'file:///capabilities.csv' AS row
+CREATE (:Capability {id: row.capabilityId, name: row.name});
+
+// ROLES
+LOAD CSV WITH HEADERS FROM 'file:///system_roles.csv' AS row
+CREATE (:Role {id: row.roleId, name: row.name});
+
+// TASKS
+LOAD CSV WITH HEADERS FROM 'file:///task_categories.csv' AS row
+CREATE (:Task {
+id: row.taskId,
+name: row.name,
+domain: row.domain,
+load: row.cognitiveLoad
+});

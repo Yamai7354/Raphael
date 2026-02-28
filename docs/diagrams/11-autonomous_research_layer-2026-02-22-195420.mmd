@@ -1,0 +1,24 @@
+flowchart TB
+    subgraph L11["11. Autonomous Research System"]
+        Curiosity["Curiosity Engine"]
+        Hypothesis["Hypothesis Generator"]
+        ExperimentDesign["Experiment Designer"]
+        ExperimentRun["Experiment Runner"]
+        Discovery["Discovery Agents"]
+    end
+
+    %% Inputs
+    Memory["Memory System"] --> Curiosity
+    WorldModel["World Model"] --> Curiosity
+    Reward["Reward Signals (Layer 10)"] --> Curiosity
+
+    %% Processing
+    Curiosity --> Hypothesis
+    Hypothesis --> ExperimentDesign
+    ExperimentDesign --> ExperimentRun
+    ExperimentRun --> Discovery
+
+    %% Outputs
+    Discovery --> KG["Knowledge Graph / Memory"]
+    Discovery --> Forecast["Capability Forecasting (Layer 12)"]
+    Discovery --> KnowledgeEconomy["Knowledge Economy (Layer 13)"]

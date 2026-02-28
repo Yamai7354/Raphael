@@ -1,0 +1,21 @@
+flowchart TB
+    subgraph L12["12. Strategic Intelligence"]
+        StrategyEngine["Long-Horizon Strategy"]
+        TechRadar["Technology Radar"]
+        Forecast["Capability Forecasting"]
+        SelfModel["System Self-Model"]
+    end
+
+    %% Inputs
+    KG["Knowledge Graph / Memory"] --> StrategyEngine
+    Curiosity["Curiosity Engine (Layer 11)"] --> StrategyEngine
+    Health["System Health / Telemetry (Layer 4)"] --> SelfModel
+    Forecast --> StrategyEngine
+    TechRadar --> StrategyEngine
+    SelfModel --> StrategyEngine
+
+    %% Outputs
+    StrategyEngine --> GoalMgr["Goal / Mission Manager (Layer 3)"]
+    StrategyEngine --> Curiosity
+    StrategyEngine --> ResourceMgr["Resource Manager (Layer 4)"]
+    StrategyEngine --> L13["Civilization Loop (Layer 13)"]

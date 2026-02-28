@@ -1,0 +1,95 @@
+{
+    "desktop_hardware_capabilities": [
+        {
+            "modelCompatibilityType": "gguf",
+            "runtime": {
+                "hardwareSurveyResult": {
+                    "compatibility": {
+                        "status": "Compatible"
+                    },
+                    "cpuSurveyResult": {
+                        "result": {
+                            "code": "Success",
+                            "message": ""
+                        },
+                        "cpuInfo": {
+                            "name": "AMD Ryzen 5 PRO 2400G with Radeon Vega Graphics",
+                            "architecture": "x86_64",
+                            "supportedInstructionSetExtensions": [
+                                "AVX",
+                                "AVX2"
+                            ]
+                        }
+                    },
+                    "memoryInfo": {
+                        "ramCapacity": 14944960512,
+                        "vramCapacity": 8589934592,
+                        "totalMemory": 23534895104
+                    },
+                    "gpuSurveyResult": {
+                        "result": {
+                            "code": "Success",
+                            "message": ""
+                        },
+                        "gpuInfo": [
+                            {
+                                "name": "AMD Radeon(TM) Vega 11 Graphics",
+                                "deviceId": 0,
+                                "totalMemoryCapacityBytes": 9351200768,
+                                "dedicatedMemoryCapacityBytes": 2147483648,
+                                "integrationType": "Integrated",
+                                "detectionPlatform": "Vulkan",
+                                "detectionPlatformVersion": "1.3.283",
+                                "otherInfo": {
+                                    "deviceLUIDValid": "true",
+                                    "deviceLUID": "a35d010000000000",
+                                    "deviceUUID": "00000000300000000000000000000000",
+                                    "driverID": "1",
+                                    "driverName": "AMD proprietary driver",
+                                    "driverInfo": "25.8.1",
+                                    "vendorID": "4098"
+                                }
+                            },
+                            {
+                                "name": "AMD Radeon(TM) Vega 11 Graphics",
+                                "deviceId": 1,
+                                "totalMemoryCapacityBytes": 9351200768,
+                                "dedicatedMemoryCapacityBytes": 2147483648,
+                                "integrationType": "Integrated",
+                                "detectionPlatform": "Vulkan",
+                                "otherInfo": {
+                                    "detectionPlatformVersion": "1.3.283",
+                                    "deviceLUIDValid": "true",
+                                    "deviceLUID": "a35d010000000000",
+                                    "deviceUUID": "00000000300000000000000000000000",
+                                    "driverID": "1",
+                                    "driverName": "AMD proprietary driver",
+                                    "driverInfo": "25.8.1 (AMD proprietary shader compiler)",
+                                    "vendorID": "4098"
+                                }
+                            },
+                            {
+                                "name": "AMD Radeon (TM) R9 390 Series",
+                                "deviceId": 2,
+                                "totalMemoryCapacityBytes": 15793651712,
+                                "dedicatedMemoryCapacityBytes": 8589934592,
+                                "integrationType": "Discrete",
+                                "detectionPlatform": "Vulkan",
+                                "detectionPlatformVersion": "1.3.283",
+                                "otherInfo": {
+                                    "deviceLUIDValid": "true",
+                                    "deviceLUID": "a14f010000000000",
+                                    "deviceUUID": "00000000100000000000000000000000",
+                                    "driverID": "1",
+                                    "driverName": "AMD proprietary driver",
+                                    "driverInfo": "22.6.1",
+                                    "vendorID": "4098"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,101 @@
+[
+    "mac_hardware_capabilities",
+    {
+        "modelCompatibilityType": "gguf",
+        "runtime": {
+            "hardwareSurveyResult": {
+                "compatibility": {
+                    "status": "Compatible"
+                },
+                "cpuSurveyResult": {
+                    "result": {
+                        "code": "Success",
+                        "message": ""
+                    },
+                    "cpuInfo": {
+                        "name": "Apple M4",
+                        "architecture": "ARM64",
+                        "supportedInstructionSetExtensions": [
+                            "AdvSIMD"
+                        ]
+                    }
+                },
+                "memoryInfo": {
+                    "ramCapacity": 17179869184,
+                    "vramCapacity": 12713115648,
+                    "totalMemory": 17179869184
+                },
+                "gpuSurveyResult": {
+                    "result": {
+                        "code": "Success",
+                        "message": "Successfully queried Apple Silicon for GPU Info."
+                    },
+                    "gpuInfo": [
+                        {
+                            "name": "Apple M4",
+                            "deviceId": 0,
+                            "totalMemoryCapacityBytes": 17179869184,
+                            "dedicatedMemoryCapacityBytes": 12713115648,
+                            "integrationType": "Integrated",
+                            "detectionPlatform": "Metal",
+                            "detectionPlatformVersion": "",
+                            "otherInfo": {
+                                "osProductVersion": "26.3",
+                                "metalGpuFamilyNumeric": "9"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "modelCompatibilityType": "safetensors",
+        "runtime": {
+            "hardwareSurveyResult": {
+                "compatibility": {
+                    "status": "Compatible"
+                },
+                "cpuSurveyResult": {
+                    "result": {
+                        "code": "Success",
+                        "message": ""
+                    },
+                    "cpuInfo": {
+                        "name": "Apple M4",
+                        "architecture": "ARM64",
+                        "supportedInstructionSetExtensions": [
+                            "AdvSIMD"
+                        ]
+                    }
+                },
+                "memoryInfo": {
+                    "ramCapacity": 17179869184,
+                    "vramCapacity": 12713115648,
+                    "totalMemory": 17179869184
+                },
+                "gpuSurveyResult": {
+                    "result": {
+                        "code": "Success",
+                        "message": "Successfully queried Apple Silicon for GPU Info."
+                    },
+                    "gpuInfo": [
+                        {
+                            "name": "Apple M4",
+                            "deviceId": 0,
+                            "totalMemoryCapacityBytes": 17179869184,
+                            "dedicatedMemoryCapacityBytes": 12713115648,
+                            "integrationType": "Integrated",
+                            "detectionPlatform": "Metal",
+                            "detectionPlatformVersion": "",
+                            "otherInfo": {
+                                "osProductVersion": "26.3",
+                                "metalGpuFamilyNumeric": "9"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+]

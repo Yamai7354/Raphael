@@ -1,0 +1,181 @@
+{
+  "ok": true,
+  "generated_at": "2026-02-26T08:01:02.488807+00:00",
+  "queries_attempted": 22,
+  "queries_successful": 22,
+  "errors": [],
+  "node_counts_focus": [
+    {
+      "labels": [
+        "Memory"
+      ],
+      "count": 13778
+    },
+    {
+      "labels": [
+        "Observation"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "Experiment"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "Character"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "Goal"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Event"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Belief"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Faction"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Strategy"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Ideology"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Hypothesis"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Knowledge"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "HistoricalEvent"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Story"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "CulturalIdentity"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Influence"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Innovation"
+      ],
+      "count": 1
+    }
+  ],
+  "relationship_counts_focus": [
+    {
+      "type": "REFERS_TO_HISTORY",
+      "count": 13602
+    },
+    {
+      "type": "HAS_MEMORY",
+      "count": 7
+    },
+    {
+      "type": "SUPPORTS",
+      "count": 3
+    },
+    {
+      "type": "CONTRIBUTES_TO",
+      "count": 2
+    },
+    {
+      "type": "GENERATED",
+      "count": 1
+    },
+    {
+      "type": "HOLDS_BELIEF",
+      "count": 1
+    },
+    {
+      "type": "MEMBER_OF",
+      "count": 1
+    },
+    {
+      "type": "OBSERVED",
+      "count": 1
+    },
+    {
+      "type": "RELATIONSHIP",
+      "count": 1
+    },
+    {
+      "type": "INFLUENCES",
+      "count": 1
+    },
+    {
+      "type": "SUGGESTS",
+      "count": 1
+    },
+    {
+      "type": "TESTED_BY",
+      "count": 1
+    },
+    {
+      "type": "VALIDATED_AS",
+      "count": 1
+    },
+    {
+      "type": "SHAPES",
+      "count": 1
+    },
+    {
+      "type": "ADOPTED",
+      "count": 1
+    },
+    {
+      "type": "SPREADS_TO",
+      "count": 1
+    },
+    {
+      "type": "REFERS_TO",
+      "count": 1
+    }
+  ]
+}

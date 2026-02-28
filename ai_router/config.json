@@ -1,0 +1,217 @@
+{
+  "nodes": [
+    {
+      "id": "mac-local",
+      "name": "M4 MacBook",
+      "url": "http://100.125.58.22:5000/v1",
+      "timeout": 30.0,
+      "role": "fast_inference",
+      "capabilities": {
+        "max_context_supported": 16384,
+        "supported_model_sizes": [
+          "3B",
+          "8B"
+        ],
+        "supported_quantizations": [
+          "q4_only",
+          "q8_only"
+        ],
+        "concurrent_role_limit": 1
+      }
+    },
+    {
+      "id": "win-desktop",
+      "name": "R9 Desktop",
+      "url": "http://100.125.58.22:5000/v1",
+      "timeout": 30.0,
+      "role": "heavy_inference",
+      "capabilities": {
+        "max_context_supported": 32768,
+        "supported_model_sizes": [
+          "8B",
+          "13B",
+          "70B"
+        ],
+        "supported_quantizations": [
+          "q4_only",
+          "q8_only",
+          "q8_or_higher",
+          "fp16_only"
+        ],
+        "concurrent_role_limit": 2
+      }
+    }
+  ],
+  "roles": [
+    {
+      "role_id": "director",
+      "description": "Narrative control and plot direction",
+      "max_context_tokens": 8192,
+      "preferred_model_size_max": "8B",
+      "quantization_policy": "q8_or_higher",
+      "default_temperature": 0.3,
+      "latency_sensitive": false
+    },
+    {
+      "role_id": "world",
+      "description": "World simulation and event generation",
+      "max_context_tokens": 16384,
+      "preferred_model_size_max": "8B",
+      "quantization_policy": "q8_or_higher",
+      "default_temperature": 0.5,
+      "latency_sensitive": false
+    },
+    {
+      "role_id": "planner",
+      "description": "Complex task planning and decomposition",
+      "max_context_tokens": 32768,
+      "preferred_model_size_max": "8B",
+      "quantization_policy": "q8_or_higher",
+      "default_temperature": 0.2,
+      "latency_sensitive": false
+    },
+    {
+      "role_id": "curiosity",
+      "description": "Research and open-ended inquiry",
+      "max_context_tokens": 32768,
+      "preferred_model_size_max": "8B",
+      "quantization_policy": "q8_or_higher",
+      "default_temperature": 0.9,
+      "latency_sensitive": false
+    },
+    {
+      "role_id": "memory",
+      "description": "Memory consolidation and retrieval",
+      "max_context_tokens": 16384,
+      "preferred_model_size_max": "8B",
+      "quantization_policy": "q8_or_higher",
+      "default_temperature": 0.1,
+      "latency_sensitive": false
+    },
+    {
+      "role_id": "spine",
+      "description": "Intent classification and decision making",
+      "max_context_tokens": 4096,
+      "preferred_model_size_max": "3B",
+      "quantization_policy": "q8_or_higher",
+      "default_temperature": 0.1,
+      "latency_sensitive": true
+    },
+    {
+      "role_id": "voice",
+      "description": "Character roleplay and dialogue",
+      "max_context_tokens": 8192,
+      "preferred_model": "l3-8b-stheno-v3.2-iq-imatrix",
+      "quantization_policy": "q8_or_higher",
+      "default_temperature": 0.8,
+      "latency_sensitive": true
+    },
+    {
+      "role_id": "router",
+      "description": "JSON parsing and agent dispatch",
+      "max_context_tokens": 4096,
+      "preferred_model_size_max": "3B",
+      "quantization_policy": "q8_or_higher",
+      "default_temperature": 0.1,
+      "latency_sensitive": true
+    }
+  ],
+  "policy": {
+    "global_max_context_tokens": 32768,
+    "default_quantization": "q8_or_higher",
+    "max_concurrent_requests_per_node": 2,
+    "request_timeout_seconds": 120,
+    "allow_runtime_role_changes": false,
+    "allow_runtime_policy_changes": false
+  },
+  "model_mappings": [
+    {
+      "role_id": "director",
+      "models": [
+        {
+          "model_id": "l3-8b-stheno-v3.2-iq-imatrix",
+          "size": "8B",
+          "quantization": "q8_only",
+          "context_length": 32768
+        }
+      ]
+    },
+    {
+      "role_id": "world",
+      "models": [
+        {
+          "model_id": "l3-8b-stheno-v3.2-iq-imatrix",
+          "size": "8B",
+          "quantization": "q8_only",
+          "context_length": 32768
+        }
+      ]
+    },
+    {
+      "role_id": "planner",
+      "models": [
+        {
+          "model_id": "l3-8b-stheno-v3.2-iq-imatrix",
+          "size": "8B",
+          "quantization": "q8_only",
+          "context_length": 32768
+        }
+      ]
+    },
+    {
+      "role_id": "curiosity",
+      "models": [
+        {
+          "model_id": "l3-8b-stheno-v3.2-iq-imatrix",
+          "size": "8B",
+          "quantization": "q8_only",
+          "context_length": 32768
+        }
+      ]
+    },
+    {
+      "role_id": "memory",
+      "models": [
+        {
+          "model_id": "mistralai/ministral-3-3b",
+          "size": "8B",
+          "quantization": "q8_only",
+          "context_length": 32768
+        }
+      ]
+    },
+    {
+      "role_id": "spine",
+      "models": [
+        {
+          "model_id": "mistralai/ministral-3-3b",
+          "size": "3B",
+          "quantization": "q8_only",
+          "context_length": 8192
+        }
+      ]
+    },
+    {
+      "role_id": "voice",
+      "models": [
+        {
+          "model_id": "l3-8b-stheno-v3.2-iq-imatrix",
+          "size": "8B",
+          "quantization": "q8_only",
+          "context_length": 8192
+        }
+      ]
+    },
+    {
+      "role_id": "router",
+      "models": [
+        {
+          "model_id": "mistralai/ministral-3-3b",
+          "size": "3B",
+          "quantization": "q8_only",
+          "context_length": 8192
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "autonomousScaling": true,
+  "autoRecycling": true,
+  "recycleThreshold": 8,
+  "triggerCooldownSeconds": 5,
+  "maxConcurrentTasks": 12,
+  "telemetryIntervalSeconds": "5",
+  "modelRoutingMode": "hybrid",
+  "strictSafetyChecks": true
+}

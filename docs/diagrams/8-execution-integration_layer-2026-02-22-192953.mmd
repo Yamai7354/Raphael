@@ -1,0 +1,17 @@
+flowchart TB
+    subgraph L8["8. Execution & Integration"]
+        SystemCtrl["System Control"]
+        Automation["Automation Engine"]
+        CodeRun["Code Runner"]
+        ToolExec["Tool Executor"]
+    end
+
+    %% Inputs
+    L7["Agent Swarm Outputs (Layer 7)"] --> ToolExec
+    ToolExec --> SystemCtrl & Automation & CodeRun
+
+    %% Feedback
+    SystemCtrl --> Health["Health & Telemetry (Layer 4)"]
+    Automation --> Aggregator["Result Aggregator (Layer 5)"]
+    CodeRun --> Aggregator
+    ToolExec --> Aggregator

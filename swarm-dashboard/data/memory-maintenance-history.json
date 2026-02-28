@@ -1,0 +1,64 @@
+{
+  "runs": [
+    {
+      "ranAt": "2026-02-26T12:38:35.700Z",
+      "result": {
+        "consolidate": {
+          "ok": true,
+          "created": 0,
+          "window_days": 7,
+          "min_items": 6,
+          "db_path": "/Users/yamai/ai/Raphael/swarm-dashboard/data/memory_system.db"
+        },
+        "retention": {
+          "ok": true,
+          "deleted": 0,
+          "keep_days": 90,
+          "confidence_threshold": 0.35,
+          "db_path": "/Users/yamai/ai/Raphael/swarm-dashboard/data/memory_system.db"
+        },
+        "conflicts": {
+          "ok": true,
+          "conflicted_items": 0,
+          "scanned": 1,
+          "db_path": "/Users/yamai/ai/Raphael/swarm-dashboard/data/memory_system.db"
+        },
+        "trace": {
+          "ok": true,
+          "trace": {
+            "window_days": 1,
+            "total_queries": 1,
+            "avg_latency_ms": 1,
+            "hit_rate_pct": 100,
+            "top_missed_queries": [],
+            "slow_queries": [
+              {
+                "query": "What is Hina researching?",
+                "latency_ms": 1
+              }
+            ]
+          },
+          "db_path": "/Users/yamai/ai/Raphael/swarm-dashboard/data/memory_system.db"
+        },
+        "health": {
+          "ok": true,
+          "health": {
+            "id": "75917463-fcbf-403f-b61e-0dd7dd1f52b1",
+            "total_items": 1,
+            "by_type": {
+              "semantic": 1
+            },
+            "by_validation": {
+              "unverified": 1
+            },
+            "conflict_items": 0,
+            "avg_confidence": 0.5,
+            "retrieval_events_24h": 1,
+            "captured_at": "2026-02-26T12:38:36.318301+00:00"
+          },
+          "db_path": "/Users/yamai/ai/Raphael/swarm-dashboard/data/memory_system.db"
+        }
+      }
+    }
+  ]
+}

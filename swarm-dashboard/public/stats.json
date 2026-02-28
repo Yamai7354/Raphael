@@ -1,0 +1,547 @@
+{
+  "timestamp": 1772275271.084041,
+  "resources": [
+    {
+      "name": "04:38:59",
+      "cpu": 43,
+      "ram": 88,
+      "vram": 50
+    },
+    {
+      "name": "04:39:07",
+      "cpu": 60,
+      "ram": 84,
+      "vram": 23
+    },
+    {
+      "name": "04:39:15",
+      "cpu": 50,
+      "ram": 68,
+      "vram": 51
+    },
+    {
+      "name": "04:39:26",
+      "cpu": 70,
+      "ram": 55,
+      "vram": 13
+    },
+    {
+      "name": "04:39:35",
+      "cpu": 55,
+      "ram": 82,
+      "vram": 52
+    },
+    {
+      "name": "04:39:45",
+      "cpu": 62,
+      "ram": 78,
+      "vram": 25
+    },
+    {
+      "name": "04:39:54",
+      "cpu": 44,
+      "ram": 81,
+      "vram": 17
+    },
+    {
+      "name": "04:40:03",
+      "cpu": 33,
+      "ram": 90,
+      "vram": 55
+    },
+    {
+      "name": "04:40:11",
+      "cpu": 63,
+      "ram": 87,
+      "vram": 43
+    },
+    {
+      "name": "04:40:21",
+      "cpu": 47,
+      "ram": 79,
+      "vram": 28
+    },
+    {
+      "name": "04:40:30",
+      "cpu": 31,
+      "ram": 84,
+      "vram": 53
+    },
+    {
+      "name": "04:40:39",
+      "cpu": 36,
+      "ram": 81,
+      "vram": 12
+    },
+    {
+      "name": "04:40:49",
+      "cpu": 30,
+      "ram": 46,
+      "vram": 40
+    },
+    {
+      "name": "04:41:00",
+      "cpu": 63,
+      "ram": 42,
+      "vram": 30
+    },
+    {
+      "name": "04:41:11",
+      "cpu": 56,
+      "ram": 90,
+      "vram": 32
+    }
+  ],
+  "agents": [
+    {
+      "name": "Tae_772",
+      "role": "Creative Coder",
+      "culture": "Korean",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 80.45,
+      "task_success_rate": 55.3,
+      "knowledge_contrib": 5853,
+      "reputation": 2529.42,
+      "research_group": "Archivist",
+      "priority_action": "spawn_compression_agents",
+      "mission": "optimize memory compression"
+    },
+    {
+      "name": "Aiko",
+      "role": "Communicator",
+      "culture": "Japanese",
+      "status": "Executing",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 80.51,
+      "task_success_rate": 62.3,
+      "knowledge_contrib": 5944,
+      "reputation": 1619.26,
+      "research_group": "Reviewer",
+      "priority_action": "spawn_compression_agents",
+      "mission": "optimize memory compression"
+    },
+    {
+      "name": "Hoang",
+      "role": "Analyst",
+      "culture": "Vietnamese",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 82.38,
+      "task_success_rate": 67.1,
+      "knowledge_contrib": 5890,
+      "reputation": 1146.01,
+      "research_group": "Reviewer",
+      "priority_action": "spawn_compression_agents",
+      "mission": "reduce response latency"
+    },
+    {
+      "name": "Kook_775",
+      "role": "Creative Coder",
+      "culture": "Korean",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 83.09,
+      "task_success_rate": 62.3,
+      "knowledge_contrib": 5865,
+      "reputation": 1912.2,
+      "research_group": "Archivist",
+      "priority_action": "spawn_compression_agents",
+      "mission": "reduce response latency"
+    },
+    {
+      "name": "Hee_359",
+      "role": "Analyst",
+      "culture": "Korean",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 84.32,
+      "task_success_rate": 63.8,
+      "knowledge_contrib": 5842,
+      "reputation": 1058.41,
+      "research_group": "Reviewer",
+      "priority_action": "spawn_compression_agents",
+      "mission": "improve retrieval accuracy"
+    },
+    {
+      "name": "Kook_245",
+      "role": "Creative Coder",
+      "culture": "Korean",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 85.13,
+      "task_success_rate": 70.3,
+      "knowledge_contrib": 5847,
+      "reputation": 1540.27,
+      "research_group": "Archivist",
+      "priority_action": "spawn_compression_agents",
+      "mission": "discover new models"
+    },
+    {
+      "name": "Kaito",
+      "role": "Creative Coder",
+      "culture": "Japanese",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 86.04,
+      "task_success_rate": 69.1,
+      "knowledge_contrib": 5943,
+      "reputation": 3671.33,
+      "research_group": "Archivist",
+      "priority_action": "spawn_compression_agents",
+      "mission": "reduce response latency"
+    },
+    {
+      "name": "Hee_692",
+      "role": "Analyst",
+      "culture": "Korean",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 86.07,
+      "task_success_rate": 74.3,
+      "knowledge_contrib": 5842,
+      "reputation": 1864.97,
+      "research_group": "Reviewer",
+      "priority_action": "spawn_compression_agents",
+      "mission": "optimize memory compression"
+    },
+    {
+      "name": "Hee_249",
+      "role": "Analyst",
+      "culture": "Korean",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 87.52,
+      "task_success_rate": 77.4,
+      "knowledge_contrib": 5857,
+      "reputation": 1114.3,
+      "research_group": "Reviewer",
+      "priority_action": "spawn_compression_agents",
+      "mission": "reduce response latency"
+    },
+    {
+      "name": "Hai_239",
+      "role": "Creative Coder",
+      "culture": "Vietnamese",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 87.67,
+      "task_success_rate": 81.0,
+      "knowledge_contrib": 5904,
+      "reputation": 1720.74,
+      "research_group": "Archivist",
+      "priority_action": "spawn_compression_agents",
+      "mission": "discover new models"
+    },
+    {
+      "name": "Seok_218",
+      "role": "Analyst",
+      "culture": "Korean",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 88.24,
+      "task_success_rate": 72.5,
+      "knowledge_contrib": 5868,
+      "reputation": 1751.96,
+      "research_group": "Reviewer",
+      "priority_action": "spawn_compression_agents",
+      "mission": "optimize memory compression"
+    },
+    {
+      "name": "Sora",
+      "role": "Creative Coder",
+      "culture": "Japanese",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 88.57,
+      "task_success_rate": 74.4,
+      "knowledge_contrib": 5944,
+      "reputation": 2568.99,
+      "research_group": "Archivist",
+      "priority_action": "spawn_compression_agents",
+      "mission": "discover new models"
+    },
+    {
+      "name": "Hina",
+      "role": "Researcher",
+      "culture": "Japanese",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 89.03,
+      "task_success_rate": 79.3,
+      "knowledge_contrib": 5944,
+      "reputation": 11279.04,
+      "research_group": "Explorer",
+      "priority_action": "spawn_compression_agents",
+      "mission": "optimize memory compression"
+    },
+    {
+      "name": "Hee_871",
+      "role": "Analyst",
+      "culture": "Korean",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 89.17,
+      "task_success_rate": 79.6,
+      "knowledge_contrib": 5878,
+      "reputation": 1392.82,
+      "research_group": "Reviewer",
+      "priority_action": "spawn_compression_agents",
+      "mission": "discover new models"
+    },
+    {
+      "name": "Takashi",
+      "role": "Analyst",
+      "culture": "Japanese",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 89.43,
+      "task_success_rate": 73.8,
+      "knowledge_contrib": 5943,
+      "reputation": 1748.8,
+      "research_group": "Reviewer",
+      "priority_action": "spawn_compression_agents",
+      "mission": "reduce response latency"
+    },
+    {
+      "name": "Mio",
+      "role": "Analyst",
+      "culture": "Japanese",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 89.85,
+      "task_success_rate": 85.4,
+      "knowledge_contrib": 5944,
+      "reputation": 2218.83,
+      "research_group": "Reviewer",
+      "priority_action": "spawn_compression_agents",
+      "mission": "discover new models"
+    },
+    {
+      "name": "Shun",
+      "role": "Explorer",
+      "culture": "Japanese",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 90.42,
+      "task_success_rate": 84.6,
+      "knowledge_contrib": 5944,
+      "reputation": 11005.13,
+      "research_group": "Explorer",
+      "priority_action": "spawn_compression_agents",
+      "mission": "design new agents"
+    },
+    {
+      "name": "Kook_617",
+      "role": "Creative Coder",
+      "culture": "Korean",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 91.57,
+      "task_success_rate": 87.5,
+      "knowledge_contrib": 5889,
+      "reputation": 2054.23,
+      "research_group": "Archivist",
+      "priority_action": "spawn_compression_agents",
+      "mission": "discover new models"
+    },
+    {
+      "name": "Tae_108",
+      "role": "Creative Coder",
+      "culture": "Korean",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 91.78,
+      "task_success_rate": 82.0,
+      "knowledge_contrib": 5859,
+      "reputation": 2400.81,
+      "research_group": "Archivist",
+      "priority_action": "spawn_compression_agents",
+      "mission": "improve retrieval accuracy"
+    },
+    {
+      "name": "Kenji",
+      "role": "Analyst",
+      "culture": "Japanese",
+      "status": "Idle",
+      "model": "fluffy/llama-3.1-8b-stheno-v3.4:latest",
+      "fitness": 92.12,
+      "task_success_rate": 81.8,
+      "knowledge_contrib": 5922,
+      "reputation": 1760.75,
+      "research_group": "Reviewer",
+      "priority_action": "spawn_compression_agents",
+      "mission": "improve retrieval accuracy"
+    },
+    {
+      "name": "Hee_459",
+      "role": "Analyst",
+      "culture": "Korean",
+      "status": "Idle",
+      "model": "l3-8b-stheno-v3.2-iq-imatrix",
+      "fitness": 0.0,
+      "task_success_rate": 70.0,
+      "knowledge_contrib": 0,
+      "reputation": 0.0,
+      "research_group": "Reviewer",
+      "priority_action": "spawn_compression_agents",
+      "mission": null
+    },
+    {
+      "name": "Dong_365",
+      "role": "Analyst",
+      "culture": "Korean",
+      "status": "Idle",
+      "model": "l3-8b-stheno-v3.2-iq-imatrix",
+      "fitness": 0.0,
+      "task_success_rate": 70.0,
+      "knowledge_contrib": 0,
+      "reputation": 0.0,
+      "research_group": "Reviewer",
+      "priority_action": "spawn_compression_agents",
+      "mission": null
+    },
+    {
+      "name": "Jiho_610",
+      "role": "Creative Coder",
+      "culture": "Korean",
+      "status": "Idle",
+      "model": "l3-8b-stheno-v3.2-iq-imatrix",
+      "fitness": 0.0,
+      "task_success_rate": 70.0,
+      "knowledge_contrib": 0,
+      "reputation": 0.0,
+      "research_group": "Archivist",
+      "priority_action": "spawn_compression_agents",
+      "mission": null
+    },
+    {
+      "name": "Jin_816",
+      "role": "Creative Coder",
+      "culture": "Korean",
+      "status": "Idle",
+      "model": "l3-8b-stheno-v3.2-iq-imatrix",
+      "fitness": 0.0,
+      "task_success_rate": 70.0,
+      "knowledge_contrib": 0,
+      "reputation": 0.0,
+      "research_group": "Archivist",
+      "priority_action": "spawn_compression_agents",
+      "mission": null
+    }
+  ],
+  "feed": [
+    {
+      "time": "04:41:06",
+      "type": "Task",
+      "summary": "> Aiko (Cautious): Communicator Validation Findings 654 -> Success: False"
+    },
+    {
+      "time": "04:41:06",
+      "type": "Task",
+      "summary": "> Takashi (Calm): Analyst Exploration Findings 996 -> Success: True"
+    },
+    {
+      "time": "04:41:06",
+      "type": "Task",
+      "summary": "> Kaito (Cautious): Creative Coder Experiment Findings 235 -> Success: False"
+    },
+    {
+      "time": "04:41:07",
+      "type": "Task",
+      "summary": "> Hina (Calm): Researcher Exploration Findings 117 -> Success: True"
+    },
+    {
+      "time": "04:41:07",
+      "type": "Observation",
+      "summary": "Exploration Event | agent=Hina | topic=Researcher:exploration | confidence=0.79 | novelty=0.64 | sources=agent://Hina,model://fluffy/llama-3.1-8b-stheno-v3.4:latest"
+    },
+    {
+      "time": "04:41:07",
+      "type": "Task",
+      "summary": "> Sora (Calm): Creative Coder Exploration Findings 804 -> Success: True"
+    },
+    {
+      "time": "04:41:07",
+      "type": "Task",
+      "summary": "> Mio (Excited): Analyst Exploration Findings 683 -> Success: True"
+    },
+    {
+      "time": "04:41:07",
+      "type": "Task",
+      "summary": "> Kenji (Excited): Analyst Validation Findings 959 -> Success: True"
+    },
+    {
+      "time": "04:41:07",
+      "type": "Task",
+      "summary": "> Tae_108 (Excited): Creative Coder Validation Findings 387 -> Success: True"
+    },
+    {
+      "time": "04:41:09",
+      "type": "Task",
+      "summary": "> Hee_871 (Cautious): Analyst Exploration Findings 768 -> Success: False"
+    },
+    {
+      "time": "04:41:09",
+      "type": "Task",
+      "summary": "> Shun (Calm): Explorer Experiment Findings 389 -> Success: True"
+    },
+    {
+      "time": "04:41:09",
+      "type": "Observation",
+      "summary": "Exploration Event | agent=Shun | topic=Explorer:experiment | confidence=0.85 | novelty=0.59 | sources=agent://Shun,model://fluffy/llama-3.1-8b-stheno-v3.4:latest"
+    },
+    {
+      "time": "04:41:10",
+      "type": "Task",
+      "summary": "> Hai_239 (Curious): Creative Coder Exploration Findings 944 -> Success: False"
+    },
+    {
+      "time": "04:41:10",
+      "type": "Task",
+      "summary": "> Kook_617 (Cautious): Creative Coder Exploration Findings 622 -> Success: False"
+    },
+    {
+      "time": "04:41:10",
+      "type": "Task",
+      "summary": "> Kook_163 (Calm): Creative Coder Exploration Findings 551 -> Success: True"
+    },
+    {
+      "time": "04:41:10",
+      "type": "Task",
+      "summary": "> Yoon_626 (Calm): Analyst Exploration Findings 638 -> Success: True"
+    },
+    {
+      "time": "04:41:10",
+      "type": "Task",
+      "summary": "> Tae_430 (Calm): Creative Coder Exploration Findings 491 -> Success: True"
+    },
+    {
+      "time": "04:41:10",
+      "type": "Task",
+      "summary": "> Yoon_372 (Calm): Analyst Exploration Findings 782 -> Success: True"
+    },
+    {
+      "time": "04:41:11",
+      "type": "Observation",
+      "summary": "Reviewer Aiko rejected cluster 451b0ab1f72d0899 score=0.63"
+    },
+    {
+      "time": "04:41:11",
+      "type": "Observation",
+      "summary": "Reviewer Aiko rejected cluster a576e757293d4907 score=0.63"
+    }
+  ],
+  "priority_engine": {
+    "evaluations": 500,
+    "latest_action": "spawn_compression_agents",
+    "latest_signals": {
+      "graph_too_large": true,
+      "no_new_features": true,
+      "memory_quality_dropping": false,
+      "system_idle": false
+    },
+    "manual_override": false,
+    "active_missions": 20
+  }
+}

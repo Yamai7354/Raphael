@@ -1,0 +1,19 @@
+flowchart TB
+    subgraph L9["9. Evaluation & Testing"]
+        Critic["Critic Agent"]
+        QA["Quality Assessment"]
+        Sandbox["Sandbox Environment"]
+    end
+
+    %% Inputs
+    ExecutionOutputs["Execution & Integration (Layer 8)"] --> Sandbox
+    Sandbox --> QA
+    QA --> Critic
+
+    %% Processing
+    Critic --> Reward["Reward Signals (Layer 10)"]
+    QA --> Reward
+
+    %% Outputs
+    Reward --> SkillLearning["Skill Learning (Layer 10)"]
+    Reward --> PolicyUpdate["Policy Updates (Layer 10)"]

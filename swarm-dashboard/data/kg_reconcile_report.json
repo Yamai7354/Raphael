@@ -1,0 +1,74 @@
+{
+  "ok": true,
+  "generated_at": "2026-02-26T07:39:30.210533+00:00",
+  "inventory": {
+    "registry_agents": 14,
+    "repo_agent_files": 21,
+    "skills": 6,
+    "tools": 16
+  },
+  "graph_counts": {
+    "agent": 103,
+    "skill": 51,
+    "tool": 87,
+    "role": 11
+  },
+  "roles": {
+    "Agent Builder": 1,
+    "Analyst": 1,
+    "Communicator": 1,
+    "Creative Coder": 1,
+    "Database Performance Optimizer": 1,
+    "Database Reliability Optimizer": 1,
+    "Explorer": 1,
+    "Graph Steward / Optimization": 1,
+    "Knowledge Graph Link Optimizer": 1,
+    "Researcher": 2,
+    "Resource Saver": 3
+  },
+  "retired": {
+    "from_registry_or_stats": [
+      "TestA"
+    ],
+    "from_graph": [
+      "network_observatory_log_collector",
+      "network_observatory_safe_executor",
+      "network_observatory_settings_checker",
+      "network_observatory_syslog_receiver",
+      "network_observatory_threat_detector",
+      "portfolio_memory",
+      "portfolio_planner",
+      "portfolio_report_agent",
+      "portfolio_tool_router",
+      "project_sorter_agent",
+      "project_sorter_agent_context",
+      "project_sorter_agent_executor",
+      "project_sorter_agent_orchestration",
+      "project_sorter_agent_router",
+      "project_sorter_autonomous_agent_pipeline",
+      "project_sorter_director_agent",
+      "project_sorter_graph_agent",
+      "project_sorter_memory",
+      "project_sorter_npc_agent",
+      "project_sorter_planner",
+      "project_sorter_priority_agent_orchestration",
+      "project_sorter_report_agent",
+      "project_sorter_test_agent",
+      "project_sorter_test_agent_executor",
+      "project_sorter_test_agent_runtime",
+      "project_sorter_test_memory_agent",
+      "project_sorter_test_planner_agent",
+      "project_sorter_tool_gate",
+      "project_sorter_tool_router",
+      "project_sorter_tools",
+      "project_sorter_verify_dual_agent",
+      "projects_autonomous_agent_pipeline",
+      "projects_log_collector",
+      "projects_safe_executor",
+      "projects_settings_checker",
+      "projects_syslog_receiver",
+      "projects_threat_detector",
+      "router_agent"
+    ]
+  }
+}

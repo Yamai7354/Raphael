@@ -1,0 +1,25 @@
+flowchart TB
+    subgraph L13["13. Civilization Loop"]
+        GovernanceCouncil["Governance Council"]
+        InfrastructureEvolution["Infrastructure Evolution"]
+        Innovation["Innovation Engine"]
+        AgentSociety["Agent Society Manager"]
+        KnowledgeEconomy["Knowledge Economy"]
+    end
+
+    %% Inputs
+    StrategyEngine["Strategy Engine (Layer 12)"] --> GovernanceCouncil
+    ResourceMgr["Resource Manager (Layer 4)"] --> InfrastructureEvolution
+    Discovery["Autonomous Research (Layer 11)"] --> Innovation
+    AgentSociety --> Innovation
+
+    %% Processing
+    GovernanceCouncil --> Innovation
+    Innovation --> InfrastructureEvolution
+    InfrastructureEvolution --> AgentSociety
+    KnowledgeEconomy --> Innovation
+
+    %% Outputs
+    InfrastructureEvolution --> AgentSociety
+    Innovation --> KnowledgeEconomy
+    GovernanceCouncil --> StrategyEngine["Strategy Engine (Layer 12)"]

@@ -1,0 +1,308 @@
+---
+config:
+  layout: elk
+---
+flowchart TB
+    %% ==========================================
+    %% 1. ENVIRONMENT LAYER
+    %% ==========================================
+    subgraph L1["1. Environment Layer"]
+        User["User / Human Inputs"]
+        ExternalSystems["External Systems / Software"]
+        Network["Network / API Endpoints"]
+        Filesystem["Local / Remote Filesystem"]
+        Hardware["Hardware Sensors / IoT Devices"]
+        Internet["Internet / Web Resources"]
+        DataStreams["Continuous Data Feeds"]
+        InternalState["Internal System State / Logs"]
+        SimulationWorlds["Simulation / Sandbox Environments"]
+        Constraints["Environment Constraints / Permissions"]
+    end
+
+    %% ==========================================
+    %% 2. PERCEPTION LAYER
+    %% ==========================================
+    subgraph L2["2. Perception Layer"]
+        Normalize["Input Normalizer"]
+        Vision["Vision Models (Moondream)"]
+        Speech["Speech Models (Whisper)"]
+        Text["Text Understanding"]
+        Attention["Attention / Priority Filtering"]
+    end
+
+    %% ==========================================
+    %% 3. TASK UNDERSTANDING LAYER
+    %% ==========================================
+    subgraph L3["3. Goals & Task Understanding Layer"]
+        Intent["Intent Detection"]
+        Parser["Task Parser"]
+        ContextAware["Context-Aware Parsing"]
+        Decomposer["Task Decomposition"]
+        Priority["Priority Scoring"]
+        ConflictResolver["Conflict Resolution"]
+        MultiAgent["Multi-Agent Assignment"]
+    end
+
+    %% ==========================================
+    %% SUPPORTING SYSTEMS (MEMORY, WORLD, REGISTRY, BUS)
+    %% ==========================================
+    Bus["System Event Bus"]
+    
+    subgraph Support_Registry["Registry System"]
+        Compat["Compatibility Map"]
+        ModReg["Model Registry"]
+        CapReg["Capability Registry"]
+    end
+
+    subgraph Support_WorldModel["World Model"]
+        Temporal["Temporal Reasoning"]
+        Prediction["Prediction Engine"]
+        EnvState["Environment State"]
+    end
+
+    subgraph Support_Memory["Memory System"]
+        KG["Knowledge Graph"]
+        Vector["Vector Store"]
+        Episodic["Episodic Memory"]
+        WM["Working Memory"]
+    end
+
+    %% ==========================================
+    %% 4. SYSTEM SPINE LAYER
+    %% ==========================================
+    subgraph L4["4. System Spine Layer"]
+        ResourceMgr["Resource Manager"]
+        Governance["Safety & Governance"]
+        Health["Health & Telemetry"]
+        Identity["Identity & Permissions"]
+    end
+
+    %% ==========================================
+    %% 5. CORE COGNITIVE SYSTEM
+    %% ==========================================
+    subgraph L5["5. Core Cognitive System"]
+        Planner["Planner"]
+        Context["Context Builder"]
+        Validator["Reasoning Validator"]
+        Aggregator["Result Aggregator"]
+    end
+
+    %% ==========================================
+    %% 6. SWARM MANAGER
+    %% ==========================================
+    subgraph L6["6. Swarm Manager"]
+        Orchestrator["Orchestrator"]
+        Router["Model Router"]
+        Scheduler["Task Scheduler"]
+    end
+
+    %% ==========================================
+    %% 7. AGENT SWARM
+    %% ==========================================
+    subgraph L7["7. Agent Swarm"]
+        SystemAgents["System Agents"]
+        Simulation["Simulation Agents"]
+        Research["Research Agents"]
+        Coding["Coding Agents"]
+        Reasoning["Reasoning Agents"]
+    end
+
+    %% ==========================================
+    %% 8. EXECUTION & INTEGRATION
+    %% ==========================================
+    subgraph L8["8. Execution & Integration"]
+        SystemCtrl["System Control"]
+        Automation["Automation Engine"]
+        CodeRun["Code Runner"]
+        ToolExec["Tool Executor"]
+    end
+
+    %% ==========================================
+    %% 9. EVALUATION & TESTING
+    %% ==========================================
+    subgraph L9["9. Evaluation & Testing"]
+        Critic["Critic Agent"]
+        QA["Quality Assessment"]
+        SandboxEnv["Sandbox Environment"]
+    end
+
+    %% ==========================================
+    %% 10. LEARNING ENGINE
+    %% ==========================================
+    subgraph L10["10. Learning Engine"]
+        SkillLearning["Skill Learning"]
+        PolicyUpdate["Policy Updates"]
+        RewardSignals["Reward Signals"]
+    end
+
+    %% ==========================================
+    %% 11. AUTONOMOUS RESEARCH SYSTEM
+    %% ==========================================
+    subgraph L11["11. Autonomous Research System"]
+        Curiosity["Curiosity Engine"]
+        Hypothesis["Hypothesis Generator"]
+        ExperimentDesign["Experiment Designer"]
+        ExperimentRun["Experiment Runner"]
+        Discovery["Discovery Agents"]
+    end
+
+    %% ==========================================
+    %% 12. STRATEGIC INTELLIGENCE
+    %% ==========================================
+    subgraph L12["12. Strategic Intelligence"]
+        StrategyEngine["Long-Horizon Strategy"]
+        TechRadar["Technology Radar"]
+        Forecast["Capability Forecasting"]
+        SelfModel["System Self-Model"]
+    end
+
+    %% ==========================================
+    %% 13. CIVILIZATION LOOP
+    %% ==========================================
+    subgraph L13["13. Civilization Loop"]
+        GovernanceCouncil["Governance Council"]
+        InfrastructureEvolution["Infrastructure Evolution"]
+        Innovation["Innovation Engine"]
+        AgentSociety["Agent Society Manager"]
+        KnowledgeEconomy["Knowledge Economy"]
+    end
+
+    %% ==========================================
+    %% CONNECTIONS
+    %% ==========================================
+
+    %% Layer 1 Internal Dataflow
+    User -->|Interaction| ExternalSystems
+    ExternalSystems -->|Signals| Network
+    Network -->|Requests| Filesystem
+    Hardware -->|Sensors| InternalState
+    DataStreams -->|Observables| InternalState
+    SimulationWorlds -->|Testing| InternalState
+    InternalState -->|Feedback| Filesystem
+    Constraints -.->|Rules| Network & Filesystem & Hardware & DataStreams & SimulationWorlds
+
+    %% L1 -> L2
+    User & ExternalSystems & Network & Filesystem & Hardware & Internet & DataStreams & InternalState --> Normalize
+
+    %% L2 Perception Flow
+    Normalize --> Vision & Speech & Text
+    Vision & Speech & Text --> Attention
+    Attention --> Bus
+
+    %% L3 Task Understanding
+    Bus --> Intent
+    Intent --> Parser
+    Parser --> ContextAware
+    ContextAware --> Decomposer
+    Decomposer --> Priority
+    Priority --> ConflictResolver
+    ConflictResolver --> MultiAgent
+
+    %% Support -> L3 Feedback
+    Support_Memory --> ContextAware
+
+    %% L3 -> L4 & L5 & L6
+    MultiAgent --> Orchestrator
+    Decomposer --> Planner
+    Decomposer --> L4
+
+    %% L4 System Spine Integrations
+    ModReg --> L4
+    CapReg --> L4
+    ResourceMgr --> Orchestrator
+    Governance --> Parser
+    Health --> SelfModel
+    Identity --> L7
+
+    %% Support interactions
+
+    Planner --> Context
+    Planner --> Validator
+    Context --> Validator
+    Validator --> Aggregator
+
+    Support_Memory <--> Context
+    Support_WorldModel <--> Context
+    Support_WorldModel <--> Support_Memory
+
+    %% L5 Cognitive -> L6 Manager
+    Aggregator --> Orchestrator
+
+    %% L6 Swarm Manager Flow
+    Aggregator --> Orchestrator
+    CapReg --> Router
+    Orchestrator --> Scheduler
+    Router --> Scheduler
+
+    %% L6 -> L7
+    Scheduler --> L7
+
+    %% L7 Agent Swarm -> L8 Execution
+    SystemAgents & Simulation & Research & Coding & Reasoning --> ToolExec
+    ToolExec --> SystemCtrl & Automation & CodeRun
+
+    %% L8 Execution Feedback
+    SystemCtrl --> Health
+    Automation --> Aggregator
+    CodeRun --> Aggregator
+    ToolExec --> Aggregator
+
+    %% L8 -> L9
+    L8 --> SandboxEnv
+    SandboxEnv --> QA
+    QA --> Critic
+
+    %% L9 -> L10
+    Critic --> RewardSignals
+    QA --> RewardSignals
+    RewardSignals --> SkillLearning
+    RewardSignals --> PolicyUpdate
+    Aggregator --> SkillLearning
+    Support_Memory --> SkillLearning
+
+    %% L10 -> System
+    SkillLearning --> PolicyUpdate
+    PolicyUpdate --> Planner
+    SkillLearning --> L7
+    PolicyUpdate --> L7
+
+    %% L10/WorldModel -> L11
+    Support_Memory --> Curiosity
+    Support_WorldModel --> Curiosity
+    RewardSignals --> Curiosity
+    
+    Curiosity --> Hypothesis
+    Hypothesis --> ExperimentDesign
+    ExperimentDesign --> ExperimentRun
+    ExperimentRun --> Discovery
+
+    %% L11 -> Future Layers / Storage
+    Discovery --> Support_Memory
+    Discovery --> Forecast
+    Discovery --> KnowledgeEconomy
+
+    %% L11 / Internal -> L12
+    Support_Memory --> StrategyEngine
+    Curiosity --> StrategyEngine
+    Forecast --> StrategyEngine
+    TechRadar --> StrategyEngine
+    SelfModel --> StrategyEngine
+
+    %% L12 Strategy -> System
+    StrategyEngine --> Intent
+    StrategyEngine --> Curiosity
+    StrategyEngine --> ResourceMgr
+    StrategyEngine --> GovernanceCouncil
+
+    %% L12/L13 Loop
+    GovernanceCouncil --> Innovation
+    ResourceMgr --> InfrastructureEvolution
+    Discovery --> Innovation
+    AgentSociety --> Innovation
+
+    %% L13 Internal Feedback
+    Innovation --> InfrastructureEvolution
+    InfrastructureEvolution --> AgentSociety
+    KnowledgeEconomy --> Innovation
+    Innovation --> KnowledgeEconomy
+    GovernanceCouncil --> StrategyEngine

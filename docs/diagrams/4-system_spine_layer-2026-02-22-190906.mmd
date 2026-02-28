@@ -1,0 +1,50 @@
+flowchart TB
+    subgraph L4["4. System Spine"]
+        ResourceMgr["Resource Manager"]
+        Governance["Safety & Governance"]
+        Health["Health & Telemetry"]
+        Identity["Identity & Permissions"]
+    end
+
+    ResourceMgr --> Orchestrator["Swarm Manager / Orchestrator"]
+    Governance --> TaskParser["Layer 3 Parser & Decomposition"]
+    Health --> SelfModel["System Self-Model"]
+    Identity --> Agents["Layer 7 Agent Swarm"]
+    subgraph L2["2. Interface & Perception"]
+        Text["Text Understanding"]
+        Speech["Speech Models"]
+        Vision["Vision Models"]
+        Normalize["Input Normalizer"]
+        Events["Network Events"]
+        CLI["CLI / UI"]
+    end
+
+    subgraph L3["3. Goals & Task Understanding"]
+        Decomp["Task Decomposition"]
+        Parser["Task Parser"]
+        Intent["Intent Detection"]
+        GoalMgr["Goal / Mission Manager"]
+    end
+
+    subgraph Registry["Registry System"]
+        ModReg["Model Registry"]
+        CapReg["Capability Registry"]
+    end
+
+    subgraph L4["4. System Spine"]
+        ResourceMgr["Resource Manager"]
+        Governance["Safety & Governance"]
+        Health["Health & Telemetry"]
+        Identity["Identity & Permissions"]
+    end
+
+    %% Inputs to Spine
+    Text --> Parser
+    Speech --> Parser
+    Vision --> Parser
+    Events --> Parser
+    Parser --> Decomp
+    GoalMgr --> Decomp
+    Decomp --> L4
+    ModReg --> L4
+    CapReg --> L4

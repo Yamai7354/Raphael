@@ -1,0 +1,2153 @@
+{
+  "generated_at": "2026-02-26T07:53:25.864207+00:00",
+  "nodes": [
+    {
+      "id": "TestA",
+      "label": "TestA",
+      "role": "Researcher",
+      "fitness": 42.2,
+      "status": "Retired",
+      "retired_reason": "retired",
+      "bucket": "TestA"
+    },
+    {
+      "id": "network_observatory_log_collector",
+      "label": "network_observatory_log_collector",
+      "role": "collector",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "network_observatory"
+    },
+    {
+      "id": "network_observatory_safe_executor",
+      "label": "network_observatory_safe_executor",
+      "role": "executor",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "network_observatory"
+    },
+    {
+      "id": "network_observatory_settings_checker",
+      "label": "network_observatory_settings_checker",
+      "role": "checker",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "network_observatory"
+    },
+    {
+      "id": "network_observatory_syslog_receiver",
+      "label": "network_observatory_syslog_receiver",
+      "role": "receiver",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "network_observatory"
+    },
+    {
+      "id": "network_observatory_threat_detector",
+      "label": "network_observatory_threat_detector",
+      "role": "detector",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "network_observatory"
+    },
+    {
+      "id": "portfolio_memory",
+      "label": "portfolio_memory",
+      "role": "memory",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "portfolio_memory"
+    },
+    {
+      "id": "portfolio_planner",
+      "label": "portfolio_planner",
+      "role": "planner",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "portfolio_planner"
+    },
+    {
+      "id": "portfolio_report_agent",
+      "label": "portfolio_report_agent",
+      "role": "agent",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "portfolio_report"
+    },
+    {
+      "id": "portfolio_tool_router",
+      "label": "portfolio_tool_router",
+      "role": "router",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "portfolio_tool"
+    },
+    {
+      "id": "project_sorter_agent",
+      "label": "project_sorter_agent",
+      "role": "agent",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_agent_context",
+      "label": "project_sorter_agent_context",
+      "role": "context",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_agent_executor",
+      "label": "project_sorter_agent_executor",
+      "role": "executor",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_agent_orchestration",
+      "label": "project_sorter_agent_orchestration",
+      "role": "orchestration",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_agent_router",
+      "label": "project_sorter_agent_router",
+      "role": "router",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_autonomous_agent_pipeline",
+      "label": "project_sorter_autonomous_agent_pipeline",
+      "role": "pipeline",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_director_agent",
+      "label": "project_sorter_director_agent",
+      "role": "agent",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_graph_agent",
+      "label": "project_sorter_graph_agent",
+      "role": "agent",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_memory",
+      "label": "project_sorter_memory",
+      "role": "memory",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_npc_agent",
+      "label": "project_sorter_npc_agent",
+      "role": "agent",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_planner",
+      "label": "project_sorter_planner",
+      "role": "planner",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_priority_agent_orchestration",
+      "label": "project_sorter_priority_agent_orchestration",
+      "role": "orchestration",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_report_agent",
+      "label": "project_sorter_report_agent",
+      "role": "agent",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_test_agent",
+      "label": "project_sorter_test_agent",
+      "role": "agent",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_test_agent_executor",
+      "label": "project_sorter_test_agent_executor",
+      "role": "executor",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_test_agent_runtime",
+      "label": "project_sorter_test_agent_runtime",
+      "role": "runtime",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_test_memory_agent",
+      "label": "project_sorter_test_memory_agent",
+      "role": "agent",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_test_planner_agent",
+      "label": "project_sorter_test_planner_agent",
+      "role": "agent",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_tool_gate",
+      "label": "project_sorter_tool_gate",
+      "role": "gate",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_tool_router",
+      "label": "project_sorter_tool_router",
+      "role": "router",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_tools",
+      "label": "project_sorter_tools",
+      "role": "tools",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "project_sorter_verify_dual_agent",
+      "label": "project_sorter_verify_dual_agent",
+      "role": "agent",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "project_sorter"
+    },
+    {
+      "id": "projects_autonomous_agent_pipeline",
+      "label": "projects_autonomous_agent_pipeline",
+      "role": "pipeline",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "projects_autonomous"
+    },
+    {
+      "id": "projects_log_collector",
+      "label": "projects_log_collector",
+      "role": "collector",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "projects_log"
+    },
+    {
+      "id": "projects_safe_executor",
+      "label": "projects_safe_executor",
+      "role": "executor",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "projects_safe"
+    },
+    {
+      "id": "projects_settings_checker",
+      "label": "projects_settings_checker",
+      "role": "checker",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "projects_settings"
+    },
+    {
+      "id": "projects_syslog_receiver",
+      "label": "projects_syslog_receiver",
+      "role": "receiver",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "projects_syslog"
+    },
+    {
+      "id": "projects_threat_detector",
+      "label": "projects_threat_detector",
+      "role": "detector",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "projects_threat"
+    },
+    {
+      "id": "router_agent",
+      "label": "router_agent",
+      "role": "task_router",
+      "fitness": 45.0,
+      "status": "Retired",
+      "retired_reason": "Stale or floating graph-only agent",
+      "bucket": "router_agent"
+    }
+  ],
+  "edges": [
+    {
+      "source": "network_observatory_log_collector",
+      "target": "network_observatory_safe_executor",
+      "weight": 0.88
+    },
+    {
+      "source": "network_observatory_log_collector",
+      "target": "network_observatory_settings_checker",
+      "weight": 0.88
+    },
+    {
+      "source": "network_observatory_log_collector",
+      "target": "network_observatory_syslog_receiver",
+      "weight": 0.88
+    },
+    {
+      "source": "network_observatory_log_collector",
+      "target": "network_observatory_threat_detector",
+      "weight": 0.88
+    },
+    {
+      "source": "network_observatory_safe_executor",
+      "target": "network_observatory_settings_checker",
+      "weight": 0.88
+    },
+    {
+      "source": "network_observatory_safe_executor",
+      "target": "network_observatory_syslog_receiver",
+      "weight": 0.88
+    },
+    {
+      "source": "network_observatory_safe_executor",
+      "target": "network_observatory_threat_detector",
+      "weight": 0.88
+    },
+    {
+      "source": "network_observatory_settings_checker",
+      "target": "network_observatory_syslog_receiver",
+      "weight": 0.88
+    },
+    {
+      "source": "network_observatory_settings_checker",
+      "target": "network_observatory_threat_detector",
+      "weight": 0.88
+    },
+    {
+      "source": "network_observatory_syslog_receiver",
+      "target": "network_observatory_threat_detector",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_agent_context",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_agent_executor",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_agent_orchestration",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_agent_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_autonomous_agent_pipeline",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_director_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_graph_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_memory",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_npc_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_planner",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_priority_agent_orchestration",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_report_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_test_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_test_agent_executor",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_test_agent_runtime",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_test_memory_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_agent_executor",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_agent_orchestration",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_agent_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_autonomous_agent_pipeline",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_director_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_graph_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_memory",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_npc_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_planner",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_priority_agent_orchestration",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_report_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_test_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_test_agent_executor",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_test_agent_runtime",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_test_memory_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_context",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_agent_orchestration",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_agent_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_autonomous_agent_pipeline",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_director_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_graph_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_memory",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_npc_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_planner",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_priority_agent_orchestration",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_report_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_test_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_test_agent_executor",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_test_agent_runtime",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_test_memory_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_agent_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_autonomous_agent_pipeline",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_director_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_graph_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_memory",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_npc_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_planner",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_priority_agent_orchestration",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_report_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_test_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_test_agent_executor",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_test_agent_runtime",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_test_memory_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_orchestration",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "project_sorter_autonomous_agent_pipeline",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "project_sorter_director_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "project_sorter_graph_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "project_sorter_memory",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "project_sorter_npc_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "project_sorter_planner",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "project_sorter_priority_agent_orchestration",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "project_sorter_report_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "project_sorter_test_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "project_sorter_test_agent_executor",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "project_sorter_test_agent_runtime",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "project_sorter_test_memory_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_autonomous_agent_pipeline",
+      "target": "project_sorter_director_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_autonomous_agent_pipeline",
+      "target": "project_sorter_graph_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_autonomous_agent_pipeline",
+      "target": "project_sorter_memory",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_autonomous_agent_pipeline",
+      "target": "project_sorter_npc_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_autonomous_agent_pipeline",
+      "target": "project_sorter_planner",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_autonomous_agent_pipeline",
+      "target": "project_sorter_priority_agent_orchestration",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_autonomous_agent_pipeline",
+      "target": "project_sorter_report_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_autonomous_agent_pipeline",
+      "target": "project_sorter_test_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_autonomous_agent_pipeline",
+      "target": "project_sorter_test_agent_executor",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_autonomous_agent_pipeline",
+      "target": "project_sorter_test_agent_runtime",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_autonomous_agent_pipeline",
+      "target": "project_sorter_test_memory_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_autonomous_agent_pipeline",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_autonomous_agent_pipeline",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_autonomous_agent_pipeline",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_autonomous_agent_pipeline",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_autonomous_agent_pipeline",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_director_agent",
+      "target": "project_sorter_graph_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_director_agent",
+      "target": "project_sorter_memory",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_director_agent",
+      "target": "project_sorter_npc_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_director_agent",
+      "target": "project_sorter_planner",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_director_agent",
+      "target": "project_sorter_priority_agent_orchestration",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_director_agent",
+      "target": "project_sorter_report_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_director_agent",
+      "target": "project_sorter_test_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_director_agent",
+      "target": "project_sorter_test_agent_executor",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_director_agent",
+      "target": "project_sorter_test_agent_runtime",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_director_agent",
+      "target": "project_sorter_test_memory_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_director_agent",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_director_agent",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_director_agent",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_director_agent",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_director_agent",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_graph_agent",
+      "target": "project_sorter_memory",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_graph_agent",
+      "target": "project_sorter_npc_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_graph_agent",
+      "target": "project_sorter_planner",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_graph_agent",
+      "target": "project_sorter_priority_agent_orchestration",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_graph_agent",
+      "target": "project_sorter_report_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_graph_agent",
+      "target": "project_sorter_test_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_graph_agent",
+      "target": "project_sorter_test_agent_executor",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_graph_agent",
+      "target": "project_sorter_test_agent_runtime",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_graph_agent",
+      "target": "project_sorter_test_memory_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_graph_agent",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_graph_agent",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_graph_agent",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_graph_agent",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_graph_agent",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_memory",
+      "target": "project_sorter_npc_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_memory",
+      "target": "project_sorter_planner",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_memory",
+      "target": "project_sorter_priority_agent_orchestration",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_memory",
+      "target": "project_sorter_report_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_memory",
+      "target": "project_sorter_test_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_memory",
+      "target": "project_sorter_test_agent_executor",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_memory",
+      "target": "project_sorter_test_agent_runtime",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_memory",
+      "target": "project_sorter_test_memory_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_memory",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_memory",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_memory",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_memory",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_memory",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_npc_agent",
+      "target": "project_sorter_planner",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_npc_agent",
+      "target": "project_sorter_priority_agent_orchestration",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_npc_agent",
+      "target": "project_sorter_report_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_npc_agent",
+      "target": "project_sorter_test_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_npc_agent",
+      "target": "project_sorter_test_agent_executor",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_npc_agent",
+      "target": "project_sorter_test_agent_runtime",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_npc_agent",
+      "target": "project_sorter_test_memory_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_npc_agent",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_npc_agent",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_npc_agent",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_npc_agent",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_npc_agent",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_planner",
+      "target": "project_sorter_priority_agent_orchestration",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_planner",
+      "target": "project_sorter_report_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_planner",
+      "target": "project_sorter_test_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_planner",
+      "target": "project_sorter_test_agent_executor",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_planner",
+      "target": "project_sorter_test_agent_runtime",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_planner",
+      "target": "project_sorter_test_memory_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_planner",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_planner",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_planner",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_planner",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_planner",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_priority_agent_orchestration",
+      "target": "project_sorter_report_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_priority_agent_orchestration",
+      "target": "project_sorter_test_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_priority_agent_orchestration",
+      "target": "project_sorter_test_agent_executor",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_priority_agent_orchestration",
+      "target": "project_sorter_test_agent_runtime",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_priority_agent_orchestration",
+      "target": "project_sorter_test_memory_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_priority_agent_orchestration",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_priority_agent_orchestration",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_priority_agent_orchestration",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_priority_agent_orchestration",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_priority_agent_orchestration",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_report_agent",
+      "target": "project_sorter_test_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_report_agent",
+      "target": "project_sorter_test_agent_executor",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_report_agent",
+      "target": "project_sorter_test_agent_runtime",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_report_agent",
+      "target": "project_sorter_test_memory_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_report_agent",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_report_agent",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_report_agent",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_report_agent",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_report_agent",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent",
+      "target": "project_sorter_test_agent_executor",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent",
+      "target": "project_sorter_test_agent_runtime",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent",
+      "target": "project_sorter_test_memory_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent_executor",
+      "target": "project_sorter_test_agent_runtime",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent_executor",
+      "target": "project_sorter_test_memory_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent_executor",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent_executor",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent_executor",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent_executor",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent_executor",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent_runtime",
+      "target": "project_sorter_test_memory_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent_runtime",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent_runtime",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent_runtime",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent_runtime",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_agent_runtime",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_memory_agent",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_memory_agent",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_memory_agent",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_memory_agent",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_memory_agent",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_planner_agent",
+      "target": "project_sorter_tool_gate",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_planner_agent",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_planner_agent",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_test_planner_agent",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_tool_gate",
+      "target": "project_sorter_tool_router",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_tool_gate",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_tool_gate",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_tool_router",
+      "target": "project_sorter_tools",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_tool_router",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_tools",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.88
+    },
+    {
+      "source": "project_sorter_autonomous_agent_pipeline",
+      "target": "projects_autonomous_agent_pipeline",
+      "weight": 0.75
+    },
+    {
+      "source": "network_observatory_log_collector",
+      "target": "projects_log_collector",
+      "weight": 0.65
+    },
+    {
+      "source": "network_observatory_safe_executor",
+      "target": "projects_safe_executor",
+      "weight": 0.65
+    },
+    {
+      "source": "network_observatory_settings_checker",
+      "target": "projects_settings_checker",
+      "weight": 0.65
+    },
+    {
+      "source": "network_observatory_syslog_receiver",
+      "target": "projects_syslog_receiver",
+      "weight": 0.65
+    },
+    {
+      "source": "network_observatory_threat_detector",
+      "target": "projects_threat_detector",
+      "weight": 0.65
+    },
+    {
+      "source": "portfolio_report_agent",
+      "target": "project_sorter_report_agent",
+      "weight": 0.65
+    },
+    {
+      "source": "portfolio_tool_router",
+      "target": "project_sorter_tool_router",
+      "weight": 0.65
+    },
+    {
+      "source": "project_sorter_agent_router",
+      "target": "router_agent",
+      "weight": 0.65
+    },
+    {
+      "source": "network_observatory_safe_executor",
+      "target": "project_sorter_agent_executor",
+      "weight": 0.62
+    },
+    {
+      "source": "network_observatory_safe_executor",
+      "target": "project_sorter_test_agent_executor",
+      "weight": 0.62
+    },
+    {
+      "source": "project_sorter_agent_executor",
+      "target": "projects_safe_executor",
+      "weight": 0.62
+    },
+    {
+      "source": "project_sorter_test_agent_executor",
+      "target": "projects_safe_executor",
+      "weight": 0.62
+    },
+    {
+      "source": "portfolio_memory",
+      "target": "project_sorter_memory",
+      "weight": 0.62
+    },
+    {
+      "source": "portfolio_planner",
+      "target": "project_sorter_planner",
+      "weight": 0.62
+    },
+    {
+      "source": "portfolio_report_agent",
+      "target": "project_sorter_agent",
+      "weight": 0.62
+    },
+    {
+      "source": "portfolio_report_agent",
+      "target": "project_sorter_director_agent",
+      "weight": 0.62
+    },
+    {
+      "source": "portfolio_report_agent",
+      "target": "project_sorter_graph_agent",
+      "weight": 0.62
+    },
+    {
+      "source": "portfolio_report_agent",
+      "target": "project_sorter_npc_agent",
+      "weight": 0.62
+    },
+    {
+      "source": "portfolio_report_agent",
+      "target": "project_sorter_test_agent",
+      "weight": 0.62
+    },
+    {
+      "source": "portfolio_report_agent",
+      "target": "project_sorter_test_memory_agent",
+      "weight": 0.62
+    },
+    {
+      "source": "portfolio_report_agent",
+      "target": "project_sorter_test_planner_agent",
+      "weight": 0.62
+    },
+    {
+      "source": "portfolio_report_agent",
+      "target": "project_sorter_verify_dual_agent",
+      "weight": 0.62
+    },
+    {
+      "source": "portfolio_tool_router",
+      "target": "project_sorter_agent_router",
+      "weight": 0.62
+    }
+  ],
+  "evolution": {
+    "timeline": [
+      {
+        "step": 1,
+        "avg_fitness": 46.31
+      },
+      {
+        "step": 2,
+        "avg_fitness": 47.56
+      },
+      {
+        "step": 3,
+        "avg_fitness": 48.92
+      },
+      {
+        "step": 4,
+        "avg_fitness": 50.22
+      },
+      {
+        "step": 5,
+        "avg_fitness": 51.8
+      },
+      {
+        "step": 6,
+        "avg_fitness": 53.24
+      },
+      {
+        "step": 7,
+        "avg_fitness": 54.72
+      },
+      {
+        "step": 8,
+        "avg_fitness": 56.09
+      },
+      {
+        "step": 9,
+        "avg_fitness": 57.05
+      },
+      {
+        "step": 10,
+        "avg_fitness": 58.37
+      },
+      {
+        "step": 11,
+        "avg_fitness": 59.56
+      },
+      {
+        "step": 12,
+        "avg_fitness": 60.75
+      },
+      {
+        "step": 13,
+        "avg_fitness": 61.95
+      },
+      {
+        "step": 14,
+        "avg_fitness": 63.24
+      },
+      {
+        "step": 15,
+        "avg_fitness": 64.74
+      },
+      {
+        "step": 16,
+        "avg_fitness": 66.0
+      },
+      {
+        "step": 17,
+        "avg_fitness": 67.14
+      },
+      {
+        "step": 18,
+        "avg_fitness": 68.56
+      },
+      {
+        "step": 19,
+        "avg_fitness": 70.29
+      },
+      {
+        "step": 20,
+        "avg_fitness": 71.42
+      },
+      {
+        "step": 21,
+        "avg_fitness": 72.86
+      },
+      {
+        "step": 22,
+        "avg_fitness": 74.19
+      },
+      {
+        "step": 23,
+        "avg_fitness": 75.28
+      },
+      {
+        "step": 24,
+        "avg_fitness": 76.62
+      },
+      {
+        "step": 25,
+        "avg_fitness": 78.19
+      },
+      {
+        "step": 26,
+        "avg_fitness": 79.17
+      },
+      {
+        "step": 27,
+        "avg_fitness": 80.56
+      },
+      {
+        "step": 28,
+        "avg_fitness": 82.09
+      }
+    ],
+    "ranked": [
+      {
+        "name": "network_observatory_log_collector",
+        "role": "collector",
+        "fitness": 94.88,
+        "adaptability": 0.535,
+        "cooperation": 0.638,
+        "novelty": 0.711
+      },
+      {
+        "name": "project_sorter_agent",
+        "role": "agent",
+        "fitness": 93.81,
+        "adaptability": 0.68,
+        "cooperation": 0.837,
+        "novelty": 0.633
+      },
+      {
+        "name": "router_agent",
+        "role": "task_router",
+        "fitness": 92.73,
+        "adaptability": 0.822,
+        "cooperation": 0.935,
+        "novelty": 0.386
+      },
+      {
+        "name": "project_sorter_priority_agent_orchestration",
+        "role": "orchestration",
+        "fitness": 91.41,
+        "adaptability": 0.678,
+        "cooperation": 0.71,
+        "novelty": 0.493
+      },
+      {
+        "name": "projects_syslog_receiver",
+        "role": "receiver",
+        "fitness": 90.79,
+        "adaptability": 0.717,
+        "cooperation": 0.903,
+        "novelty": 0.286
+      },
+      {
+        "name": "project_sorter_agent_executor",
+        "role": "executor",
+        "fitness": 90.22,
+        "adaptability": 0.865,
+        "cooperation": 0.746,
+        "novelty": 0.92
+      },
+      {
+        "name": "projects_safe_executor",
+        "role": "executor",
+        "fitness": 88.86,
+        "adaptability": 0.648,
+        "cooperation": 0.672,
+        "novelty": 0.255
+      },
+      {
+        "name": "network_observatory_threat_detector",
+        "role": "detector",
+        "fitness": 88.44,
+        "adaptability": 0.704,
+        "cooperation": 0.415,
+        "novelty": 0.456
+      },
+      {
+        "name": "project_sorter_tools",
+        "role": "tools",
+        "fitness": 86.84,
+        "adaptability": 0.472,
+        "cooperation": 0.729,
+        "novelty": 0.496
+      },
+      {
+        "name": "project_sorter_test_agent_runtime",
+        "role": "runtime",
+        "fitness": 86.36,
+        "adaptability": 0.553,
+        "cooperation": 0.735,
+        "novelty": 0.332
+      },
+      {
+        "name": "project_sorter_test_planner_agent",
+        "role": "agent",
+        "fitness": 85.89,
+        "adaptability": 0.564,
+        "cooperation": 0.647,
+        "novelty": 0.776
+      },
+      {
+        "name": "project_sorter_test_agent_executor",
+        "role": "executor",
+        "fitness": 85.13,
+        "adaptability": 0.972,
+        "cooperation": 0.418,
+        "novelty": 0.693
+      },
+      {
+        "name": "project_sorter_agent_context",
+        "role": "context",
+        "fitness": 84.67,
+        "adaptability": 0.902,
+        "cooperation": 0.517,
+        "novelty": 0.291
+      },
+      {
+        "name": "project_sorter_planner",
+        "role": "planner",
+        "fitness": 84.66,
+        "adaptability": 0.97,
+        "cooperation": 0.594,
+        "novelty": 0.501
+      },
+      {
+        "name": "portfolio_memory",
+        "role": "memory",
+        "fitness": 84.52,
+        "adaptability": 0.866,
+        "cooperation": 0.427,
+        "novelty": 0.907
+      },
+      {
+        "name": "network_observatory_safe_executor",
+        "role": "executor",
+        "fitness": 84.51,
+        "adaptability": 0.99,
+        "cooperation": 0.48,
+        "novelty": 0.316
+      },
+      {
+        "name": "network_observatory_settings_checker",
+        "role": "checker",
+        "fitness": 84.15,
+        "adaptability": 0.4,
+        "cooperation": 0.328,
+        "novelty": 0.16
+      },
+      {
+        "name": "projects_autonomous_agent_pipeline",
+        "role": "pipeline",
+        "fitness": 83.91,
+        "adaptability": 0.856,
+        "cooperation": 0.61,
+        "novelty": 0.661
+      },
+      {
+        "name": "project_sorter_memory",
+        "role": "memory",
+        "fitness": 83.84,
+        "adaptability": 0.539,
+        "cooperation": 0.686,
+        "novelty": 0.188
+      },
+      {
+        "name": "network_observatory_syslog_receiver",
+        "role": "receiver",
+        "fitness": 83.15,
+        "adaptability": 0.538,
+        "cooperation": 0.465,
+        "novelty": 0.603
+      },
+      {
+        "name": "project_sorter_agent_orchestration",
+        "role": "orchestration",
+        "fitness": 82.36,
+        "adaptability": 0.754,
+        "cooperation": 0.679,
+        "novelty": 0.141
+      },
+      {
+        "name": "project_sorter_autonomous_agent_pipeline",
+        "role": "pipeline",
+        "fitness": 81.35,
+        "adaptability": 0.469,
+        "cooperation": 0.471,
+        "novelty": 0.05
+      },
+      {
+        "name": "projects_log_collector",
+        "role": "collector",
+        "fitness": 81.05,
+        "adaptability": 0.99,
+        "cooperation": 0.374,
+        "novelty": 0.452
+      },
+      {
+        "name": "portfolio_tool_router",
+        "role": "router",
+        "fitness": 80.87,
+        "adaptability": 0.405,
+        "cooperation": 0.715,
+        "novelty": 0.427
+      },
+      {
+        "name": "projects_threat_detector",
+        "role": "detector",
+        "fitness": 79.61,
+        "adaptability": 0.733,
+        "cooperation": 0.418,
+        "novelty": 0.22
+      },
+      {
+        "name": "portfolio_planner",
+        "role": "planner",
+        "fitness": 79.27,
+        "adaptability": 0.725,
+        "cooperation": 0.529,
+        "novelty": 0.346
+      },
+      {
+        "name": "portfolio_report_agent",
+        "role": "agent",
+        "fitness": 78.87,
+        "adaptability": 0.894,
+        "cooperation": 0.384,
+        "novelty": 0.111
+      },
+      {
+        "name": "project_sorter_test_agent",
+        "role": "agent",
+        "fitness": 78.1,
+        "adaptability": 0.717,
+        "cooperation": 0.334,
+        "novelty": 0.702
+      },
+      {
+        "name": "projects_settings_checker",
+        "role": "checker",
+        "fitness": 77.89,
+        "adaptability": 0.759,
+        "cooperation": 0.187,
+        "novelty": 0.38
+      },
+      {
+        "name": "project_sorter_test_memory_agent",
+        "role": "agent",
+        "fitness": 77.3,
+        "adaptability": 0.498,
+        "cooperation": 0.567,
+        "novelty": 0.532
+      },
+      {
+        "name": "project_sorter_tool_router",
+        "role": "router",
+        "fitness": 77.12,
+        "adaptability": 0.75,
+        "cooperation": 0.095,
+        "novelty": 0.129
+      },
+      {
+        "name": "project_sorter_director_agent",
+        "role": "agent",
+        "fitness": 75.9,
+        "adaptability": 0.732,
+        "cooperation": 0.493,
+        "novelty": 0.362
+      },
+      {
+        "name": "project_sorter_agent_router",
+        "role": "router",
+        "fitness": 75.66,
+        "adaptability": 0.632,
+        "cooperation": 0.223,
+        "novelty": 0.152
+      },
+      {
+        "name": "project_sorter_npc_agent",
+        "role": "agent",
+        "fitness": 75.62,
+        "adaptability": 0.9,
+        "cooperation": 0.388,
+        "novelty": 0.44
+      },
+      {
+        "name": "project_sorter_verify_dual_agent",
+        "role": "agent",
+        "fitness": 74.35,
+        "adaptability": 0.681,
+        "cooperation": 0.368,
+        "novelty": 0.054
+      },
+      {
+        "name": "TestA",
+        "role": "Researcher",
+        "fitness": 72.67,
+        "adaptability": 0.564,
+        "cooperation": 0.292,
+        "novelty": 0.254
+      },
+      {
+        "name": "project_sorter_tool_gate",
+        "role": "gate",
+        "fitness": 71.88,
+        "adaptability": 0.575,
+        "cooperation": 0.343,
+        "novelty": 0.61
+      },
+      {
+        "name": "project_sorter_graph_agent",
+        "role": "agent",
+        "fitness": 69.02,
+        "adaptability": 0.464,
+        "cooperation": 0.503,
+        "novelty": 0.596
+      },
+      {
+        "name": "project_sorter_report_agent",
+        "role": "agent",
+        "fitness": 63.72,
+        "adaptability": 0.534,
+        "cooperation": 0.169,
+        "novelty": 0.187
+      }
+    ],
+    "rounds": 28
+  },
+  "stats": {
+    "agent_count": 39,
+    "edge_count": 265,
+    "role_distribution": {
+      "Researcher": 1,
+      "collector": 2,
+      "executor": 4,
+      "checker": 2,
+      "receiver": 2,
+      "detector": 2,
+      "memory": 2,
+      "planner": 2,
+      "agent": 10,
+      "router": 3,
+      "context": 1,
+      "orchestration": 2,
+      "pipeline": 2,
+      "runtime": 1,
+      "gate": 1,
+      "tools": 1,
+      "task_router": 1
+    },
+    "bucket_distribution": {
+      "TestA": 1,
+      "network_observatory": 5,
+      "portfolio_memory": 1,
+      "portfolio_planner": 1,
+      "portfolio_report": 1,
+      "portfolio_tool": 1,
+      "project_sorter": 22,
+      "projects_autonomous": 1,
+      "projects_log": 1,
+      "projects_safe": 1,
+      "projects_settings": 1,
+      "projects_syslog": 1,
+      "projects_threat": 1,
+      "router_agent": 1
+    }
+  }
+}

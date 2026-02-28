@@ -1,0 +1,28 @@
+flowchart TB
+%% =====================
+%% TASK UNDERSTANDING LAYER
+%% =====================
+subgraph TaskUnderstanding["Task Understanding Layer"]
+    Intent["Intent Detection"]
+    Parser["Task Parser"]
+    Decomposer["Task Decomposition"]
+    ContextAware["Context-Aware Parsing"]
+    Priority["Priority Scoring"]
+    ConflictResolver["Conflict Resolution"]
+    MultiAgent["Multi-Agent Assignment"]
+end
+
+%% Inputs
+Perception["Perception Layer"] --> Intent
+
+%% Core flow
+Intent --> Parser
+Parser --> ContextAware
+ContextAware --> Decomposer
+Decomposer --> Priority
+Priority --> ConflictResolver
+ConflictResolver --> MultiAgent
+MultiAgent --> Orchestrator["Planner / Orchestrator Layer"]
+
+%% Optional feedback
+Memory["Memory Layer"] --> ContextAware

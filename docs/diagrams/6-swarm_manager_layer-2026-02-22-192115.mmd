@@ -1,0 +1,15 @@
+flowchart TB
+    subgraph L6["6. Swarm Manager"]
+        Orchestrator["Orchestrator"]
+        Router["Model Router"]
+        Scheduler["Task Scheduler"]
+    end
+
+    %% Inputs
+    Aggregator["Layer 5 Aggregated Plan"] --> Orchestrator
+    CapReg["Capability Registry"] --> Router
+    Orchestrator --> Scheduler
+    Router --> Scheduler
+
+    %% Outputs
+    Scheduler --> L7["Agent Swarm (Layer 7)"]

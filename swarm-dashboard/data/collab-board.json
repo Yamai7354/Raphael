@@ -1,0 +1,141 @@
+{
+  "items": [
+    {
+      "id": "seed-verification-1",
+      "type": "verification",
+      "author": "GraphSteward",
+      "message": "Please verify whether all high-value entities have at least one incoming and one outgoing relationship.",
+      "createdAt": "2026-02-26T00:00:00.000Z",
+      "requiredResponders": [
+        "Sora",
+        "Ren",
+        "Kouta"
+      ],
+      "responses": [
+        {
+          "responder": "Sora",
+          "message": "Sora: Verification received. I will validate this now -> Please verify whether all high-value entities have at least one incoming and one outgoing relationship.",
+          "createdAt": "2026-02-26T08:49:19.278Z"
+        },
+        {
+          "responder": "Ren",
+          "message": "Ren: Verification received. I will validate this now -> Please verify whether all high-value entities have at least one incoming and one outgoing relationship.",
+          "createdAt": "2026-02-26T08:49:19.278Z"
+        },
+        {
+          "responder": "Kouta",
+          "message": "Kouta: Verification received. I will validate this now -> Please verify whether all high-value entities have at least one incoming and one outgoing relationship.",
+          "createdAt": "2026-02-26T08:49:19.278Z"
+        }
+      ]
+    },
+    {
+      "id": "seed-idea-1",
+      "type": "idea",
+      "author": "DBFlowOptimizer",
+      "message": "Create a weekly index health report to surface missing indexes before latency spikes.",
+      "createdAt": "2026-02-26T00:01:00.000Z"
+    },
+    {
+      "id": "1772094762306-e91d3a",
+      "type": "verification",
+      "author": "Operator",
+      "message": "These are all of the orphan nodes:\n\n\n[\n  {\n    \"labels(n)\": [\n      \"PerformanceProfile\"\n    ],\n    \"count(n)\": 131\n  },\n  {\n    \"labels(n)\": [\n      \"Agent\"\n    ],\n    \"count(n)\": 10\n  },\n  {\n    \"labels(n)\": [\n      \"Skill\"\n    ],\n    \"count(n)\": 10\n  },\n  {\n    \"labels(n)\": [\n      \"ComputeTier\"\n    ],\n    \"count(n)\": 1\n  },\n  {\n    \"labels(n)\": [\n      \"Hardware\"\n    ],\n    \"count(n)\": 4\n  },\n  {\n    \"labels(n)\": [\n      \"Capability\"\n    ],\n    \"count(n)\": 2\n  },\n  {\n    \"labels(n)\": [\n     ",
+      "createdAt": "2026-02-26T08:32:42.307Z",
+      "requiredResponders": [
+        "Sora",
+        "Ren",
+        "Kouta"
+      ],
+      "responses": [
+        {
+          "responder": "Sora",
+          "message": "Sora: Verification received. I will validate this now -> These are all of the orphan nodes:\n\n\n[\n  {\n    \"labels(n)\": [\n      \"PerformanceProfile\"\n    ],\n    \"count(n)\": 131\n  },\n  {\n    \"labels(n)\"",
+          "createdAt": "2026-02-26T08:49:19.279Z"
+        },
+        {
+          "responder": "Ren",
+          "message": "Ren: Verification received. I will validate this now -> These are all of the orphan nodes:\n\n\n[\n  {\n    \"labels(n)\": [\n      \"PerformanceProfile\"\n    ],\n    \"count(n)\": 131\n  },\n  {\n    \"labels(n)\"",
+          "createdAt": "2026-02-26T08:49:19.279Z"
+        },
+        {
+          "responder": "Kouta",
+          "message": "Kouta: Verification received. I will validate this now -> These are all of the orphan nodes:\n\n\n[\n  {\n    \"labels(n)\": [\n      \"PerformanceProfile\"\n    ],\n    \"count(n)\": 131\n  },\n  {\n    \"labels(n)\"",
+          "createdAt": "2026-02-26T08:49:19.279Z"
+        }
+      ]
+    },
+    {
+      "id": "1772094817276-150c94",
+      "type": "verification",
+      "author": "Operator",
+      "message": "Hina what are you researching?",
+      "createdAt": "2026-02-26T08:33:37.276Z",
+      "requiredResponders": [
+        "Sora",
+        "Ren",
+        "Kouta"
+      ],
+      "responses": [
+        {
+          "responder": "Sora",
+          "message": "Sora: Verification received. I will validate this now -> Hina what are you researching?",
+          "createdAt": "2026-02-26T08:49:19.279Z"
+        },
+        {
+          "responder": "Ren",
+          "message": "Ren: Verification received. I will validate this now -> Hina what are you researching?",
+          "createdAt": "2026-02-26T08:49:19.279Z"
+        },
+        {
+          "responder": "Kouta",
+          "message": "Kouta: Verification received. I will validate this now -> Hina what are you researching?",
+          "createdAt": "2026-02-26T08:49:19.279Z"
+        }
+      ]
+    },
+    {
+      "id": "1772096566815-65c9ea",
+      "type": "verification",
+      "author": "Operator",
+      "message": "Hina what are you researching right now?",
+      "createdAt": "2026-02-26T09:02:46.808Z",
+      "requiredResponders": [
+        "Hina"
+      ],
+      "responses": [
+        {
+          "responder": "Hina",
+          "message": "Hina: I received your verification request. Current work: Researcher Exploration Findings 339. 81.3% success over 5 completed jobs. Latest task: Researcher Exploration Findings 339 (success).",
+          "createdAt": "2026-02-26T09:02:46.808Z"
+        }
+      ]
+    },
+    {
+      "id": "1772096576357-fca8b4",
+      "type": "verification",
+      "author": "Operator",
+      "message": "Hina what are you researching right now?",
+      "createdAt": "2026-02-26T09:02:56.294Z",
+      "requiredResponders": [
+        "Hina"
+      ],
+      "responses": [
+        {
+          "responder": "Hina",
+          "message": "Hina: I received your verification request. Current work: Researcher Exploration Findings 733. 74.9% success over 7 completed jobs. Latest task: Researcher Exploration Findings 733 (failed).",
+          "createdAt": "2026-02-26T09:02:56.294Z"
+        }
+      ]
+    },
+    {
+      "id": "1772100699207-ab19ff",
+      "type": "idea",
+      "author": "Operator",
+      "message": "A scheduler was built to handle this task, thanks for the recommendation",
+      "createdAt": "2026-02-26T10:11:39.206Z",
+      "requiredResponders": [],
+      "responses": []
+    }
+  ]
+}

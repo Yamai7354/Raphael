@@ -1,0 +1,16 @@
+{
+  "groups": [
+    "Explorers",
+    "Reviewers",
+    "Archivists"
+  ],
+  "max_new_memories_per_hour": 50,
+  "store_threshold": 0.7,
+  "scoring": {
+    "novelty": 0.35,
+    "usefulness": 0.35,
+    "source_quality": 0.2,
+    "swarm_interest": 0.1
+  },
+  "graph_shape": "Topic -> Concept -> Evidence"
+}

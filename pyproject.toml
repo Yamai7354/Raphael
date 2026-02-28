@@ -1,0 +1,160 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Project Metadata
+# ──────────────────────────────────────────────────────────────────────────────
+
+[project]
+name = "raphael"
+version = "0.1.0"
+description = "Raphael — A self-improving multi-agent AI system with swarm intelligence, memory, and exploration capabilities"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [{ name = "Yamai" }]
+keywords = [
+    "ai",
+    "agents",
+    "swarm",
+    "multi-agent",
+    "self-improving",
+    "exploration",
+    "memory",
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Phase 1 — Foundation Setup & Scaffold (core dependencies)
+# ──────────────────────────────────────────────────────────────────────────────
+dependencies = [
+    "pydantic>=2.0.0",
+    "PyYAML",
+    "python-dotenv",
+    "python-json-logger",
+    "httpx>=0.28.1",
+    "asyncpg>=0.31.0",
+    "pymilvus>=2.6.9",
+    "neo4j>=6.1.0",
+    "qdrant-client>=1.17.0",
+    "lancedb>=0.29.2",
+    "redis>=7.2.0",
+    "python-multipart>=0.0.22",
+]
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Optional dependency groups — mapped to roadmap phases
+# ──────────────────────────────────────────────────────────────────────────────
+
+[project.optional-dependencies]
+
+# Phase 2 — System Spine (config, health, identity, permissions, telemetry)
+spine = ["redis", "uvicorn", "httpx"]
+
+# Phase 3 — Core Brain (reasoning, planner, tool router, event bus, capability registry)
+core = ["networkx"]
+
+# Phase 4 — Memory System (vector store, semantic, episodic, knowledge graph, working memory)
+memory = ["lancedb", "pyarrow"]
+
+# Phase 5 — Capability Framework (analytics engine, coding agent, research agent)
+capabilities = []
+
+# Phase 6 — Swarm Manager
+swarm = []
+
+# Phase 7 — Agent Swarm (worker agents, deployment, optimization, performance, monitoring)
+agents = []
+
+# Phase 8 — Interfaces (API, CLI, dashboard, adapters, documents)
+interfaces = ["fastapi", "uvicorn", "python-multipart", "aiofiles", "flet"]
+
+# Phase 9 — Integration Layer
+integration = ["httpx"]
+
+# Phase 10 — Project Templates
+templates = []
+
+# Phase 11 — Self-Improving System
+self-improving = []
+
+# Phase 12 — Exploration Engine
+exploration = []
+
+# Phase 13 — Testing / Sandbox Layer
+testing = ["pytest", "pytest-asyncio", "pytest-cov"]
+
+# Phase 14 — Research Layer
+research = ["pandas"]
+
+# Phase 15 — Network Layer
+network = ["httpx"]
+
+# Phase 16 — Agent & Tool Factory + Evaluation Layer
+factory = []
+
+# Phase 17 — AI Router Layer
+ai_router = ["fastapi", "uvicorn", "python-multipart", "redis", "httpx"]
+
+# ── Meta groups ──────────────────────────────────────────────────────────────
+
+# Install everything needed to hack on Raphael locally
+dev = [
+    "raphael[spine,core,memory,capabilities,interfaces,integration,testing,research,network,ai_router]",
+    "ruff",
+    "mypy",
+    "pre-commit",
+]
+
+# Full install — all optional groups
+all = [
+    "raphael[spine,core,memory,capabilities,swarm,agents,interfaces,integration,templates,self-improving,exploration,testing,research,network,factory,ai_router]",
+]
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Entry points
+# ──────────────────────────────────────────────────────────────────────────────
+
+[project.scripts]
+raphael = "runtime.main:main"
+
+[project.urls]
+Homepage = "https://github.com/Yamai7354/Raphael"
+Repository = "https://github.com/Yamai7354/Raphael"
+Issues = "https://github.com/Yamai7354/Raphael/issues"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Tool Configuration
+# ──────────────────────────────────────────────────────────────────────────────
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/raphael"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = "-v --tb=short"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false

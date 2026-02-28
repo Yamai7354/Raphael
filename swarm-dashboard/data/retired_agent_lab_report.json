@@ -1,0 +1,93 @@
+{
+  "ok": true,
+  "generated_at": "2026-02-26T07:53:25.864207+00:00",
+  "agent_count": 39,
+  "edge_count": 265,
+  "top_emergent": [
+    {
+      "name": "network_observatory_log_collector",
+      "role": "collector",
+      "fitness": 94.88,
+      "adaptability": 0.535,
+      "cooperation": 0.638,
+      "novelty": 0.711
+    },
+    {
+      "name": "project_sorter_agent",
+      "role": "agent",
+      "fitness": 93.81,
+      "adaptability": 0.68,
+      "cooperation": 0.837,
+      "novelty": 0.633
+    },
+    {
+      "name": "router_agent",
+      "role": "task_router",
+      "fitness": 92.73,
+      "adaptability": 0.822,
+      "cooperation": 0.935,
+      "novelty": 0.386
+    },
+    {
+      "name": "project_sorter_priority_agent_orchestration",
+      "role": "orchestration",
+      "fitness": 91.41,
+      "adaptability": 0.678,
+      "cooperation": 0.71,
+      "novelty": 0.493
+    },
+    {
+      "name": "projects_syslog_receiver",
+      "role": "receiver",
+      "fitness": 90.79,
+      "adaptability": 0.717,
+      "cooperation": 0.903,
+      "novelty": 0.286
+    },
+    {
+      "name": "project_sorter_agent_executor",
+      "role": "executor",
+      "fitness": 90.22,
+      "adaptability": 0.865,
+      "cooperation": 0.746,
+      "novelty": 0.92
+    },
+    {
+      "name": "projects_safe_executor",
+      "role": "executor",
+      "fitness": 88.86,
+      "adaptability": 0.648,
+      "cooperation": 0.672,
+      "novelty": 0.255
+    },
+    {
+      "name": "network_observatory_threat_detector",
+      "role": "detector",
+      "fitness": 88.44,
+      "adaptability": 0.704,
+      "cooperation": 0.415,
+      "novelty": 0.456
+    },
+    {
+      "name": "project_sorter_tools",
+      "role": "tools",
+      "fitness": 86.84,
+      "adaptability": 0.472,
+      "cooperation": 0.729,
+      "novelty": 0.496
+    },
+    {
+      "name": "project_sorter_test_agent_runtime",
+      "role": "runtime",
+      "fitness": 86.36,
+      "adaptability": 0.553,
+      "cooperation": 0.735,
+      "novelty": 0.332
+    }
+  ],
+  "ending_avg_fitness": 82.09,
+  "notes": [
+    "This lab is file-backed and CPU-light; no persistent simulation process is running.",
+    "Use this export to prototype relationships before promoting changes to the primary graph."
+  ]
+}

@@ -1,0 +1,693 @@
+{
+  "ok": false,
+  "generated_at": "2026-02-26T08:00:23.774800+00:00",
+  "csv_path": "/Users/yamai/Downloads/social_experiment.csv",
+  "executed_count": 63,
+  "skipped_count": 5,
+  "error_count": 4,
+  "executed": [
+    {
+      "id": "1",
+      "name": "Connect goals to memory"
+    },
+    {
+      "id": "2",
+      "name": "Create goals"
+    },
+    {
+      "id": "3",
+      "name": "Periodic memory decay"
+    },
+    {
+      "id": "4",
+      "name": "Relationships with emotional states"
+    },
+    {
+      "id": "5",
+      "name": "Subjective experiences"
+    },
+    {
+      "id": "6",
+      "name": "Memory nodes"
+    },
+    {
+      "id": "7",
+      "name": "Link person to event"
+    },
+    {
+      "id": "8",
+      "name": "Create event"
+    },
+    {
+      "id": "9",
+      "name": "Create event (Example)"
+    },
+    {
+      "id": "10",
+      "name": "Create character node (Example)"
+    },
+    {
+      "id": "11",
+      "name": "Create character node"
+    },
+    {
+      "id": "16",
+      "name": "Memory consolidation (Night cycle)"
+    },
+    {
+      "id": "17",
+      "name": "Belief node"
+    },
+    {
+      "id": "18",
+      "name": "Belief node (Example)"
+    },
+    {
+      "id": "19",
+      "name": "Attach belief to a a character"
+    },
+    {
+      "id": "20",
+      "name": "Cultural memory node"
+    },
+    {
+      "id": "21",
+      "name": "Cultural node"
+    },
+    {
+      "id": "22",
+      "name": "Link belief to culture node"
+    },
+    {
+      "id": "24",
+      "name": "Periodic reputation engine"
+    },
+    {
+      "id": "25",
+      "name": "Periodic reputation engine example"
+    },
+    {
+      "id": "27",
+      "name": "Faction node"
+    },
+    {
+      "id": "28",
+      "name": "Faction membership"
+    },
+    {
+      "id": "29",
+      "name": "Action nodes"
+    },
+    {
+      "id": "30",
+      "name": "Action node (Example)"
+    },
+    {
+      "id": "31",
+      "name": "Action node"
+    },
+    {
+      "id": "32",
+      "name": "Link action to target"
+    },
+    {
+      "id": "33",
+      "name": "Link action to relevant targets"
+    },
+    {
+      "id": "34",
+      "name": "Action evaluation (Example)"
+    },
+    {
+      "id": "35",
+      "name": "Relationship Pressure example"
+    },
+    {
+      "id": "36",
+      "name": "Belief influence"
+    },
+    {
+      "id": "37",
+      "name": "Memory influence"
+    },
+    {
+      "id": "38",
+      "name": "Faction pressure"
+    },
+    {
+      "id": "39",
+      "name": "Strategy node"
+    },
+    {
+      "id": "40",
+      "name": "Strategy node (Example)"
+    },
+    {
+      "id": "41",
+      "name": "Link strategy to character"
+    },
+    {
+      "id": "42",
+      "name": "Compute strategic influence"
+    },
+    {
+      "id": "43",
+      "name": "Create influence edges"
+    },
+    {
+      "id": "44",
+      "name": "Create idealogy node"
+    },
+    {
+      "id": "45",
+      "name": "Link ideaology to beliefs"
+    },
+    {
+      "id": "46",
+      "name": "Character adopts ideaology over tiome"
+    },
+    {
+      "id": "48",
+      "name": "Create observation node"
+    },
+    {
+      "id": "49",
+      "name": "Create observation node (Example)"
+    },
+    {
+      "id": "50",
+      "name": "Attach observers"
+    },
+    {
+      "id": "51",
+      "name": "Create hypothesis node"
+    },
+    {
+      "id": "52",
+      "name": "Create hypothesis node (Example)"
+    },
+    {
+      "id": "53",
+      "name": "Link observation to hypothesis"
+    },
+    {
+      "id": "54",
+      "name": "Characters support hypothesis"
+    },
+    {
+      "id": "55",
+      "name": "Create experiment node"
+    },
+    {
+      "id": "56",
+      "name": "Create experiment node (Example)"
+    },
+    {
+      "id": "57",
+      "name": "Link hypothesis to experiment"
+    },
+    {
+      "id": "58",
+      "name": "Create knowledge node"
+    },
+    {
+      "id": "59",
+      "name": "Knowledge node example"
+    },
+    {
+      "id": "60",
+      "name": "Link hypothesis to knowledge node"
+    },
+    {
+      "id": "61",
+      "name": "Compute consensus support"
+    },
+    {
+      "id": "63",
+      "name": "Create historical event node"
+    },
+    {
+      "id": "64",
+      "name": "Create historical event node (Example)"
+    },
+    {
+      "id": "65",
+      "name": "Link paste events to memory, beliefs, and knowledge"
+    },
+    {
+      "id": "66",
+      "name": "Create story event node"
+    },
+    {
+      "id": "67",
+      "name": "Create story event node (Example)"
+    },
+    {
+      "id": "68",
+      "name": "Link story to historical event nodes"
+    },
+    {
+      "id": "69",
+      "name": "Create cultural identity node"
+    },
+    {
+      "id": "70",
+      "name": "Link story to cultural identity node"
+    },
+    {
+      "id": "71",
+      "name": "Story memory decay"
+    }
+  ],
+  "skipped": [
+    {
+      "id": "0",
+      "name": "Character_Matrix",
+      "reason": "folder_or_empty"
+    },
+    {
+      "id": "12",
+      "name": "Create memories automatically",
+      "reason": "placeholder_or_template"
+    },
+    {
+      "id": "13",
+      "name": "Relationship update algorithm",
+      "reason": "placeholder_or_template"
+    },
+    {
+      "id": "14",
+      "name": "Trait drift",
+      "reason": "placeholder_or_template"
+    },
+    {
+      "id": "15",
+      "name": "Goal reprioritization",
+      "reason": "placeholder_or_template"
+    }
+  ],
+  "errors": [
+    {
+      "id": "23",
+      "name": "Rumor propagation example",
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Variable `hb` not defined (line 7, column 17 (offset: 244))\n\"    conviction: hb.conviction * 0.8,\"\n                 ^} {gql_status: 42001} {gql_status_description: error: syntax error or access rule violation - invalid syntax}"
+    },
+    {
+      "id": "26",
+      "name": "Store reputation score",
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Variable `reputation_score` not defined (line 2, column 20 (offset: 39))\n\"SET c.reputation = reputation_score;\"\n                    ^} {gql_status: 42001} {gql_status_description: error: syntax error or access rule violation - invalid syntax}"
+    },
+    {
+      "id": "47",
+      "name": "Track identity drift",
+      "error": "{neo4j_code: Neo.ClientError.Statement.TypeError} {message: Collections containing null values can not be stored in properties.} {gql_status: 22G03} {gql_status_description: error: data exception - invalid value type}"
+    },
+    {
+      "id": "62",
+      "name": "If consensus passes the threshold knowledge activates globally",
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input 'IF': expected 'ALTER', 'ORDER BY', 'CALL', 'USING PERIODIC COMMIT', 'CREATE', 'LOAD CSV', 'START DATABASE', 'STOP DATABASE', 'DEALLOCATE', 'DELETE', 'DENY', 'DETACH', 'DROP', 'DRYRUN', 'FINISH', 'FOREACH', 'GRANT', 'INSERT', 'LIMIT', 'MATCH', 'MERGE', 'NODETACH', 'OFFSET', 'OPTIONAL', 'REALLOCATE', 'REMOVE', 'RENAME', 'RETURN', 'REVOKE', 'ENABLE SERVER', 'SET', 'SHOW', 'SKIP', 'TERMINATE', 'UNWIND', 'USE' or 'WITH' (lin"
+    }
+  ],
+  "node_counts": [
+    {
+      "labels": [
+        "Memory"
+      ],
+      "count": 13602
+    },
+    {
+      "labels": [
+        "Concept"
+      ],
+      "count": 4114
+    },
+    {
+      "labels": [
+        "PerformanceProfile"
+      ],
+      "count": 166
+    },
+    {
+      "labels": [
+        "Agent"
+      ],
+      "count": 103
+    },
+    {
+      "labels": [
+        "Tool"
+      ],
+      "count": 87
+    },
+    {
+      "labels": [
+        "Skill"
+      ],
+      "count": 51
+    },
+    {
+      "labels": [
+        "Model"
+      ],
+      "count": 35
+    },
+    {
+      "labels": [
+        "Capability"
+      ],
+      "count": 12
+    },
+    {
+      "labels": [
+        "Role"
+      ],
+      "count": 11
+    },
+    {
+      "labels": [
+        "Hardware"
+      ],
+      "count": 8
+    },
+    {
+      "labels": [],
+      "count": 6
+    },
+    {
+      "labels": [
+        "Machine"
+      ],
+      "count": 4
+    },
+    {
+      "labels": [
+        "GPU"
+      ],
+      "count": 3
+    },
+    {
+      "labels": [
+        "ComputeTier"
+      ],
+      "count": 3
+    },
+    {
+      "labels": [
+        "CPU"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "InstructionSet"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "ModelFormat"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "Task"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "Observation"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "Experiment"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "CulturalNorm"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "Failure"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "RoutingPolicy"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Improvement"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Catalog"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Goal"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Event"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Character"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Belief"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Faction"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Action"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Strategy"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Ideology"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Hypothesis"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Knowledge"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "HistoricalEvent"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "Story"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "CulturalIdentity"
+      ],
+      "count": 1
+    }
+  ],
+  "relationship_counts": [
+    {
+      "type": "LinkedTo",
+      "count": 210834
+    },
+    {
+      "type": "REFERS_TO_HISTORY",
+      "count": 13602
+    },
+    {
+      "type": "CAN_USE",
+      "count": 784
+    },
+    {
+      "type": "RUNS_ON",
+      "count": 416
+    },
+    {
+      "type": "HAS_SKILL",
+      "count": 190
+    },
+    {
+      "type": "HAS_CAPABILITY",
+      "count": 95
+    },
+    {
+      "type": "CAN_USE_SKILL",
+      "count": 84
+    },
+    {
+      "type": "USES_TOOL",
+      "count": 52
+    },
+    {
+      "type": "HAS_PERFORMANCE",
+      "count": 35
+    },
+    {
+      "type": "HAS_AGENT",
+      "count": 35
+    },
+    {
+      "type": "MANAGES",
+      "count": 25
+    },
+    {
+      "type": "PLAYS_ROLE",
+      "count": 24
+    },
+    {
+      "type": "DELEGATES_TO",
+      "count": 21
+    },
+    {
+      "type": "HAS_TOOL",
+      "count": 16
+    },
+    {
+      "type": "HAS_GPU",
+      "count": 13
+    },
+    {
+      "type": "HAS_CPU",
+      "count": 9
+    },
+    {
+      "type": "HAS_MEMORY",
+      "count": 6
+    },
+    {
+      "type": "TESTED_MODEL",
+      "count": 5
+    },
+    {
+      "type": "HAS_HARDWARE",
+      "count": 4
+    },
+    {
+      "type": "CREATED_AGENT",
+      "count": 4
+    },
+    {
+      "type": "PREFERS_MODEL",
+      "count": 3
+    },
+    {
+      "type": "SUPPORTS_FORMAT",
+      "count": 3
+    },
+    {
+      "type": "SUPPORTS",
+      "count": 3
+    },
+    {
+      "type": "BEST_FOR",
+      "count": 2
+    },
+    {
+      "type": "CONNECTED_TO",
+      "count": 2
+    },
+    {
+      "type": "CONTRIBUTES_TO",
+      "count": 2
+    },
+    {
+      "type": "GENERATED",
+      "count": 1
+    },
+    {
+      "type": "IMPROVES",
+      "count": 1
+    },
+    {
+      "type": "RESOLVES",
+      "count": 1
+    },
+    {
+      "type": "HOLDS_BELIEF",
+      "count": 1
+    },
+    {
+      "type": "MEMBER_OF",
+      "count": 1
+    },
+    {
+      "type": "CONSIDERING",
+      "count": 1
+    },
+    {
+      "type": "OBSERVED",
+      "count": 1
+    },
+    {
+      "type": "SUGGESTS",
+      "count": 1
+    },
+    {
+      "type": "TESTED_BY",
+      "count": 1
+    },
+    {
+      "type": "VALIDATED_AS",
+      "count": 1
+    },
+    {
+      "type": "INSPIRED_BY",
+      "count": 1
+    },
+    {
+      "type": "SHAPES",
+      "count": 1
+    }
+  ]
+}

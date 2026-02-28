@@ -1,0 +1,49 @@
+{
+  "ok": true,
+  "generated_at": "2026-02-26T10:55:10.847285+00:00",
+  "config": {
+    "limit": 10,
+    "embed": false,
+    "embed_model": "nomic-embed-text",
+    "prune": true,
+    "prune_days": 14,
+    "prune_batch": 20000,
+    "aggressive_prune": true,
+    "compact": true
+  },
+  "migration": {
+    "inserted_docs": 0,
+    "skipped_docs": 10,
+    "about_links_created": 0,
+    "sqlite_path": "/Users/yamai/ai/Raphael/swarm-dashboard/data/research_hybrid.db",
+    "before": {
+      "memory_nodes": 51653,
+      "concept_nodes": 8280,
+      "research_docs": 12147,
+      "research_rollups": 5,
+      "linked_to_edges": 3291742,
+      "authored_doc_edges": 12147,
+      "about_edges": 56242,
+      "rollup_edges": 5
+    },
+    "after": {
+      "memory_nodes": 51653,
+      "concept_nodes": 8280,
+      "research_docs": 12147,
+      "research_rollups": 5,
+      "linked_to_edges": 3291742,
+      "authored_doc_edges": 12147,
+      "about_edges": 56242,
+      "rollup_edges": 5
+    }
+  },
+  "compaction": {
+    "rollups_touched": 5
+  },
+  "pruning": {
+    "deleted_archived_memory_nodes": 7146,
+    "prune_days": 14,
+    "batch_size": 20000,
+    "aggressive": true
+  }
+}

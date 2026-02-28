@@ -1,0 +1,30 @@
+flowchart TB
+%% =====================
+%% ENVIRONMENT LAYER
+%% =====================
+subgraph Environment["Environment Layer"]
+    User["User / Human Inputs"]
+    ExternalSystems["External Systems / Software"]
+    Network["Network / API Endpoints"]
+    Filesystem["Local / Remote Filesystem"]
+    Hardware["Hardware Sensors / IoT Devices"]
+    Internet["Internet / Web Resources"]
+    DataStreams["Continuous Data Feeds"]
+    InternalState["Internal System State / Logs"]
+    SimulationWorlds["Simulation / Sandbox Environments"]
+    Constraints["Environment Constraints / Permissions"]
+end
+
+%% Connectivity
+User -->|Interaction| ExternalSystems
+ExternalSystems -->|Signals| Network
+Network -->|Requests| Filesystem
+Hardware -->|Sensors| InternalState
+DataStreams -->|Observables| InternalState
+SimulationWorlds -->|Testing| InternalState
+InternalState -->|Feedback| Filesystem
+Constraints -.->|Rules| Network
+Constraints -.->|Rules| Filesystem
+Constraints -.->|Rules| Hardware
+Constraints -.->|Rules| DataStreams
+Constraints -.->|Rules| SimulationWorlds
