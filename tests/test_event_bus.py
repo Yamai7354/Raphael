@@ -5,8 +5,8 @@ import sys
 # Ensure imports work regardless of execution location
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
-from src.raphael.core.event_bus import SystemEventBus
+from data.schemas import SystemEvent, EventType, LayerContext
+from event_bus.event_bus import SystemEventBus
 
 
 async def test_pub_sub_basic():

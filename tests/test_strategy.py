@@ -1,9 +1,9 @@
 import pytest
 import asyncio
-from src.raphael.strategy.strategy_engine import StrategyEngine
-from src.raphael.strategy.tech_radar import TechRadar
-from src.raphael.strategy.forecaster import CapabilityForecaster
-from src.raphael.strategy.self_model import SystemSelfModel
+from core.strategy.strategy_engine import StrategyEngine
+from core.strategy.tech_radar import TechRadar
+from core.strategy.forecaster import CapabilityForecaster
+from core.strategy.self_model import SystemSelfModel
 
 
 def test_strategy_engine():

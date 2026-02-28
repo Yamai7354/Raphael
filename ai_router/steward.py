@@ -267,7 +267,7 @@ class GraphSteward:
 
         created = []
         with self.driver.session() as session:
-            from raphael.ai_router.embedding_client import EmbeddingClient
+            from ai_router.embedding_client import EmbeddingClient
             import asyncio
 
             router = EmbeddingClient()

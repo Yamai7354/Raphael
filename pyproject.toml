@@ -138,12 +138,13 @@ Issues = "https://github.com/Yamai7354/Raphael/issues"
 # ──────────────────────────────────────────────────────────────────────────────
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/raphael"]
+packages = ["agents", "ai_router", "core", "data", "event_bus", "spine", "swarm", "tool_router"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
 addopts = "-v --tb=short"
+pythonpath = ["."]
 
 [tool.ruff]
 target-version = "py311"

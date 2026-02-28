@@ -11,7 +11,7 @@ from datetime import datetime
 from dataclasses import dataclass, field
 from typing import List, Dict, Any, Optional
 from enum import Enum
-from raphael.core.models.task import ExecutionMode
+from core.understanding.schemas import ExecutionMode
 
 logger = logging.getLogger("ai_router.orchestration")
 

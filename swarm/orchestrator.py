@@ -1,9 +1,9 @@
 import logging
 from typing import Any
 
-from src.raphael.swarm.scheduler import TaskScheduler
-from src.raphael.swarm.model_router import ModelRouter
-from src.raphael.swarm.dynamics import SwarmMetabolism
+from swarm.scheduler import TaskScheduler
+from swarm.model_router import ModelRouter
+from swarm.dynamics import SwarmMetabolism
 
 logger = logging.getLogger(__name__)
 

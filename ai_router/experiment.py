@@ -8,9 +8,9 @@ from typing import Dict, List, Optional, Any
 from pydantic import BaseModel, Field
 
 from .database import db_manager
-from raphael.core.models.task import Task
+from core.understanding.schemas import Task
 from . import bus
-from raphael.core.bus.event_bus import Event
+from event_bus.event_bus import Event
 
 logger = logging.getLogger("ai_router.experiment")
 

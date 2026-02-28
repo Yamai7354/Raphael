@@ -1,6 +1,6 @@
 import pytest
 from uuid import uuid4
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
+from data.schemas import SystemEvent, EventType, LayerContext
 
 
 def test_system_event_initialization():

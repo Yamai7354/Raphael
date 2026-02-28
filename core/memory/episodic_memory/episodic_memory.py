@@ -2,8 +2,8 @@ import logging
 import json
 from typing import Optional, Dict, Any
 
-from src.raphael.understanding.schemas import Task
-from src.raphael.core.schemas import SystemEvent
+from core.understanding.schemas import Task
+from data.schemas import SystemEvent
 from .database import db_manager
 
 logger = logging.getLogger("raphael.memory.episodic_memory")

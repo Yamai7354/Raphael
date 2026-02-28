@@ -1,8 +1,8 @@
 import psutil
 import asyncio
 from datetime import datetime, timezone
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
-from src.raphael.core.event_bus import SystemEventBus
+from data.schemas import SystemEvent, EventType, LayerContext
+from event_bus.event_bus import SystemEventBus
 
 
 class SystemMonitor:

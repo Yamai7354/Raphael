@@ -1,7 +1,7 @@
 import httpx
 from urllib.parse import urlparse
 from typing import Dict, Any, Optional
-from src.raphael.environment.constraints import SandboxConfig
+from core.environment.constraints import SandboxConfig
 
 
 class NetworkAccessor:

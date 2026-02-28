@@ -7,7 +7,7 @@ from pydantic import BaseModel
 from pathlib import Path
 
 from . import bus
-from raphael.core.bus.event_bus import Event
+from event_bus.event_bus import Event
 
 logger = logging.getLogger("ai_router.interaction")
 

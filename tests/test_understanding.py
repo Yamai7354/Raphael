@@ -1,13 +1,13 @@
 import pytest
 import asyncio
 from typing import Optional
-from src.raphael.understanding.schemas import Task, SubTask, TaskStatus
-from src.raphael.understanding.parser import TaskParser
-from src.raphael.understanding.decomposition import DecompositionEngine
-from src.raphael.understanding.goal_manager import GoalManager
-from src.raphael.understanding.router import UnderstandingRouter
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
+from core.understanding.schemas import Task, SubTask, TaskStatus
+from core.understanding.parser import TaskParser
+from core.understanding.decomposition import DecompositionEngine
+from core.understanding.goal_manager import GoalManager
+from core.understanding.router import UnderstandingRouter
+from event_bus.event_bus import SystemEventBus
+from data.schemas import SystemEvent, EventType, LayerContext
 
 
 def test_task_schemas_and_parser():

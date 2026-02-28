@@ -2,9 +2,9 @@ import logging
 import os
 import datetime
 from typing import List, Dict, Any
-from src.raphael.agents.base import BaseAgent
+from agents.base import BaseAgent
 
-logger = logging.getLogger("raphael.agents.caretaker.auditor")
+logger = logging.getLogger("agents.caretaker.auditor")
 
 
 class WorkspaceAuditor(BaseAgent):

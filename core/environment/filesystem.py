@@ -1,6 +1,6 @@
 import os
 import aiofiles
-from src.raphael.environment.constraints import SandboxConfig
+from core.environment.constraints import SandboxConfig
 
 
 class SecureFileSystem:

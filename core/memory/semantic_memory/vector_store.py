@@ -96,7 +96,7 @@ class VectorStore(MemoryContract):
     async def store(self, payload: MemoryPayload):
         """Cross-project storage contract (MEM-1)."""
         # Assume payload.content is text for semantic store
-        from raphael.ai_router.embedding_client import EmbeddingClient
+        from ai_router.embedding_client import EmbeddingClient
 
         client = EmbeddingClient()
 
@@ -109,7 +109,7 @@ class VectorStore(MemoryContract):
 
     async def retrieve(self, query: str, filters: Dict[str, Any]) -> List[MemoryPayload]:
         """Cross-project retrieval contract (MEM-1)."""
-        from raphael.ai_router.embedding_client import EmbeddingClient
+        from ai_router.embedding_client import EmbeddingClient
 
         client = EmbeddingClient()
 

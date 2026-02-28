@@ -4,7 +4,7 @@ from pydantic import BaseModel
 import uvicorn
 import logging
 
-from raphael.ai_router.embeddings import EmbeddingRouter, EmbeddingLayer
+from ai_router.embeddings import EmbeddingRouter, EmbeddingLayer
 
 app = FastAPI(title="Code Embedding Service", version="1.0.0")
 # We only use the CODE layer for this node
@@ -28,4 +28,4 @@ async def embed_code(request: EmbedRequest):
 
 
 if __name__ == "__main__":
-    uvicorn.run("raphael.ai_router.code_embedding_server:app", host="0.0.0.0", port=9200)
+    uvicorn.run("ai_router.code_embedding_server:app", host="0.0.0.0", port=9200)

@@ -7,29 +7,29 @@ from pathlib import Path
 # Add src to python path
 sys.path.append(str(Path(__file__).resolve().parents[2]))
 
-from src.raphael.core.event_bus import SystemEventBus
+from event_bus.event_bus import SystemEventBus
 # Note: SystemEvent, EventType, LayerContext removed if truly unused in main.py,
 # but they might be used in type hints if I missed them.
 # Checking... they don't seem used in the provided snippet.
 
 # Import Routers
-from src.raphael.environment.router import EnvironmentRouter
-from src.raphael.perception.router import PerceptionRouter
-from src.raphael.understanding.router import UnderstandingRouter
-from src.raphael.spine.router import SpineRouter
-from src.raphael.cognitive.router import CognitiveRouter
-from src.raphael.swarm.router import SwarmRouter
-from src.raphael.agents.router import AgentRouter
-from src.raphael.execution.router import ExecutionRouter
-from src.raphael.evaluation.router import EvaluationRouter
-from src.raphael.learning.router import LearningRouter
-from src.raphael.research.router import ResearchRouter
-from src.raphael.strategy.router import StrategyRouter
-from src.raphael.civilization.router import CivilizationRouter
+from core.environment.router import EnvironmentRouter
+from core.perception.router import PerceptionRouter
+from core.understanding.router import UnderstandingRouter
+from spine.router import SpineRouter
+from core.cognitive.router import CognitiveRouter
+from swarm.router import SwarmRouter
+from agents.router import AgentRouter
+from core.execution.router import ExecutionRouter
+from core.evaluation.router import EvaluationRouter
+from core.learning.router import LearningRouter
+from core.research.router import ResearchRouter
+from core.strategy.router import StrategyRouter
+from core.civilization.router import CivilizationRouter
 
 # Import Interfaces
 from interfaces.api.api_interface import run_api
-from src.raphael.ai_router.main import app as ai_router_app
+from ai_router.main import app as ai_router_app
 import uvicorn
 
 # Configure Logging

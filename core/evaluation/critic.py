@@ -1,6 +1,6 @@
 import logging
 from typing import Dict, Any
-from src.raphael.agents.base import BaseAgent
+from agents.base import BaseAgent
 
 logger = logging.getLogger(__name__)
 

@@ -1,7 +1,7 @@
 import logging
 from typing import Dict, Any, List
 from qdrant_client import QdrantClient
-from src.raphael.agents.stewardship_base import DatabaseStewardAgent
+from agents.stewardship_base import DatabaseStewardAgent
 
 logger = logging.getLogger(__name__)
 

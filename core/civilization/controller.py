@@ -5,11 +5,11 @@ import os
 import json
 import time
 from typing import Any
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.civilization.router import CivilizationRouter
-from src.raphael.civilization.society import SocietyManager
-from src.raphael.civilization.infrastructure import InfrastructureManager
-from src.raphael.civilization.knowledge import KnowledgeManager
+from event_bus.event_bus import SystemEventBus
+from core.civilization.router import CivilizationRouter
+from core.civilization.society import SocietyManager
+from core.civilization.infrastructure import InfrastructureManager
+from core.civilization.knowledge import KnowledgeManager
 
 # Configure logging
 logging.basicConfig(

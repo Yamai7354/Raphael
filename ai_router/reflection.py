@@ -15,7 +15,7 @@ from dataclasses import dataclass, asdict
 
 from .database import db_manager
 from .bus import event_bus
-from raphael.core.bus.event_bus import Event
+from event_bus.event_bus import Event
 
 logger = logging.getLogger("ai_router.reflection")
 

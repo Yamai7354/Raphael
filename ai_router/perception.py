@@ -4,7 +4,7 @@ from typing import Dict, Any, Optional
 from collections import defaultdict
 from datetime import datetime
 
-from raphael.core.bus.event_bus import Event
+from event_bus.event_bus import Event
 from . import bus
 
 logger = logging.getLogger("ai_router.perception")

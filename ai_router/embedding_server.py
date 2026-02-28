@@ -4,8 +4,8 @@ from pydantic import BaseModel
 import uvicorn
 import logging
 
-from raphael.ai_router.embeddings import EmbeddingRouter, EmbeddingLayer
-from raphael.ai_router.node_manager import NodeRegistration, NodeRole, NodeHealth
+from ai_router.embeddings import EmbeddingRouter, EmbeddingLayer
+from ai_router.node_manager import NodeRegistration, NodeRole, NodeHealth
 
 app = FastAPI(title="Embedding Router Service", version="1.0.0")
 router = EmbeddingRouter()
@@ -28,4 +28,4 @@ async def embed(request: EmbedRequest):
 
 
 if __name__ == "__main__":
-    uvicorn.run("raphael.ai_router.embedding_server:app", host="0.0.0.0", port=9100)
+    uvicorn.run("ai_router.embedding_server:app", host="0.0.0.0", port=9100)

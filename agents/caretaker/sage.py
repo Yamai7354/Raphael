@@ -1,9 +1,9 @@
 import logging
 import datetime
 from typing import Any
-from src.raphael.agents.base import BaseAgent
+from agents.base import BaseAgent
 
-logger = logging.getLogger("raphael.agents.caretaker.sage")
+logger = logging.getLogger("agents.caretaker.sage")
 
 
 class DocumentationSage(BaseAgent):

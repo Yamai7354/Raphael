@@ -2,12 +2,12 @@ import pytest
 import asyncio
 from typing import Dict, Any
 
-from src.raphael.agents.system import SystemAgent
-from src.raphael.agents.coder import CodingAgent
-from src.raphael.agents.research import ResearchAgent
-from src.raphael.agents.router import AgentRouter
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
+from agents.system import SystemAgent
+from agents.coder import CodingAgent
+from agents.research import ResearchAgent
+from agents.router import AgentRouter
+from event_bus.event_bus import SystemEventBus
+from data.schemas import SystemEvent, EventType, LayerContext
 
 
 @pytest.mark.asyncio

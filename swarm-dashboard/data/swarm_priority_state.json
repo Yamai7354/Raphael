@@ -1,846 +1,6 @@
 {
   "evaluations": [
     {
-      "time": "2026-02-26T23:33:51.468364+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 504974,
-        "relationships": 748795
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7359,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-26T23:37:23.348842+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 507362,
-        "relationships": 761211
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7359,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-26T23:40:55.300672+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 509752,
-        "relationships": 773885
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.736,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-26T23:44:29.543718+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 512139,
-        "relationships": 788310
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7359,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-26T23:48:02.801848+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 514518,
-        "relationships": 800946
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7358,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-26T23:51:36.381072+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 516904,
-        "relationships": 812128
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7357,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-26T23:55:12.041317+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 519299,
-        "relationships": 824707
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7359,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-26T23:58:47.056546+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 521692,
-        "relationships": 837595
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7359,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T00:02:21.639578+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 524067,
-        "relationships": 850655
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7359,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T00:05:58.328109+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 526442,
-        "relationships": 866343
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7359,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T00:09:35.766139+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 528822,
-        "relationships": 879760
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7359,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T00:13:14.562324+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 531186,
-        "relationships": 894591
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7359,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T00:16:53.630913+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 533573,
-        "relationships": 908278
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7361,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T00:20:36.098006+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 535951,
-        "relationships": 922776
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7359,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T00:24:17.594622+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 538332,
-        "relationships": 936459
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7359,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T00:27:59.790597+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 540708,
-        "relationships": 951236
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7359,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T00:31:42.932957+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 543094,
-        "relationships": 964045
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7361,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T00:35:24.466077+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 545459,
-        "relationships": 978984
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7363,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T00:39:08.133893+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 547822,
-        "relationships": 995193
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7365,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T00:42:53.457881+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 550182,
-        "relationships": 1012342
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7366,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T00:46:38.094526+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 552560,
-        "relationships": 1027459
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7366,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T00:50:24.423392+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 554948,
-        "relationships": 1044487
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7364,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T00:54:10.478327+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 557319,
-        "relationships": 1056606
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7365,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T00:57:58.428204+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 559696,
-        "relationships": 1072573
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7364,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T01:01:46.559910+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 562070,
-        "relationships": 1084768
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7365,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T01:05:35.680354+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 564449,
-        "relationships": 1102906
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7366,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T01:09:26.202998+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 566825,
-        "relationships": 1117627
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7367,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T01:13:16.298994+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 569192,
-        "relationships": 1131231
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7367,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T01:17:07.027561+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 571556,
-        "relationships": 1147194
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7367,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T01:20:57.647805+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 573927,
-        "relationships": 1161761
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7367,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T01:24:49.901615+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 576286,
-        "relationships": 1178160
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7365,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T01:28:42.650409+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 578656,
-        "relationships": 1193228
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7365,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T01:32:37.384041+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 581033,
-        "relationships": 1206988
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7364,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T01:36:31.813584+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 583396,
-        "relationships": 1222426
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7364,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
-      "time": "2026-02-27T01:40:26.193783+00:00",
-      "question": "What is best for the system right now?",
-      "action": "spawn_compression_agents",
-      "details": "Graph too large; compression specialists activated.",
-      "manual_override": false,
-      "spawned_agents": 0,
-      "mission_assignments": 0,
-      "signals": {
-        "graph_too_large": true,
-        "no_new_features": true,
-        "memory_quality_dropping": false,
-        "system_idle": false
-      },
-      "graph_metrics": {
-        "nodes": 585767,
-        "relationships": 1237055
-      },
-      "memory_metrics": {
-        "avg_confidence": 0.7364,
-        "conflict_items": 0,
-        "hit_rate_pct": 100.0
-      }
-    },
-    {
       "time": "2026-02-27T01:44:21.963374+00:00",
       "question": "What is best for the system right now?",
       "action": "spawn_compression_agents",
@@ -11996,6 +11156,846 @@
       },
       "memory_metrics": {
         "avg_confidence": 0.7355,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T10:59:59.608135+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 290253,
+        "relationships": 32300219
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7355,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:03:03.410890+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 290898,
+        "relationships": 32485126
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7356,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:06:06.147095+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 291520,
+        "relationships": 32666259
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7356,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:09:10.583289+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 292121,
+        "relationships": 32859489
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7356,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:12:19.075483+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 292741,
+        "relationships": 33070268
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7356,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:15:25.731308+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 293288,
+        "relationships": 33272975
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7356,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:18:26.739187+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 293906,
+        "relationships": 33460458
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7356,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:21:34.085874+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 294381,
+        "relationships": 33642413
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7356,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:24:35.886758+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 294888,
+        "relationships": 33833622
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7356,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:27:41.967597+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 295485,
+        "relationships": 34049090
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7356,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:30:44.419813+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 296062,
+        "relationships": 34235833
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7356,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:33:55.974899+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 296612,
+        "relationships": 34447276
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7356,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:36:59.866502+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 297146,
+        "relationships": 34664665
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7356,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:39:59.891761+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 297718,
+        "relationships": 34870074
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7356,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:43:04.703954+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 298402,
+        "relationships": 35061799
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7356,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:46:08.611673+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 298982,
+        "relationships": 35270593
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7356,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:49:09.830603+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 299554,
+        "relationships": 35481322
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7356,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:52:16.383686+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 300205,
+        "relationships": 35692659
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7357,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:55:22.546271+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 300925,
+        "relationships": 35882507
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7357,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T11:58:24.714188+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 301487,
+        "relationships": 36103115
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7357,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T12:01:33.689404+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 302050,
+        "relationships": 36320201
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7357,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T12:04:42.955490+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 302697,
+        "relationships": 36518113
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7357,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T12:07:51.833739+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 303300,
+        "relationships": 36717169
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7357,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T12:10:53.449693+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 303930,
+        "relationships": 36918877
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7358,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T12:13:54.071921+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 304595,
+        "relationships": 37133518
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7358,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T12:16:55.571417+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 305167,
+        "relationships": 37348489
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7358,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T12:19:56.752145+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 305781,
+        "relationships": 37548968
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7358,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T12:23:05.224303+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 306401,
+        "relationships": 37773646
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7358,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T12:26:13.112529+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_compression_agents",
+      "details": "Graph too large; compression specialists activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": true,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": 306999,
+        "relationships": 37998238
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7358,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T12:29:15.262798+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_coding_agents",
+      "details": "Feature throughput low; coding specialist activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": false,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": null,
+        "relationships": null
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7358,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T12:32:16.733394+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_coding_agents",
+      "details": "Feature throughput low; coding specialist activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": false,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": null,
+        "relationships": null
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7358,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T12:35:18.028939+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_coding_agents",
+      "details": "Feature throughput low; coding specialist activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": false,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": null,
+        "relationships": null
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7358,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T12:38:21.319050+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_coding_agents",
+      "details": "Feature throughput low; coding specialist activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": false,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": null,
+        "relationships": null
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7358,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T12:41:21.854501+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_coding_agents",
+      "details": "Feature throughput low; coding specialist activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": false,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": null,
+        "relationships": null
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7358,
+        "conflict_items": 0,
+        "hit_rate_pct": 100.0
+      }
+    },
+    {
+      "time": "2026-02-28T12:44:24.621453+00:00",
+      "question": "What is best for the system right now?",
+      "action": "spawn_coding_agents",
+      "details": "Feature throughput low; coding specialist activated.",
+      "manual_override": false,
+      "spawned_agents": 0,
+      "mission_assignments": 0,
+      "signals": {
+        "graph_too_large": false,
+        "no_new_features": true,
+        "memory_quality_dropping": false,
+        "system_idle": false
+      },
+      "graph_metrics": {
+        "nodes": null,
+        "relationships": null
+      },
+      "memory_metrics": {
+        "avg_confidence": 0.7358,
         "conflict_items": 0,
         "hit_rate_pct": 100.0
       }

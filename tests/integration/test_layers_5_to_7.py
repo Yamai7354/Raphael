@@ -2,11 +2,11 @@ import pytest
 import asyncio
 from unittest.mock import MagicMock
 
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
-from src.raphael.cognitive.router import CognitiveRouter
-from src.raphael.swarm.router import SwarmRouter
-from src.raphael.agents.router import AgentRouter
+from event_bus.event_bus import SystemEventBus
+from data.schemas import SystemEvent, EventType, LayerContext
+from core.cognitive.router import CognitiveRouter
+from swarm.router import SwarmRouter
+from agents.router import AgentRouter
 
 
 @pytest.mark.asyncio
@@ -17,13 +17,13 @@ async def test_layer_5_to_7_event_flow(mocker):
     """
     # Mock LLM calls so tests don't actually hit APIs
     mocker.patch(
-        "src.raphael.cognitive.planner.ExecutionPlanner.generate_plan", return_value=["dummy_step"]
+        "core.cognitive.planner.ExecutionPlanner.generate_plan", return_value=["dummy_step"]
     )
     mocker.patch(
-        "src.raphael.cognitive.validator.ReasoningValidator.validate_plan", return_value=True
+        "core.cognitive.validator.ReasoningValidator.validate_plan", return_value=True
     )
     mocker.patch(
-        "src.raphael.cognitive.aggregator.ResultAggregator.compile_package",
+        "core.cognitive.aggregator.ResultAggregator.compile_package",
         return_value={
             "plan_metadata": {"id": "test_plan_1"},
             "sequence": [{"sub_task_id": "sub_1", "required_capabilities": ["coding"]}],
@@ -31,12 +31,12 @@ async def test_layer_5_to_7_event_flow(mocker):
     )
     # Also mock Swarm Orchestrator and ModelRouter to easily route to a fake agent
     mocker.patch(
-        "src.raphael.swarm.model_router.ModelRouter.find_agent", return_value="agent_omega"
+        "swarm.model_router.ModelRouter.find_agent", return_value="agent_omega"
     )
 
     # Mock the Agent base execute method so we don't run real code
     mocker.patch(
-        "src.raphael.agents.coder.CodingAgent.execute",
+        "agents.coder.CodingAgent.execute",
         return_value={"success": True, "result": "code written"},
     )
 

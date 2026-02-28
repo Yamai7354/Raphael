@@ -1,164 +1,1004 @@
 {
   "jobs": [
     {
-      "id": "04:58:34|Shun|Explorer Experiment Findings 195",
-      "agent": "Shun",
+      "id": "05:21:40|Hee_359|Analyst Validation Findings 717",
+      "agent": "Hee_359",
       "role": "Calm",
-      "time": "04:58:34",
-      "summary": "Explorer Experiment Findings 195",
+      "time": "05:21:40",
+      "summary": "Analyst Validation Findings 717",
       "success": true,
       "source": "stats-feed",
-      "recordedAt": "2026-02-28T10:58:53.218Z"
+      "recordedAt": "2026-02-28T11:21:52.898Z"
     },
     {
-      "id": "04:58:34|Kook_617|Creative Coder Exploration Findings 749",
-      "agent": "Kook_617",
-      "role": "Excited",
-      "time": "04:58:34",
-      "summary": "Creative Coder Exploration Findings 749",
-      "success": true,
-      "source": "stats-feed",
-      "recordedAt": "2026-02-28T10:58:53.218Z"
-    },
-    {
-      "id": "04:58:34|Kook_775|Creative Coder Exploration Findings 382",
-      "agent": "Kook_775",
-      "role": "Excited",
-      "time": "04:58:34",
-      "summary": "Creative Coder Exploration Findings 382",
-      "success": true,
-      "source": "stats-feed",
-      "recordedAt": "2026-02-28T10:58:53.218Z"
-    },
-    {
-      "id": "04:58:36|Hoang|Analyst Experiment Findings 151",
-      "agent": "Hoang",
-      "role": "Calm",
-      "time": "04:58:36",
-      "summary": "Analyst Experiment Findings 151",
-      "success": true,
-      "source": "stats-feed",
-      "recordedAt": "2026-02-28T10:58:53.218Z"
-    },
-    {
-      "id": "04:58:36|Kook_245|Creative Coder Exploration Findings 137",
-      "agent": "Kook_245",
-      "role": "Calm",
-      "time": "04:58:36",
-      "summary": "Creative Coder Exploration Findings 137",
-      "success": true,
-      "source": "stats-feed",
-      "recordedAt": "2026-02-28T10:58:53.218Z"
-    },
-    {
-      "id": "04:58:36|Hee_871|Analyst Exploration Findings 800",
-      "agent": "Hee_871",
-      "role": "Excited",
-      "time": "04:58:36",
-      "summary": "Analyst Exploration Findings 800",
-      "success": true,
-      "source": "stats-feed",
-      "recordedAt": "2026-02-28T10:58:53.218Z"
-    },
-    {
-      "id": "04:58:36|Mio|Analyst Exploration Findings 942",
-      "agent": "Mio",
-      "role": "Calm",
-      "time": "04:58:36",
-      "summary": "Analyst Exploration Findings 942",
-      "success": true,
-      "source": "stats-feed",
-      "recordedAt": "2026-02-28T10:58:53.218Z"
-    },
-    {
-      "id": "04:58:36|Takashi|Analyst Experiment Findings 649",
-      "agent": "Takashi",
-      "role": "Excited",
-      "time": "04:58:36",
-      "summary": "Analyst Experiment Findings 649",
-      "success": true,
-      "source": "stats-feed",
-      "recordedAt": "2026-02-28T10:58:53.218Z"
-    },
-    {
-      "id": "04:58:37|Hee_692|Analyst Validation Findings 607",
-      "agent": "Hee_692",
-      "role": "Excited",
-      "time": "04:58:37",
-      "summary": "Analyst Validation Findings 607",
-      "success": true,
-      "source": "stats-feed",
-      "recordedAt": "2026-02-28T10:58:53.218Z"
-    },
-    {
-      "id": "04:58:37|Tae_772|Creative Coder Validation Findings 373",
-      "agent": "Tae_772",
-      "role": "Cautious",
-      "time": "04:58:37",
-      "summary": "Creative Coder Validation Findings 373",
-      "success": false,
-      "source": "stats-feed",
-      "recordedAt": "2026-02-28T10:58:53.218Z"
-    },
-    {
-      "id": "04:58:38|Tae_108|Creative Coder Validation Findings 660",
+      "id": "05:21:41|Tae_108|Creative Coder Validation Findings 430",
       "agent": "Tae_108",
       "role": "Excited",
-      "time": "04:58:38",
-      "summary": "Creative Coder Validation Findings 660",
+      "time": "05:21:41",
+      "summary": "Creative Coder Validation Findings 430",
       "success": true,
       "source": "stats-feed",
-      "recordedAt": "2026-02-28T10:58:53.218Z"
+      "recordedAt": "2026-02-28T11:21:52.898Z"
     },
     {
-      "id": "04:58:38|Hee_249|Analyst Exploration Findings 821",
+      "id": "05:21:41|Mio|Analyst Exploration Findings 544",
+      "agent": "Mio",
+      "role": "Excited",
+      "time": "05:21:41",
+      "summary": "Analyst Exploration Findings 544",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:21:52.898Z"
+    },
+    {
+      "id": "05:21:41|Sora|Creative Coder Exploration Findings 544",
+      "agent": "Sora",
+      "role": "Excited",
+      "time": "05:21:41",
+      "summary": "Creative Coder Exploration Findings 544",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:21:52.898Z"
+    },
+    {
+      "id": "05:21:41|Hoang|Analyst Experiment Findings 505",
+      "agent": "Hoang",
+      "role": "Curious",
+      "time": "05:21:41",
+      "summary": "Analyst Experiment Findings 505",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:21:52.898Z"
+    },
+    {
+      "id": "05:21:41|Kook_245|Creative Coder Exploration Findings 510",
+      "agent": "Kook_245",
+      "role": "Calm",
+      "time": "05:21:41",
+      "summary": "Creative Coder Exploration Findings 510",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:21:52.898Z"
+    },
+    {
+      "id": "05:21:42|Kook_617|Creative Coder Exploration Findings 907",
+      "agent": "Kook_617",
+      "role": "Excited",
+      "time": "05:21:42",
+      "summary": "Creative Coder Exploration Findings 907",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:21:52.898Z"
+    },
+    {
+      "id": "05:21:42|Aiko|Communicator Validation Findings 103",
+      "agent": "Aiko",
+      "role": "Excited",
+      "time": "05:21:42",
+      "summary": "Communicator Validation Findings 103",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:21:52.898Z"
+    },
+    {
+      "id": "05:21:42|Hai_239|Creative Coder Exploration Findings 787",
+      "agent": "Hai_239",
+      "role": "Excited",
+      "time": "05:21:42",
+      "summary": "Creative Coder Exploration Findings 787",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:21:52.898Z"
+    },
+    {
+      "id": "05:21:42|Hina|Researcher Validation Findings 690",
+      "agent": "Hina",
+      "role": "Calm",
+      "time": "05:21:42",
+      "summary": "Researcher Validation Findings 690",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:21:52.898Z"
+    },
+    {
+      "id": "05:21:42|Tae_772|Creative Coder Exploration Findings 717",
+      "agent": "Tae_772",
+      "role": "Calm",
+      "time": "05:21:42",
+      "summary": "Creative Coder Exploration Findings 717",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:21:52.898Z"
+    },
+    {
+      "id": "05:21:42|Shun|Explorer Experiment Findings 827",
+      "agent": "Shun",
+      "role": "Calm",
+      "time": "05:21:42",
+      "summary": "Explorer Experiment Findings 827",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:21:52.898Z"
+    },
+    {
+      "id": "05:21:42|Hee_692|Analyst Validation Findings 385",
+      "agent": "Hee_692",
+      "role": "Cautious",
+      "time": "05:21:42",
+      "summary": "Analyst Validation Findings 385",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:21:52.898Z"
+    },
+    {
+      "id": "05:21:43|Hee_104|Analyst Exploration Findings 417",
+      "agent": "Hee_104",
+      "role": "Curious",
+      "time": "05:21:43",
+      "summary": "Analyst Exploration Findings 417",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:21:52.898Z"
+    },
+    {
+      "id": "05:21:43|Tae_363|Creative Coder Exploration Findings 978",
+      "agent": "Tae_363",
+      "role": "Cautious",
+      "time": "05:21:43",
+      "summary": "Creative Coder Exploration Findings 978",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:21:52.898Z"
+    },
+    {
+      "id": "05:21:43|Hee_494|Analyst Exploration Findings 182",
+      "agent": "Hee_494",
+      "role": "Cautious",
+      "time": "05:21:43",
+      "summary": "Analyst Exploration Findings 182",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:21:52.898Z"
+    },
+    {
+      "id": "05:21:43|Jin_752|Creative Coder Exploration Findings 234",
+      "agent": "Jin_752",
+      "role": "Calm",
+      "time": "05:21:43",
+      "summary": "Creative Coder Exploration Findings 234",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:21:52.898Z"
+    },
+    {
+      "id": "05:22:40|Hee_871|Analyst Exploration Findings 303",
+      "agent": "Hee_871",
+      "role": "Excited",
+      "time": "05:22:40",
+      "summary": "Analyst Exploration Findings 303",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:22:51.512Z"
+    },
+    {
+      "id": "05:22:41|Takashi|Analyst Exploration Findings 101",
+      "agent": "Takashi",
+      "role": "Calm",
+      "time": "05:22:41",
+      "summary": "Analyst Exploration Findings 101",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:22:51.512Z"
+    },
+    {
+      "id": "05:22:41|Kook_775|Creative Coder Experiment Findings 383",
+      "agent": "Kook_775",
+      "role": "Curious",
+      "time": "05:22:41",
+      "summary": "Creative Coder Experiment Findings 383",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:22:51.512Z"
+    },
+    {
+      "id": "05:22:41|Hee_692|Analyst Validation Findings 677",
+      "agent": "Hee_692",
+      "role": "Excited",
+      "time": "05:22:41",
+      "summary": "Analyst Validation Findings 677",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:22:51.512Z"
+    },
+    {
+      "id": "05:22:41|Shun|Explorer Experiment Findings 429",
+      "agent": "Shun",
+      "role": "Calm",
+      "time": "05:22:41",
+      "summary": "Explorer Experiment Findings 429",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:22:51.512Z"
+    },
+    {
+      "id": "05:22:41|Hee_249|Analyst Experiment Findings 552",
       "agent": "Hee_249",
       "role": "Calm",
-      "time": "04:58:38",
-      "summary": "Analyst Exploration Findings 821",
+      "time": "05:22:41",
+      "summary": "Analyst Experiment Findings 552",
       "success": true,
       "source": "stats-feed",
-      "recordedAt": "2026-02-28T10:58:53.218Z"
+      "recordedAt": "2026-02-28T11:22:51.512Z"
     },
     {
-      "id": "04:58:38|Tae_901|Creative Coder Exploration Findings 529",
-      "agent": "Tae_901",
+      "id": "05:22:41|Seok_218|Analyst Validation Findings 570",
+      "agent": "Seok_218",
       "role": "Excited",
-      "time": "04:58:38",
-      "summary": "Creative Coder Exploration Findings 529",
+      "time": "05:22:41",
+      "summary": "Analyst Validation Findings 570",
       "success": true,
       "source": "stats-feed",
-      "recordedAt": "2026-02-28T10:58:53.218Z"
+      "recordedAt": "2026-02-28T11:22:51.512Z"
     },
     {
-      "id": "04:58:39|Tae_768|Creative Coder Exploration Findings 771",
-      "agent": "Tae_768",
-      "role": "Excited",
-      "time": "04:58:39",
-      "summary": "Creative Coder Exploration Findings 771",
-      "success": true,
-      "source": "stats-feed",
-      "recordedAt": "2026-02-28T10:58:53.218Z"
-    },
-    {
-      "id": "04:58:39|Dong_167|Analyst Exploration Findings 214",
-      "agent": "Dong_167",
+      "id": "05:22:41|Kook_245|Creative Coder Exploration Findings 410",
+      "agent": "Kook_245",
       "role": "Calm",
-      "time": "04:58:39",
-      "summary": "Analyst Exploration Findings 214",
+      "time": "05:22:41",
+      "summary": "Creative Coder Exploration Findings 410",
       "success": true,
       "source": "stats-feed",
-      "recordedAt": "2026-02-28T10:58:53.218Z"
+      "recordedAt": "2026-02-28T11:22:51.512Z"
     },
     {
-      "id": "04:58:39|Dong_428|Analyst Exploration Findings 861",
-      "agent": "Dong_428",
-      "role": "Excited",
-      "time": "04:58:39",
-      "summary": "Analyst Exploration Findings 861",
+      "id": "05:22:41|Hee_359|Analyst Validation Findings 509",
+      "agent": "Hee_359",
+      "role": "Calm",
+      "time": "05:22:41",
+      "summary": "Analyst Validation Findings 509",
       "success": true,
       "source": "stats-feed",
-      "recordedAt": "2026-02-28T10:58:53.218Z"
+      "recordedAt": "2026-02-28T11:22:51.512Z"
+    },
+    {
+      "id": "05:22:42|Sora|Creative Coder Exploration Findings 292",
+      "agent": "Sora",
+      "role": "Cautious",
+      "time": "05:22:42",
+      "summary": "Creative Coder Exploration Findings 292",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:22:51.512Z"
+    },
+    {
+      "id": "05:22:42|Kook_617|Creative Coder Exploration Findings 536",
+      "agent": "Kook_617",
+      "role": "Excited",
+      "time": "05:22:42",
+      "summary": "Creative Coder Exploration Findings 536",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:22:51.512Z"
+    },
+    {
+      "id": "05:22:42|Aiko|Communicator Exploration Findings 395",
+      "agent": "Aiko",
+      "role": "Calm",
+      "time": "05:22:42",
+      "summary": "Communicator Exploration Findings 395",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:22:51.512Z"
+    },
+    {
+      "id": "05:22:42|Hina|Researcher Validation Findings 349",
+      "agent": "Hina",
+      "role": "Cautious",
+      "time": "05:22:42",
+      "summary": "Researcher Validation Findings 349",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:22:51.512Z"
+    },
+    {
+      "id": "05:22:42|Tae_421|Creative Coder Exploration Findings 961",
+      "agent": "Tae_421",
+      "role": "Calm",
+      "time": "05:22:42",
+      "summary": "Creative Coder Exploration Findings 961",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:22:51.512Z"
+    },
+    {
+      "id": "05:22:42|Tae_491|Creative Coder Exploration Findings 932",
+      "agent": "Tae_491",
+      "role": "Calm",
+      "time": "05:22:42",
+      "summary": "Creative Coder Exploration Findings 932",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:22:51.512Z"
+    },
+    {
+      "id": "05:22:42|Dong_218|Analyst Exploration Findings 256",
+      "agent": "Dong_218",
+      "role": "Curious",
+      "time": "05:22:42",
+      "summary": "Analyst Exploration Findings 256",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:22:51.512Z"
+    },
+    {
+      "id": "05:22:42|Yoon_118|Analyst Exploration Findings 346",
+      "agent": "Yoon_118",
+      "role": "Cautious",
+      "time": "05:22:42",
+      "summary": "Analyst Exploration Findings 346",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:22:51.512Z"
+    },
+    {
+      "id": "05:23:45|Hina|Researcher Exploration Findings 559",
+      "agent": "Hina",
+      "role": "Excited",
+      "time": "05:23:45",
+      "summary": "Researcher Exploration Findings 559",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:23:51.533Z"
+    },
+    {
+      "id": "05:23:45|Hoang|Analyst Exploration Findings 889",
+      "agent": "Hoang",
+      "role": "Cautious",
+      "time": "05:23:45",
+      "summary": "Analyst Exploration Findings 889",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:23:51.533Z"
+    },
+    {
+      "id": "05:23:45|Sora|Creative Coder Exploration Findings 385",
+      "agent": "Sora",
+      "role": "Calm",
+      "time": "05:23:45",
+      "summary": "Creative Coder Exploration Findings 385",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:23:51.533Z"
+    },
+    {
+      "id": "05:23:45|Tae_772|Creative Coder Validation Findings 754",
+      "agent": "Tae_772",
+      "role": "Excited",
+      "time": "05:23:45",
+      "summary": "Creative Coder Validation Findings 754",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:23:51.533Z"
+    },
+    {
+      "id": "05:23:45|Kook_775|Creative Coder Exploration Findings 880",
+      "agent": "Kook_775",
+      "role": "Calm",
+      "time": "05:23:45",
+      "summary": "Creative Coder Exploration Findings 880",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:23:51.533Z"
+    },
+    {
+      "id": "05:23:46|Hee_249|Analyst Experiment Findings 430",
+      "agent": "Hee_249",
+      "role": "Cautious",
+      "time": "05:23:46",
+      "summary": "Analyst Experiment Findings 430",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:23:51.533Z"
+    },
+    {
+      "id": "05:23:46|Kook_617|Creative Coder Exploration Findings 196",
+      "agent": "Kook_617",
+      "role": "Excited",
+      "time": "05:23:46",
+      "summary": "Creative Coder Exploration Findings 196",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:23:51.533Z"
+    },
+    {
+      "id": "05:23:46|Hee_692|Analyst Exploration Findings 463",
+      "agent": "Hee_692",
+      "role": "Curious",
+      "time": "05:23:46",
+      "summary": "Analyst Exploration Findings 463",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:23:51.533Z"
+    },
+    {
+      "id": "05:23:46|Shun|Explorer Exploration Findings 826",
+      "agent": "Shun",
+      "role": "Calm",
+      "time": "05:23:46",
+      "summary": "Explorer Exploration Findings 826",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:23:51.533Z"
+    },
+    {
+      "id": "05:23:46|Kook_245|Creative Coder Exploration Findings 357",
+      "agent": "Kook_245",
+      "role": "Excited",
+      "time": "05:23:46",
+      "summary": "Creative Coder Exploration Findings 357",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:23:51.533Z"
+    },
+    {
+      "id": "05:23:46|Hee_359|Analyst Exploration Findings 905",
+      "agent": "Hee_359",
+      "role": "Curious",
+      "time": "05:23:46",
+      "summary": "Analyst Exploration Findings 905",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:23:51.533Z"
+    },
+    {
+      "id": "05:23:46|Aiko|Communicator Validation Findings 154",
+      "agent": "Aiko",
+      "role": "Calm",
+      "time": "05:23:46",
+      "summary": "Communicator Validation Findings 154",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:23:51.533Z"
+    },
+    {
+      "id": "05:23:47|Tae_370|Creative Coder Exploration Findings 501",
+      "agent": "Tae_370",
+      "role": "Calm",
+      "time": "05:23:47",
+      "summary": "Creative Coder Exploration Findings 501",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:23:51.533Z"
+    },
+    {
+      "id": "05:23:47|Jiho_753|Creative Coder Exploration Findings 778",
+      "agent": "Jiho_753",
+      "role": "Excited",
+      "time": "05:23:47",
+      "summary": "Creative Coder Exploration Findings 778",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:23:51.533Z"
+    },
+    {
+      "id": "05:23:47|Hee_417|Analyst Exploration Findings 826",
+      "agent": "Hee_417",
+      "role": "Calm",
+      "time": "05:23:47",
+      "summary": "Analyst Exploration Findings 826",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:23:51.533Z"
+    },
+    {
+      "id": "05:23:47|Seok_560|Analyst Exploration Findings 356",
+      "agent": "Seok_560",
+      "role": "Calm",
+      "time": "05:23:47",
+      "summary": "Analyst Exploration Findings 356",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:23:51.533Z"
+    },
+    {
+      "id": "05:24:42|Tae_772|Creative Coder Exploration Findings 968",
+      "agent": "Tae_772",
+      "role": "Excited",
+      "time": "05:24:42",
+      "summary": "Creative Coder Exploration Findings 968",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:24:51.506Z"
+    },
+    {
+      "id": "05:24:42|Hai_239|Creative Coder Exploration Findings 691",
+      "agent": "Hai_239",
+      "role": "Calm",
+      "time": "05:24:42",
+      "summary": "Creative Coder Exploration Findings 691",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:24:51.506Z"
+    },
+    {
+      "id": "05:24:42|Hina|Researcher Validation Findings 309",
+      "agent": "Hina",
+      "role": "Excited",
+      "time": "05:24:42",
+      "summary": "Researcher Validation Findings 309",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:24:51.506Z"
+    },
+    {
+      "id": "05:24:42|Hee_359|Analyst Exploration Findings 576",
+      "agent": "Hee_359",
+      "role": "Curious",
+      "time": "05:24:42",
+      "summary": "Analyst Exploration Findings 576",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:24:51.506Z"
+    },
+    {
+      "id": "05:24:43|Seok_218|Analyst Exploration Findings 622",
+      "agent": "Seok_218",
+      "role": "Excited",
+      "time": "05:24:43",
+      "summary": "Analyst Exploration Findings 622",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:24:51.506Z"
+    },
+    {
+      "id": "05:24:43|Shun|Explorer Experiment Findings 315",
+      "agent": "Shun",
+      "role": "Curious",
+      "time": "05:24:43",
+      "summary": "Explorer Experiment Findings 315",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:24:51.506Z"
+    },
+    {
+      "id": "05:24:43|Kook_775|Creative Coder Experiment Findings 468",
+      "agent": "Kook_775",
+      "role": "Excited",
+      "time": "05:24:43",
+      "summary": "Creative Coder Experiment Findings 468",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:24:51.506Z"
+    },
+    {
+      "id": "05:24:43|Tae_108|Creative Coder Exploration Findings 429",
+      "agent": "Tae_108",
+      "role": "Calm",
+      "time": "05:24:43",
+      "summary": "Creative Coder Exploration Findings 429",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:24:51.506Z"
+    },
+    {
+      "id": "05:24:43|Aiko|Communicator Exploration Findings 464",
+      "agent": "Aiko",
+      "role": "Cautious",
+      "time": "05:24:43",
+      "summary": "Communicator Exploration Findings 464",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:24:51.506Z"
+    },
+    {
+      "id": "05:24:43|Kook_245|Creative Coder Exploration Findings 550",
+      "agent": "Kook_245",
+      "role": "Curious",
+      "time": "05:24:43",
+      "summary": "Creative Coder Exploration Findings 550",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:24:51.506Z"
+    },
+    {
+      "id": "05:24:43|Kook_617|Creative Coder Exploration Findings 285",
+      "agent": "Kook_617",
+      "role": "Cautious",
+      "time": "05:24:43",
+      "summary": "Creative Coder Exploration Findings 285",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:24:51.506Z"
+    },
+    {
+      "id": "05:24:43|Yoon_464|Analyst Exploration Findings 729",
+      "agent": "Yoon_464",
+      "role": "Excited",
+      "time": "05:24:43",
+      "summary": "Analyst Exploration Findings 729",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:24:51.506Z"
+    },
+    {
+      "id": "05:24:43|Seok_828|Analyst Exploration Findings 891",
+      "agent": "Seok_828",
+      "role": "Excited",
+      "time": "05:24:43",
+      "summary": "Analyst Exploration Findings 891",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:24:51.506Z"
+    },
+    {
+      "id": "05:24:44|Tae_773|Creative Coder Exploration Findings 527",
+      "agent": "Tae_773",
+      "role": "Cautious",
+      "time": "05:24:44",
+      "summary": "Creative Coder Exploration Findings 527",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:24:51.506Z"
+    },
+    {
+      "id": "05:24:44|Jin_852|Creative Coder Exploration Findings 134",
+      "agent": "Jin_852",
+      "role": "Excited",
+      "time": "05:24:44",
+      "summary": "Creative Coder Exploration Findings 134",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:24:51.506Z"
+    },
+    {
+      "id": "05:25:42|Hee_249|Analyst Exploration Findings 551",
+      "agent": "Hee_249",
+      "role": "Calm",
+      "time": "05:25:42",
+      "summary": "Analyst Exploration Findings 551",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:25:51.502Z"
+    },
+    {
+      "id": "05:25:43|Hina|Researcher Exploration Findings 297",
+      "agent": "Hina",
+      "role": "Calm",
+      "time": "05:25:43",
+      "summary": "Researcher Exploration Findings 297",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:25:51.502Z"
+    },
+    {
+      "id": "05:25:43|Tae_108|Creative Coder Exploration Findings 353",
+      "agent": "Tae_108",
+      "role": "Calm",
+      "time": "05:25:43",
+      "summary": "Creative Coder Exploration Findings 353",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:25:51.502Z"
+    },
+    {
+      "id": "05:25:43|Mio|Analyst Exploration Findings 282",
+      "agent": "Mio",
+      "role": "Excited",
+      "time": "05:25:43",
+      "summary": "Analyst Exploration Findings 282",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:25:51.502Z"
+    },
+    {
+      "id": "05:25:43|Seok_218|Analyst Exploration Findings 276",
+      "agent": "Seok_218",
+      "role": "Excited",
+      "time": "05:25:43",
+      "summary": "Analyst Exploration Findings 276",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:25:51.502Z"
+    },
+    {
+      "id": "05:25:43|Hee_692|Analyst Validation Findings 845",
+      "agent": "Hee_692",
+      "role": "Excited",
+      "time": "05:25:43",
+      "summary": "Analyst Validation Findings 845",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:25:51.502Z"
+    },
+    {
+      "id": "05:25:43|Kook_245|Creative Coder Exploration Findings 999",
+      "agent": "Kook_245",
+      "role": "Excited",
+      "time": "05:25:43",
+      "summary": "Creative Coder Exploration Findings 999",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:25:51.502Z"
+    },
+    {
+      "id": "05:25:43|Kenji|Analyst Exploration Findings 273",
+      "agent": "Kenji",
+      "role": "Excited",
+      "time": "05:25:43",
+      "summary": "Analyst Exploration Findings 273",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:25:51.502Z"
+    },
+    {
+      "id": "05:25:44|Hee_359|Analyst Exploration Findings 938",
+      "agent": "Hee_359",
+      "role": "Calm",
+      "time": "05:25:44",
+      "summary": "Analyst Exploration Findings 938",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:25:51.502Z"
+    },
+    {
+      "id": "05:25:44|Kook_775|Creative Coder Exploration Findings 176",
+      "agent": "Kook_775",
+      "role": "Excited",
+      "time": "05:25:44",
+      "summary": "Creative Coder Exploration Findings 176",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:25:51.502Z"
+    },
+    {
+      "id": "05:25:44|Hoang|Analyst Experiment Findings 917",
+      "agent": "Hoang",
+      "role": "Curious",
+      "time": "05:25:44",
+      "summary": "Analyst Experiment Findings 917",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:25:51.502Z"
+    },
+    {
+      "id": "05:25:44|Tae_772|Creative Coder Validation Findings 818",
+      "agent": "Tae_772",
+      "role": "Cautious",
+      "time": "05:25:44",
+      "summary": "Creative Coder Validation Findings 818",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:25:51.502Z"
+    },
+    {
+      "id": "05:25:44|Kook_617|Creative Coder Exploration Findings 331",
+      "agent": "Kook_617",
+      "role": "Excited",
+      "time": "05:25:44",
+      "summary": "Creative Coder Exploration Findings 331",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:25:51.502Z"
+    },
+    {
+      "id": "05:25:44|Dong_551|Analyst Exploration Findings 476",
+      "agent": "Dong_551",
+      "role": "Excited",
+      "time": "05:25:44",
+      "summary": "Analyst Exploration Findings 476",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:25:51.502Z"
+    },
+    {
+      "id": "05:25:44|Jin_821|Creative Coder Exploration Findings 481",
+      "agent": "Jin_821",
+      "role": "Calm",
+      "time": "05:25:44",
+      "summary": "Creative Coder Exploration Findings 481",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:25:51.502Z"
+    },
+    {
+      "id": "05:25:44|Yoon_198|Analyst Exploration Findings 349",
+      "agent": "Yoon_198",
+      "role": "Curious",
+      "time": "05:25:44",
+      "summary": "Analyst Exploration Findings 349",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:25:51.502Z"
+    },
+    {
+      "id": "05:25:44|Kook_231|Creative Coder Exploration Findings 866",
+      "agent": "Kook_231",
+      "role": "Excited",
+      "time": "05:25:44",
+      "summary": "Creative Coder Exploration Findings 866",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:25:51.502Z"
+    },
+    {
+      "id": "05:26:41|Sora|Creative Coder Exploration Findings 822",
+      "agent": "Sora",
+      "role": "Excited",
+      "time": "05:26:41",
+      "summary": "Creative Coder Exploration Findings 822",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
+    },
+    {
+      "id": "05:26:41|Tae_108|Creative Coder Validation Findings 442",
+      "agent": "Tae_108",
+      "role": "Excited",
+      "time": "05:26:41",
+      "summary": "Creative Coder Validation Findings 442",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
+    },
+    {
+      "id": "05:26:41|Hee_871|Analyst Exploration Findings 698",
+      "agent": "Hee_871",
+      "role": "Excited",
+      "time": "05:26:41",
+      "summary": "Analyst Exploration Findings 698",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
+    },
+    {
+      "id": "05:26:42|Mio|Analyst Exploration Findings 915",
+      "agent": "Mio",
+      "role": "Excited",
+      "time": "05:26:42",
+      "summary": "Analyst Exploration Findings 915",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
+    },
+    {
+      "id": "05:26:42|Takashi|Analyst Experiment Findings 280",
+      "agent": "Takashi",
+      "role": "Curious",
+      "time": "05:26:42",
+      "summary": "Analyst Experiment Findings 280",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
+    },
+    {
+      "id": "05:26:42|Seok_218|Analyst Validation Findings 942",
+      "agent": "Seok_218",
+      "role": "Curious",
+      "time": "05:26:42",
+      "summary": "Analyst Validation Findings 942",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
+    },
+    {
+      "id": "05:26:42|Hee_692|Analyst Validation Findings 647",
+      "agent": "Hee_692",
+      "role": "Excited",
+      "time": "05:26:42",
+      "summary": "Analyst Validation Findings 647",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
+    },
+    {
+      "id": "05:26:42|Kook_617|Creative Coder Exploration Findings 542",
+      "agent": "Kook_617",
+      "role": "Curious",
+      "time": "05:26:42",
+      "summary": "Creative Coder Exploration Findings 542",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
+    },
+    {
+      "id": "05:26:42|Hee_249|Analyst Exploration Findings 895",
+      "agent": "Hee_249",
+      "role": "Excited",
+      "time": "05:26:42",
+      "summary": "Analyst Exploration Findings 895",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
+    },
+    {
+      "id": "05:26:42|Hoang|Analyst Exploration Findings 764",
+      "agent": "Hoang",
+      "role": "Calm",
+      "time": "05:26:42",
+      "summary": "Analyst Exploration Findings 764",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
+    },
+    {
+      "id": "05:26:42|Hee_359|Analyst Validation Findings 342",
+      "agent": "Hee_359",
+      "role": "Calm",
+      "time": "05:26:42",
+      "summary": "Analyst Validation Findings 342",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
+    },
+    {
+      "id": "05:26:43|Kook_245|Creative Coder Exploration Findings 677",
+      "agent": "Kook_245",
+      "role": "Excited",
+      "time": "05:26:43",
+      "summary": "Creative Coder Exploration Findings 677",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
+    },
+    {
+      "id": "05:26:43|Kaito|Creative Coder Exploration Findings 191",
+      "agent": "Kaito",
+      "role": "Calm",
+      "time": "05:26:43",
+      "summary": "Creative Coder Exploration Findings 191",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
+    },
+    {
+      "id": "05:26:43|Kook_775|Creative Coder Exploration Findings 235",
+      "agent": "Kook_775",
+      "role": "Excited",
+      "time": "05:26:43",
+      "summary": "Creative Coder Exploration Findings 235",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
+    },
+    {
+      "id": "05:26:43|Jiho_624|Creative Coder Exploration Findings 946",
+      "agent": "Jiho_624",
+      "role": "Calm",
+      "time": "05:26:43",
+      "summary": "Creative Coder Exploration Findings 946",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
+    },
+    {
+      "id": "05:26:43|Yoon_340|Analyst Exploration Findings 182",
+      "agent": "Yoon_340",
+      "role": "Calm",
+      "time": "05:26:43",
+      "summary": "Analyst Exploration Findings 182",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
+    },
+    {
+      "id": "05:26:43|Dong_940|Analyst Exploration Findings 212",
+      "agent": "Dong_940",
+      "role": "Cautious",
+      "time": "05:26:43",
+      "summary": "Analyst Exploration Findings 212",
+      "success": false,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
+    },
+    {
+      "id": "05:26:43|Jiho_390|Creative Coder Exploration Findings 451",
+      "agent": "Jiho_390",
+      "role": "Calm",
+      "time": "05:26:43",
+      "summary": "Creative Coder Exploration Findings 451",
+      "success": true,
+      "source": "stats-feed",
+      "recordedAt": "2026-02-28T11:26:51.465Z"
     }
   ]
 }

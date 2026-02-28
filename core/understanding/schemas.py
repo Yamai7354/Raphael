@@ -5,6 +5,12 @@ from datetime import datetime, timezone
 from pydantic import BaseModel, Field
 
 
+class ExecutionMode(str, Enum):
+    COMMIT = "COMMIT"
+    DRY_RUN = "DRY_RUN"
+    SIMULATE = "SIMULATE"
+
+
 class TaskStatus(str, Enum):
     PENDING = "PENDING"
     IN_PROGRESS = "IN_PROGRESS"

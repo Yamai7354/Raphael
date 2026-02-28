@@ -1,9 +1,9 @@
 import logging
 import asyncio
 from uuid import uuid4
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.civilization.council import GovernanceCouncil
+from data.schemas import SystemEvent, EventType, LayerContext
+from event_bus.event_bus import SystemEventBus
+from core.civilization.council import GovernanceCouncil
 
 logger = logging.getLogger(__name__)
 

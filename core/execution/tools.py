@@ -1,9 +1,9 @@
 import logging
 from typing import Dict, Any
 
-from src.raphael.execution.tool_registry import BaseTool
-from src.raphael.execution.system_control import SystemController
-from src.raphael.execution.code_runner import SandboxedCodeRunner
+from core.execution.tool_registry import BaseTool
+from core.execution.system_control import SystemController
+from core.execution.code_runner import SandboxedCodeRunner
 
 logger = logging.getLogger(__name__)
 

@@ -1,10 +1,10 @@
 import pytest
 import asyncio
-from src.raphael.civilization.council import GovernanceCouncil
-from src.raphael.civilization.infrastructure import InfrastructureManager
-from src.raphael.civilization.innovation import InnovationEngine
-from src.raphael.civilization.society import SocietyManager
-from src.raphael.civilization.knowledge import KnowledgeManager
+from core.civilization.council import GovernanceCouncil
+from core.civilization.infrastructure import InfrastructureManager
+from core.civilization.innovation import InnovationEngine
+from core.civilization.society import SocietyManager
+from core.civilization.knowledge import KnowledgeManager
 
 
 def test_governance_council():

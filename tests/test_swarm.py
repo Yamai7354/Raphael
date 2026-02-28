@@ -1,11 +1,11 @@
 import pytest
 import asyncio
-from src.raphael.swarm.scheduler import TaskScheduler
-from src.raphael.swarm.model_router import ModelRouter
-from src.raphael.swarm.orchestrator import SwarmOrchestrator
-from src.raphael.swarm.router import SwarmRouter
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
+from swarm.scheduler import TaskScheduler
+from swarm.model_router import ModelRouter
+from swarm.orchestrator import SwarmOrchestrator
+from swarm.router import SwarmRouter
+from event_bus.event_bus import SystemEventBus
+from data.schemas import SystemEvent, EventType, LayerContext
 
 
 def test_task_scheduler_dependency_chain():

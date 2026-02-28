@@ -1,7 +1,7 @@
 import logging
 import sqlite3
 from typing import Dict, Any, List
-from src.raphael.agents.stewardship_base import DatabaseStewardAgent
+from agents.stewardship_base import DatabaseStewardAgent
 
 logger = logging.getLogger(__name__)
 

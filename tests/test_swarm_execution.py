@@ -1,10 +1,10 @@
 import asyncio
 import logging
 import httpx
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
-from src.raphael.swarm.router import SwarmRouter
-from src.raphael.agents.router import AgentRouter
+from event_bus.event_bus import SystemEventBus
+from data.schemas import SystemEvent, EventType, LayerContext
+from swarm.router import SwarmRouter
+from agents.router import AgentRouter
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger("TestSwarm")

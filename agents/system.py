@@ -1,8 +1,8 @@
 import logging
 from typing import Any
 
-from src.raphael.agents.base import BaseAgent
-from src.raphael.execution.tool_registry import ToolRegistry
+from agents.base import BaseAgent
+from core.execution.tool_registry import ToolRegistry
 
 logger = logging.getLogger(__name__)
 

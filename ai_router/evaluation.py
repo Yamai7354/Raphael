@@ -3,7 +3,7 @@ import uuid
 from typing import Dict, Any
 from datetime import datetime
 
-from raphael.core.bus.event_bus import Event
+from event_bus.event_bus import Event
 from . import bus
 
 logger = logging.getLogger("ai_router.evaluation")

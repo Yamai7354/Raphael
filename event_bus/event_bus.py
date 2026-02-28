@@ -1,7 +1,10 @@
 import asyncio
 import logging
 from typing import Callable, Coroutine, Dict, List, Set, Any
-from src.raphael.core.schemas import SystemEvent, EventType
+from data.schemas import SystemEvent, EventType
+
+# Alias for backwards-compat with ai_router imports that use `Event`
+Event = SystemEvent
 
 logger = logging.getLogger(__name__)
 

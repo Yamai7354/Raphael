@@ -1,6 +1,6 @@
 from typing import Dict, Any, Optional
 from .tools import ToolAdapter, ToolConfig, ToolType
-from raphael.core.planning.sandbox import LocalProcessSandbox, SandboxLimits
+from core.planner.sandbox import LocalProcessSandbox, SandboxLimits
 
 
 class ShellTool(ToolAdapter):

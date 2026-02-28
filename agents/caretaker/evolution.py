@@ -3,9 +3,9 @@ import datetime
 import os
 from typing import List, Dict, Any
 from neo4j import GraphDatabase
-from src.raphael.agents.base import BaseAgent
+from agents.base import BaseAgent
 
-logger = logging.getLogger("raphael.agents.caretaker.evolution")
+logger = logging.getLogger("agents.caretaker.evolution")
 
 
 class EvolutionAgent(BaseAgent):

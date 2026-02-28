@@ -1,7 +1,7 @@
 import logging
 from typing import Optional, Dict, Any
-from src.raphael.core.schemas import SystemEvent, EventType
-from src.raphael.understanding.schemas import Task
+from data.schemas import SystemEvent, EventType
+from core.understanding.schemas import Task
 
 logger = logging.getLogger(__name__)
 

@@ -16,8 +16,8 @@ from .policy import policy_registry
 from pydantic import BaseModel
 from .roles import role_registry
 from .state_cache import node_cache
-from raphael.core.bus.redis_bus import RedisEventBus
-from raphael.core.bus.event_bus import Event
+from event_bus.redis_bus import RedisEventBus
+from event_bus.event_bus import Event
 from . import bus  # Import the singleton module
 from .perception import perception_service  # Import perception service
 from .memory import episodic_memory  # Import episodic memory

@@ -2,11 +2,11 @@ import pytest
 import asyncio
 from typing import Any
 
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
-from src.raphael.agents.coder import CodingAgent
-from src.raphael.execution.tool_registry import ToolRegistry
-from src.raphael.execution.tools import BashExecutionTool, PythonExecutionTool
+from event_bus.event_bus import SystemEventBus
+from data.schemas import SystemEvent, EventType, LayerContext
+from agents.coder import CodingAgent
+from core.execution.tool_registry import ToolRegistry
+from core.execution.tools import BashExecutionTool, PythonExecutionTool
 
 
 @pytest.mark.asyncio

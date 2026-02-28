@@ -1,6 +1,6 @@
 import asyncio
 from typing import List
-from raphael.ai_router.embedding_client import EmbeddingClient
+from ai_router.embedding_client import EmbeddingClient
 import logging
 
 logging.basicConfig(level=logging.INFO)

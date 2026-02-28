@@ -1,8 +1,8 @@
 import logging
 
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.swarm.orchestrator import SwarmOrchestrator
+from data.schemas import SystemEvent, EventType, LayerContext
+from event_bus.event_bus import SystemEventBus
+from swarm.orchestrator import SwarmOrchestrator
 
 logger = logging.getLogger(__name__)
 

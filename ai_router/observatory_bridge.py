@@ -88,7 +88,7 @@ class ObservatoryBridge:
         def forwarder(payload: Any) -> None:
             if self._redis_bus and self._running:
                 try:
-                    from raphael.core.bus.event_bus import Event
+                    from event_bus.event_bus import Event
 
                     event = Event(
                         topic=redis_topic,

@@ -1,6 +1,6 @@
 import logging
 from typing import Dict, Any, Callable, Awaitable
-from src.raphael.core.schemas import SystemEvent
+from data.schemas import SystemEvent
 
 logger = logging.getLogger(__name__)
 

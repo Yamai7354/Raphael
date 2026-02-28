@@ -1,6 +1,6 @@
 import pytest
-from src.raphael.swarm.dynamics import SwarmMetabolism, AgentGenerationManager
-from src.raphael.agents.base import BaseAgent
+from swarm.dynamics import SwarmMetabolism, AgentGenerationManager
+from agents.base import BaseAgent
 
 # Dummy Agent for testing
 class DummyAgent(BaseAgent):

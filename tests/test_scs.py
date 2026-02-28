@@ -10,7 +10,7 @@ sys.path.append(project_root)
 # Setup logging
 logging.basicConfig(level=logging.INFO, format="%(name)s - %(levelname)s - %(message)s")
 
-from src.raphael.agents.caretaker.controller import CaretakerController
+from agents.caretaker.controller import CaretakerController
 
 
 async def main():

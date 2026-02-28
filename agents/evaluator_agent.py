@@ -2,11 +2,11 @@ import logging
 from typing import Any, Dict, List
 from datetime import datetime
 
-from src.raphael.agents.base import BaseAgent
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
+from agents.base import BaseAgent
+from event_bus.event_bus import SystemEventBus
+from data.schemas import SystemEvent, EventType, LayerContext
 
-logger = logging.getLogger("raphael.agents.evaluator")
+logger = logging.getLogger("agents.evaluator")
 
 
 class EvaluatorAgent(BaseAgent):

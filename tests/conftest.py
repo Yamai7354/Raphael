@@ -1,12 +1,12 @@
 import pytest
 from unittest.mock import AsyncMock, MagicMock
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
-from src.raphael.memory.working_memory import WorkingMemory
-from src.raphael.memory.episodic_memory import EpisodicMemory
-from src.raphael.memory.operational_kg import OperationalKG
-from src.raphael.memory.research_kg import ResearchKG
-from src.raphael.memory.vector_store import VectorStore
+from event_bus.event_bus import SystemEventBus
+from data.schemas import SystemEvent, EventType, LayerContext
+from ai_router.working_memory import WorkingMemory
+from core.memory.episodic_memory.episodic_memory import EpisodicMemory
+from core.memory.knowledge_graph.operational_kg import OperationalKG
+from core.research.research_kg import ResearchKG
+from core.memory.semantic_memory.vector_store import VectorStore
 
 
 @pytest.fixture

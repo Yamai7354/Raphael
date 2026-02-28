@@ -1,8 +1,8 @@
 import logging
 import asyncio
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.environment.monitor import SystemMonitor
+from data.schemas import SystemEvent, EventType, LayerContext
+from event_bus.event_bus import SystemEventBus
+from core.environment.monitor import SystemMonitor
 
 logger = logging.getLogger(__name__)
 

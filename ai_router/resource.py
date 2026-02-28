@@ -1,8 +1,8 @@
 import logging
-from raphael.core.planning.resource_manager import ResourceManager
+from core.planner.resource_manager import ResourceManager
 from .working_memory import working_memory
 from . import bus
-from raphael.core.bus.event_bus import Event
+from event_bus.event_bus import Event
 
 logger = logging.getLogger("ai_router.resource")
 

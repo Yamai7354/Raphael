@@ -1,8 +1,8 @@
 import pytest
 import asyncio
-from src.raphael.learning.rewards import RewardGenerator
-from src.raphael.learning.skill_engine import SkillManager
-from src.raphael.learning.policy_engine import PolicyManager
+from core.learning.rewards import RewardGenerator
+from core.learning.skill_engine import SkillManager
+from core.learning.policy_engine import PolicyManager
 
 
 def test_reward_generator():

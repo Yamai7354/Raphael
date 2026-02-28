@@ -1,7 +1,7 @@
 import logging
 from typing import Dict, Optional
 from uuid import UUID
-from src.raphael.understanding.schemas import Task, TaskStatus
+from core.understanding.schemas import Task, TaskStatus
 
 logger = logging.getLogger(__name__)
 

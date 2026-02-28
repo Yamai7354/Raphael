@@ -1,5 +1,5 @@
 from typing import List
-from src.raphael.understanding.schemas import Task, SubTask
+from core.understanding.schemas import Task, SubTask
 import re
 
 

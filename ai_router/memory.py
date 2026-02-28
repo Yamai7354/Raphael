@@ -2,8 +2,8 @@ import logging
 import json
 from typing import Optional, Dict, Any
 
-from raphael.core.models.task import Task
-from raphael.core.bus.event_bus import Event
+from core.understanding.schemas import Task
+from event_bus.event_bus import Event
 from .database import db_manager
 
 logger = logging.getLogger("ai_router.memory")

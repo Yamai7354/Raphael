@@ -47,7 +47,7 @@ class QdrantVectorStore(MemoryContract):
 
     async def store(self, payload: MemoryPayload):
         """Store semantic memory as a vector."""
-        from raphael.ai_router.embedding_client import EmbeddingClient
+        from ai_router.embedding_client import EmbeddingClient
 
         client = EmbeddingClient()
 
@@ -75,7 +75,7 @@ class QdrantVectorStore(MemoryContract):
 
     async def retrieve(self, query: str, filters: Dict[str, Any]) -> List[MemoryPayload]:
         """Retrieve using vector similarity."""
-        from raphael.ai_router.embedding_client import EmbeddingClient
+        from ai_router.embedding_client import EmbeddingClient
 
         client = EmbeddingClient()
 

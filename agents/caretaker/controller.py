@@ -2,12 +2,12 @@ import logging
 import datetime
 import os
 from typing import List, Dict, Any, Optional
-from src.raphael.agents.base import BaseAgent
-from src.raphael.agents.caretaker.auditor import WorkspaceAuditor
-from src.raphael.agents.caretaker.sage import DocumentationSage
-from src.raphael.agents.caretaker.evolution import EvolutionAgent
+from agents.base import BaseAgent
+from agents.caretaker.auditor import WorkspaceAuditor
+from agents.caretaker.sage import DocumentationSage
+from agents.caretaker.evolution import EvolutionAgent
 
-logger = logging.getLogger("raphael.agents.caretaker.controller")
+logger = logging.getLogger("agents.caretaker.controller")
 
 
 class CaretakerController(BaseAgent):

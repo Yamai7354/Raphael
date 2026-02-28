@@ -10,7 +10,7 @@ from dataclasses import dataclass
 from typing import Optional
 from enum import Enum
 from .roles import QuantizationPolicy
-from raphael.core.models.task import Task, ExecutionMode
+from core.understanding.schemas import Task, ExecutionMode
 from .constraints import ethical_validator
 
 logger = logging.getLogger("ai_router.policy")

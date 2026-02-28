@@ -1,8 +1,8 @@
 import pytest
 import asyncio
-from src.raphael.research.curiosity import CuriosityEngine
-from src.raphael.research.hypothesis import HypothesisGenerator
-from src.raphael.research.designer import ExperimentDesigner
+from core.research.curiosity import CuriosityEngine
+from core.research.hypothesis import HypothesisGenerator
+from core.research.designer import ExperimentDesigner
 
 
 def test_curiosity_engine():

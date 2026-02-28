@@ -1,9 +1,9 @@
 import pytest
 import asyncio
-from src.raphael.execution.tool_registry import BaseTool, ToolRegistry
-from src.raphael.execution.system_control import SystemController
-from src.raphael.execution.code_runner import SandboxedCodeRunner
-from src.raphael.execution.automation import TaskAutomator
+from core.execution.tool_registry import BaseTool, ToolRegistry
+from core.execution.system_control import SystemController
+from core.execution.code_runner import SandboxedCodeRunner
+from core.execution.automation import TaskAutomator
 
 
 class MockCalculator(BaseTool):

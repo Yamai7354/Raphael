@@ -2,7 +2,7 @@ import logging
 import asyncio
 from typing import Dict, Any, List
 
-from src.raphael.agents.base import BaseAgent
+from agents.base import BaseAgent
 
 logger = logging.getLogger(__name__)
 

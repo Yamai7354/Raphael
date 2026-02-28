@@ -2,12 +2,12 @@ import pytest
 import os
 import aiofiles
 import asyncio
-from src.raphael.environment.constraints import SandboxConfig
-from src.raphael.environment.filesystem import SecureFileSystem
-from src.raphael.environment.network import NetworkAccessor
-from src.raphael.environment.monitor import SystemMonitor
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.core.schemas import EventType
+from core.environment.constraints import SandboxConfig
+from core.environment.filesystem import SecureFileSystem
+from core.environment.network import NetworkAccessor
+from core.environment.monitor import SystemMonitor
+from event_bus.event_bus import SystemEventBus
+from data.schemas import EventType
 
 
 async def test_sandbox_constraints_paths():

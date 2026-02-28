@@ -237,7 +237,7 @@ class GraphOptimizer:
                 all_models.update(node.get("capabilities", {}).get("models", []))
 
             # Create Model nodes
-            from raphael.ai_router.embedding_client import EmbeddingClient
+            from ai_router.embedding_client import EmbeddingClient
             import asyncio
 
             router = EmbeddingClient()

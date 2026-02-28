@@ -13,7 +13,7 @@ if src_path not in sys.path:
     sys.path.append(src_path)
 
 import speech_recognition as sr
-from raphael.agents.voice_utils import HanamaruSynthesizer
+from agents.voice_utils import HanamaruSynthesizer
 import ollama
 
 # Configure logging

@@ -2,7 +2,7 @@ import logging
 import asyncio
 from typing import Dict, Any, List
 from neo4j import GraphDatabase
-from src.raphael.agents.stewardship_base import DatabaseStewardAgent
+from agents.stewardship_base import DatabaseStewardAgent
 
 logger = logging.getLogger(__name__)
 

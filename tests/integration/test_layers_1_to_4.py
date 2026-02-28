@@ -2,11 +2,11 @@ import pytest
 import asyncio
 from unittest.mock import MagicMock
 
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
-from src.raphael.perception.router import PerceptionRouter
-from src.raphael.understanding.router import UnderstandingRouter
-from src.raphael.spine.router import SpineRouter
+from event_bus.event_bus import SystemEventBus
+from data.schemas import SystemEvent, EventType, LayerContext
+from core.perception.router import PerceptionRouter
+from core.understanding.router import UnderstandingRouter
+from spine.router import SpineRouter
 
 
 @pytest.mark.asyncio

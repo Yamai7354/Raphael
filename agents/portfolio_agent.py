@@ -2,7 +2,7 @@ import logging
 import subprocess
 from typing import Any
 
-from src.raphael.agents.base import BaseAgent
+from agents.base import BaseAgent
 
 logger = logging.getLogger(__name__)
 

@@ -1,7 +1,7 @@
 import logging
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.research.curiosity import CuriosityEngine
+from data.schemas import SystemEvent, EventType, LayerContext
+from event_bus.event_bus import SystemEventBus
+from core.research.curiosity import CuriosityEngine
 
 logger = logging.getLogger(__name__)
 

@@ -16,7 +16,7 @@ from typing import Dict, Any, Optional, List, Set, Type
 from enum import Enum
 from pydantic import BaseModel, ValidationError
 
-from raphael.core.planning.sandbox import SandboxLimits, LocalProcessSandbox
+from core.planner.sandbox import SandboxLimits, LocalProcessSandbox
 
 logger = logging.getLogger("ai_router.tools")
 

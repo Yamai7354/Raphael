@@ -1,8 +1,8 @@
 import pytest
 import asyncio
-from src.raphael.evaluation.qa import QualityAssessor
-from src.raphael.evaluation.critic import CriticAgent
-from src.raphael.evaluation.sandbox import SandboxManager
+from core.evaluation.qa import QualityAssessor
+from core.evaluation.critic import CriticAgent
+from core.evaluation.sandbox import SandboxManager
 
 
 def test_quality_assessor():

@@ -12,9 +12,9 @@ from typing import Any, Dict, List, Optional
 
 from fastapi import HTTPException
 from .state_cache import node_cache
-from raphael.core.models.task import Task
+from core.understanding.schemas import Task
 from .policy import policy_registry
-from raphael.core.bus.event_bus import Event
+from event_bus.event_bus import Event
 from . import bus  # Import singleton
 from .perception import perception_service
 from .resource import resource_manager

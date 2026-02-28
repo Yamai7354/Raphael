@@ -1,10 +1,10 @@
 import logging
 from typing import Dict, Any
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.understanding.parser import TaskParser
-from src.raphael.understanding.decomposition import DecompositionEngine
-from src.raphael.understanding.goal_manager import GoalManager
+from data.schemas import SystemEvent, EventType, LayerContext
+from event_bus.event_bus import SystemEventBus
+from core.understanding.parser import TaskParser
+from core.understanding.decomposition import DecompositionEngine
+from core.understanding.goal_manager import GoalManager
 
 logger = logging.getLogger(__name__)
 

@@ -1,12 +1,12 @@
 import pytest
 import asyncio
 from datetime import datetime, timezone
-from src.raphael.perception.normalizer import InputNormalizer
-from src.raphael.perception.models import MockVisionModel, MockSpeechModel, TextUnderstandingModel
-from src.raphael.perception.attention import AttentionFilter
-from src.raphael.perception.router import PerceptionRouter
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
+from core.perception.normalizer import InputNormalizer
+from core.perception.models import MockVisionModel, MockSpeechModel, TextUnderstandingModel
+from core.perception.attention import AttentionFilter
+from core.perception.router import PerceptionRouter
+from event_bus.event_bus import SystemEventBus
+from data.schemas import SystemEvent, EventType, LayerContext
 
 
 def test_input_normalizer():

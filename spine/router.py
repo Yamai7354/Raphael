@@ -2,12 +2,12 @@ import logging
 import asyncio
 from typing import Dict, Any
 
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.spine.resources import ResourceManager
-from src.raphael.spine.safety import SafetyGate, SecurityViolation
-from src.raphael.spine.health import HealthMonitor
-from src.raphael.spine.identity import PermissionsValidator, PermissionDenied
+from data.schemas import SystemEvent, EventType, LayerContext
+from event_bus.event_bus import SystemEventBus
+from spine.resources import ResourceManager
+from spine.safety import SafetyGate, SecurityViolation
+from spine.health import HealthMonitor
+from spine.identity import PermissionsValidator, PermissionDenied
 
 logger = logging.getLogger(__name__)
 

@@ -1,12 +1,12 @@
 import pytest
 import asyncio
-from src.raphael.spine.resources import ResourceManager
-from src.raphael.spine.safety import SafetyGate, SecurityViolation
-from src.raphael.spine.identity import PermissionsValidator, PermissionDenied
-from src.raphael.spine.health import HealthMonitor
-from src.raphael.spine.router import SpineRouter
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
+from spine.resources import ResourceManager
+from spine.safety import SafetyGate, SecurityViolation
+from spine.identity import PermissionsValidator, PermissionDenied
+from spine.health import HealthMonitor
+from spine.router import SpineRouter
+from event_bus.event_bus import SystemEventBus
+from data.schemas import SystemEvent, EventType, LayerContext
 
 
 def test_resource_manager_queueing():

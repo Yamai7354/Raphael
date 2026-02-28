@@ -4,12 +4,12 @@ import asyncio
 from typing import Any, Dict, List, Optional
 from datetime import datetime
 
-from src.raphael.agents.base import BaseAgent
-from src.raphael.core.event_bus import SystemEventBus
-from src.raphael.core.schemas import SystemEvent, EventType, LayerContext
-from src.raphael.understanding.schemas import Task
+from agents.base import BaseAgent
+from event_bus.event_bus import SystemEventBus
+from data.schemas import SystemEvent, EventType, LayerContext
+from core.understanding.schemas import Task
 
-logger = logging.getLogger("raphael.agents.auditor")
+logger = logging.getLogger("agents.auditor")
 
 
 class AuditorAgent(BaseAgent):

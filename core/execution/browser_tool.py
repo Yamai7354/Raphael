@@ -3,7 +3,7 @@ from typing import Dict, Any
 import requests
 from bs4 import BeautifulSoup
 
-from src.raphael.execution.tool_registry import BaseTool
+from core.execution.tool_registry import BaseTool
 
 logger = logging.getLogger(__name__)
 
