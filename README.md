@@ -15,7 +15,7 @@ Raphael is a modular AI platform built around the concept of cooperating AI agen
 
 ## Project Structure
 
-```
+```text
 raphael/
 ├── agents/          # Agent implementations (explorer, factory, caretaker, validator)
 ├── ai_router/       # LLM routing, model selection, and request orchestration

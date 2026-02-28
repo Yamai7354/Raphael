@@ -9,10 +9,10 @@ Connects directly to Neo4j (or works with CSV exports) to:
 """
 
 import json
-import os
 import logging
+import os
 from datetime import datetime
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 from neo4j import GraphDatabase
 
@@ -29,7 +29,9 @@ CONFIG_PATH = os.path.join(
 
 
 class GraphOptimizer:
-    def __init__(self, uri: str = None, user: str = None, password: str = None):
+    def __init__(
+        self, uri: str | None = None, user: str | None = None, password: str | None = None
+    ):
         self.driver = GraphDatabase.driver(
             uri or NEO4J_URI,
             auth=(user or NEO4J_USER, password or NEO4J_PASSWORD),
@@ -42,9 +44,9 @@ class GraphOptimizer:
     # Analysis
     # ──────────────────────────────────────────────
 
-    def analyze_structure(self) -> Dict[str, Any]:
+    def analyze_structure(self) -> dict[str, Any]:
         """Get a full structural analysis of the knowledge graph."""
-        report: Dict[str, Any] = {"timestamp": datetime.now().isoformat()}
+        report: dict[str, Any] = {"timestamp": datetime.now().isoformat()}
 
         with self.driver.session() as session:
             # Node counts by label
@@ -115,7 +117,7 @@ class GraphOptimizer:
 
         return report
 
-    def find_optimization_opportunities(self) -> List[Dict[str, str]]:
+    def find_optimization_opportunities(self) -> list[dict[str, Any]]:
         """Identify suboptimal patterns and suggest improvements."""
         suggestions = []
 
@@ -218,10 +220,10 @@ class GraphOptimizer:
     # Auto-Enrich from config.json
     # ──────────────────────────────────────────────
 
-    def enrich_from_config(self) -> Dict[str, Any]:
+    def enrich_from_config(self) -> dict[str, Any]:
         """Auto-create Model nodes and infer capabilities from config.json model_mappings."""
         try:
-            with open(CONFIG_PATH, "r") as f:
+            with open(CONFIG_PATH) as f:
                 config = json.load(f)
         except Exception as e:
             logger.error("Cannot load config.json: %s", e)
@@ -237,8 +239,10 @@ class GraphOptimizer:
                 all_models.update(node.get("capabilities", {}).get("models", []))
 
             # Create Model nodes
-            from ai_router.embedding_client import EmbeddingClient
             import asyncio
+
+            from ai_router.embedding_client import EmbeddingClient
+            from ai_router.embeddings import EmbeddingLayer
 
             router = EmbeddingClient()
 
@@ -309,7 +313,7 @@ class GraphOptimizer:
     # Export
     # ──────────────────────────────────────────────
 
-    def export_snapshot(self, output_dir: str = ".") -> Dict[str, str]:
+    def export_snapshot(self, output_dir: str = ".") -> dict[str, Any]:
         """Export the full graph as JSON for backup/migration."""
         snapshot = {
             "timestamp": datetime.now().isoformat(),
@@ -372,7 +376,7 @@ class GraphOptimizer:
     # Full Pipeline
     # ──────────────────────────────────────────────
 
-    def optimize(self, auto_enrich: bool = True, export: bool = False) -> Dict:
+    def optimize(self, auto_enrich: bool = True, export: bool = False) -> dict:
         """Run the full optimization pipeline."""
         logger.info("=" * 60)
         logger.info("GRAPH OPTIMIZATION PIPELINE")

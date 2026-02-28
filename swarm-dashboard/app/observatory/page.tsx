@@ -8,7 +8,6 @@ import {
   Activity,
   Server,
   Database,
-  Cpu,
   HardDrive,
   RefreshCw,
 } from "lucide-react";
@@ -292,9 +291,9 @@ export default function NetworkObservatoryPage() {
                 </div>
                 {i < services.length - 1 && (
                   <div className="flex items-center gap-1">
-                    <div className="w-8 h-px bg-gradient-to-r from-primary/40 to-primary/10" />
+                    <div className="w-8 h-px bg-linear-to-r from-primary/40 to-primary/10" />
                     <div className="w-1.5 h-1.5 rounded-full bg-primary/30" />
-                    <div className="w-8 h-px bg-gradient-to-l from-primary/40 to-primary/10" />
+                    <div className="w-8 h-px bg-linear-to-l from-primary/40 to-primary/10" />
                   </div>
                 )}
               </div>
