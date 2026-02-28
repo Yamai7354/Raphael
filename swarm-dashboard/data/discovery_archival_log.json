@@ -12327,6 +12327,166 @@
       "reviewer": "Kenji",
       "archivist": "Hai_239",
       "score": 0.7241
+    },
+    {
+      "time": "2026-02-28T10:43:47.772323+00:00",
+      "evidence_id": "5f858c77-27d5-4746-b9ba-a64236b0eb31",
+      "explorer": "Shun",
+      "reviewer": "Seok_218",
+      "archivist": "Sora",
+      "score": 0.723
+    },
+    {
+      "time": "2026-02-28T10:43:48.060196+00:00",
+      "evidence_id": "d0ec335a-ff04-4a9d-88dd-bd5c120b1989",
+      "explorer": "Hina",
+      "reviewer": "Seok_218",
+      "archivist": "Kook_245",
+      "score": 0.7787
+    },
+    {
+      "time": "2026-02-28T10:50:11.617952+00:00",
+      "evidence_id": "e909f762-13d6-43ac-97e4-53a26b67f3c4",
+      "explorer": "Hina",
+      "reviewer": "Hoang",
+      "archivist": "Sora",
+      "score": 0.7151
+    },
+    {
+      "time": "2026-02-28T10:51:02.468997+00:00",
+      "evidence_id": "f418b186-87a5-4ad9-873b-86dbe949bebf",
+      "explorer": "Shun",
+      "reviewer": "Hoang",
+      "archivist": "Hai_239",
+      "score": 0.7111
+    },
+    {
+      "time": "2026-02-28T10:51:02.761793+00:00",
+      "evidence_id": "0d090faa-0cef-419b-b484-df33f8874300",
+      "explorer": "Hina",
+      "reviewer": "Hoang",
+      "archivist": "Tae_108",
+      "score": 0.7136
+    },
+    {
+      "time": "2026-02-28T10:51:20.964609+00:00",
+      "evidence_id": "8fed18bb-4c94-4380-8be4-566a0022ab2d",
+      "explorer": "Hina",
+      "reviewer": "Hoang",
+      "archivist": "Kook_775",
+      "score": 0.7295
+    },
+    {
+      "time": "2026-02-28T10:51:29.733835+00:00",
+      "evidence_id": "5ecadb49-993b-40a2-af34-52bd2a832443",
+      "explorer": "Hina",
+      "reviewer": "Hoang",
+      "archivist": "Hai_239",
+      "score": 0.7213
+    },
+    {
+      "time": "2026-02-28T10:51:49.922242+00:00",
+      "evidence_id": "a18dd350-862c-4164-890d-666deb803445",
+      "explorer": "Hina",
+      "reviewer": "Hoang",
+      "archivist": "Kook_245",
+      "score": 0.7426
+    },
+    {
+      "time": "2026-02-28T10:52:34.464563+00:00",
+      "evidence_id": "89c5fe4a-3e79-47e9-9a04-6b2bff8b300a",
+      "explorer": "Hina",
+      "reviewer": "Kenji",
+      "archivist": "Kook_245",
+      "score": 0.7535
+    },
+    {
+      "time": "2026-02-28T10:52:46.395141+00:00",
+      "evidence_id": "3ef14504-da37-4070-9e52-d6ef63e7d489",
+      "explorer": "Hina",
+      "reviewer": "Seok_218",
+      "archivist": "Kook_245",
+      "score": 0.7325
+    },
+    {
+      "time": "2026-02-28T10:53:07.043980+00:00",
+      "evidence_id": "c1f619f0-9582-447d-a0b7-8216051b0c2b",
+      "explorer": "Hina",
+      "reviewer": "Aiko",
+      "archivist": "Kook_245",
+      "score": 0.7409
+    },
+    {
+      "time": "2026-02-28T10:53:43.090202+00:00",
+      "evidence_id": "c635407a-259e-4f9a-aa31-7dfff5dbf7e1",
+      "explorer": "Hina",
+      "reviewer": "Hee_871",
+      "archivist": "Kook_245",
+      "score": 0.7163
+    },
+    {
+      "time": "2026-02-28T10:53:52.557949+00:00",
+      "evidence_id": "34f1d6b0-29b6-4b08-a1db-4832b0efb49e",
+      "explorer": "Hina",
+      "reviewer": "Hee_871",
+      "archivist": "Kook_245",
+      "score": 0.7049
+    },
+    {
+      "time": "2026-02-28T10:54:01.417748+00:00",
+      "evidence_id": "fa32b2ad-f0c3-4e5f-9860-a87d3cc3c551",
+      "explorer": "Hina",
+      "reviewer": "Hee_871",
+      "archivist": "Kook_245",
+      "score": 0.7369
+    },
+    {
+      "time": "2026-02-28T10:56:05.820322+00:00",
+      "evidence_id": "2328d15d-4ed2-4bee-9700-c91d65bffc41",
+      "explorer": "Hina",
+      "reviewer": "Hee_871",
+      "archivist": "Kook_245",
+      "score": 0.716
+    },
+    {
+      "time": "2026-02-28T10:56:32.614906+00:00",
+      "evidence_id": "3a3ba113-9148-47bd-b8c4-26ee62120f0d",
+      "explorer": "Shun",
+      "reviewer": "Hee_871",
+      "archivist": "Kook_617",
+      "score": 0.7323
+    },
+    {
+      "time": "2026-02-28T10:57:26.294610+00:00",
+      "evidence_id": "e7126ba6-bcb6-4075-8a29-3d3dd9dcb0d9",
+      "explorer": "Shun",
+      "reviewer": "Seok_218",
+      "archivist": "Sora",
+      "score": 0.7829
+    },
+    {
+      "time": "2026-02-28T10:57:36.554546+00:00",
+      "evidence_id": "db42b720-5268-4384-9dfd-f5569f776eb2",
+      "explorer": "Shun",
+      "reviewer": "Seok_218",
+      "archivist": "Sora",
+      "score": 0.7258
+    },
+    {
+      "time": "2026-02-28T10:57:54.810443+00:00",
+      "evidence_id": "2f12c294-0110-483e-921d-69894be2d767",
+      "explorer": "Shun",
+      "reviewer": "Seok_218",
+      "archivist": "Sora",
+      "score": 0.7392
+    },
+    {
+      "time": "2026-02-28T10:58:59.716930+00:00",
+      "evidence_id": "33d78edc-f48b-406a-90db-485b8f478f08",
+      "explorer": "Shun",
+      "reviewer": "Hee_359",
+      "archivist": "Kaito",
+      "score": 0.7111
     }
   ]
 }

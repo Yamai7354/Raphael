@@ -3,22 +3,22 @@
     "Takumi": 86.06,
     "Mio": 2218.83,
     "Riku": 349.13,
-    "Hina": 11279.04,
+    "Hina": 11504.07,
     "Hikaru": 22.2,
-    "Sora": 2568.99,
+    "Sora": 2638.47,
     "Kouta": 17.06,
     "Akira": 2379.61,
-    "Kaito": 3671.33,
-    "Shun": 11005.13,
+    "Kaito": 3685.02,
+    "Shun": 11126.38,
     "Takashi": 1748.8,
     "Daiki": 1980.62,
     "Phuc_214": 459.16,
-    "Aiko": 1619.26,
+    "Aiko": 1630.45,
     "Hee_405": 11.1,
     "Tae_840": 583.03,
     "Hee_665": 11.34,
     "Tae_964": 512.6,
-    "Kenji": 1760.75,
+    "Kenji": 1772.02,
     "Hee_180": 435.23,
     "Dong_944": 334.03,
     "Tae_674": 346.95,
@@ -31,17 +31,17 @@
     "Jiho_623": 111.13,
     "Jiho_647": 166.31,
     "Seok_308": 167.85,
-    "Hai_239": 1720.74,
-    "Hoang": 1146.01,
-    "Kook_617": 2054.23,
-    "Hee_871": 1392.82,
-    "Seok_218": 1751.96,
-    "Kook_775": 1912.2,
+    "Hai_239": 1748.2,
+    "Hoang": 1212.36,
+    "Kook_617": 2068.09,
+    "Hee_871": 1448.06,
+    "Seok_218": 1819.33,
+    "Kook_775": 1926.04,
     "Jin_905": 13.97,
-    "Hee_359": 1058.41,
+    "Hee_359": 1069.39,
     "Tae_772": 2529.42,
-    "Kook_245": 1540.27,
-    "Tae_108": 2400.81,
+    "Kook_245": 1665.26,
+    "Tae_108": 2414.52,
     "Hee_692": 1864.97,
     "Hee_249": 1114.3
   },
@@ -18536,6 +18536,246 @@
         "Shun": 17.24,
         "Kenji": 11.07,
         "Hai_239": 13.79
+      }
+    },
+    {
+      "time": "2026-02-28T10:43:47.766652+00:00",
+      "explorer": "Shun",
+      "reviewer": "Seok_218",
+      "archivist": "Sora",
+      "score": 0.723,
+      "rewards": {
+        "Shun": 17.23,
+        "Seok_218": 11.06,
+        "Sora": 13.78
+      }
+    },
+    {
+      "time": "2026-02-28T10:43:48.055224+00:00",
+      "explorer": "Hina",
+      "reviewer": "Seok_218",
+      "archivist": "Kook_245",
+      "score": 0.7787,
+      "rewards": {
+        "Hina": 17.79,
+        "Seok_218": 11.45,
+        "Kook_245": 14.23
+      }
+    },
+    {
+      "time": "2026-02-28T10:50:11.614246+00:00",
+      "explorer": "Hina",
+      "reviewer": "Hoang",
+      "archivist": "Sora",
+      "score": 0.7151,
+      "rewards": {
+        "Hina": 17.15,
+        "Hoang": 11.01,
+        "Sora": 13.72
+      }
+    },
+    {
+      "time": "2026-02-28T10:51:02.465534+00:00",
+      "explorer": "Shun",
+      "reviewer": "Hoang",
+      "archivist": "Hai_239",
+      "score": 0.7111,
+      "rewards": {
+        "Shun": 17.11,
+        "Hoang": 10.98,
+        "Hai_239": 13.69
+      }
+    },
+    {
+      "time": "2026-02-28T10:51:02.758552+00:00",
+      "explorer": "Hina",
+      "reviewer": "Hoang",
+      "archivist": "Tae_108",
+      "score": 0.7136,
+      "rewards": {
+        "Hina": 17.14,
+        "Hoang": 11.0,
+        "Tae_108": 13.71
+      }
+    },
+    {
+      "time": "2026-02-28T10:51:20.961001+00:00",
+      "explorer": "Hina",
+      "reviewer": "Hoang",
+      "archivist": "Kook_775",
+      "score": 0.7295,
+      "rewards": {
+        "Hina": 17.3,
+        "Hoang": 11.11,
+        "Kook_775": 13.84
+      }
+    },
+    {
+      "time": "2026-02-28T10:51:29.729022+00:00",
+      "explorer": "Hina",
+      "reviewer": "Hoang",
+      "archivist": "Hai_239",
+      "score": 0.7213,
+      "rewards": {
+        "Hina": 17.21,
+        "Hoang": 11.05,
+        "Hai_239": 13.77
+      }
+    },
+    {
+      "time": "2026-02-28T10:51:49.918994+00:00",
+      "explorer": "Hina",
+      "reviewer": "Hoang",
+      "archivist": "Kook_245",
+      "score": 0.7426,
+      "rewards": {
+        "Hina": 17.43,
+        "Hoang": 11.2,
+        "Kook_245": 13.94
+      }
+    },
+    {
+      "time": "2026-02-28T10:52:34.459564+00:00",
+      "explorer": "Hina",
+      "reviewer": "Kenji",
+      "archivist": "Kook_245",
+      "score": 0.7535,
+      "rewards": {
+        "Hina": 17.54,
+        "Kenji": 11.27,
+        "Kook_245": 14.03
+      }
+    },
+    {
+      "time": "2026-02-28T10:52:46.389938+00:00",
+      "explorer": "Hina",
+      "reviewer": "Seok_218",
+      "archivist": "Kook_245",
+      "score": 0.7325,
+      "rewards": {
+        "Hina": 17.32,
+        "Seok_218": 11.13,
+        "Kook_245": 13.86
+      }
+    },
+    {
+      "time": "2026-02-28T10:53:07.040677+00:00",
+      "explorer": "Hina",
+      "reviewer": "Aiko",
+      "archivist": "Kook_245",
+      "score": 0.7409,
+      "rewards": {
+        "Hina": 17.41,
+        "Aiko": 11.19,
+        "Kook_245": 13.93
+      }
+    },
+    {
+      "time": "2026-02-28T10:53:43.086808+00:00",
+      "explorer": "Hina",
+      "reviewer": "Hee_871",
+      "archivist": "Kook_245",
+      "score": 0.7163,
+      "rewards": {
+        "Hina": 17.16,
+        "Hee_871": 11.01,
+        "Kook_245": 13.73
+      }
+    },
+    {
+      "time": "2026-02-28T10:53:52.552606+00:00",
+      "explorer": "Hina",
+      "reviewer": "Hee_871",
+      "archivist": "Kook_245",
+      "score": 0.7049,
+      "rewards": {
+        "Hina": 17.05,
+        "Hee_871": 10.93,
+        "Kook_245": 13.64
+      }
+    },
+    {
+      "time": "2026-02-28T10:54:01.413292+00:00",
+      "explorer": "Hina",
+      "reviewer": "Hee_871",
+      "archivist": "Kook_245",
+      "score": 0.7369,
+      "rewards": {
+        "Hina": 17.37,
+        "Hee_871": 11.16,
+        "Kook_245": 13.9
+      }
+    },
+    {
+      "time": "2026-02-28T10:56:05.816577+00:00",
+      "explorer": "Hina",
+      "reviewer": "Hee_871",
+      "archivist": "Kook_245",
+      "score": 0.716,
+      "rewards": {
+        "Hina": 17.16,
+        "Hee_871": 11.01,
+        "Kook_245": 13.73
+      }
+    },
+    {
+      "time": "2026-02-28T10:56:32.610168+00:00",
+      "explorer": "Shun",
+      "reviewer": "Hee_871",
+      "archivist": "Kook_617",
+      "score": 0.7323,
+      "rewards": {
+        "Shun": 17.32,
+        "Hee_871": 11.13,
+        "Kook_617": 13.86
+      }
+    },
+    {
+      "time": "2026-02-28T10:57:26.291504+00:00",
+      "explorer": "Shun",
+      "reviewer": "Seok_218",
+      "archivist": "Sora",
+      "score": 0.7829,
+      "rewards": {
+        "Shun": 17.83,
+        "Seok_218": 11.48,
+        "Sora": 14.26
+      }
+    },
+    {
+      "time": "2026-02-28T10:57:36.551361+00:00",
+      "explorer": "Shun",
+      "reviewer": "Seok_218",
+      "archivist": "Sora",
+      "score": 0.7258,
+      "rewards": {
+        "Shun": 17.26,
+        "Seok_218": 11.08,
+        "Sora": 13.81
+      }
+    },
+    {
+      "time": "2026-02-28T10:57:54.806602+00:00",
+      "explorer": "Shun",
+      "reviewer": "Seok_218",
+      "archivist": "Sora",
+      "score": 0.7392,
+      "rewards": {
+        "Shun": 17.39,
+        "Seok_218": 11.17,
+        "Sora": 13.91
+      }
+    },
+    {
+      "time": "2026-02-28T10:58:59.704809+00:00",
+      "explorer": "Shun",
+      "reviewer": "Hee_359",
+      "archivist": "Kaito",
+      "score": 0.7111,
+      "rewards": {
+        "Shun": 17.11,
+        "Hee_359": 10.98,
+        "Kaito": 13.69
       }
     }
   ]
