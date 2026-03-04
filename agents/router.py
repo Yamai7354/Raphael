@@ -3,19 +3,19 @@ from typing import Any
 from data.schemas import SystemEvent, EventType, LayerContext
 from event_bus.event_bus import SystemEventBus
 
-from agents.base import BaseAgent
+from agents.base_agent import BaseAgent
 from agents.system import SystemAgent
-from agents.coder import CodingAgent
+from agents.coder.coding_agent import CodingAgent
 from agents.remote import RemoteAgent
-from agents.planner_agent import PlannerAgent
-from agents.evaluator_agent import EvaluatorAgent
+from agents.planner.planner_agent import PlannerAgent
+from agents.evaluator.evaluator_agent import EvaluatorAgent
 from agents.auditor_agent import AuditorAgent
 from agents.neo4j_steward import Neo4jStewardAgent
 from agents.qdrant_steward import QdrantStewardAgent
 from agents.relational_steward import RelationalStewardAgent
 from agents.graph_optimizer_agent import GraphOptimizerAgent
 from agents.portfolio_agent import PortfolioAgent
-from agents.researcher import ResearchAgent
+from agents.researcher.research_agent import ResearchAgent
 from agents.universal import UniversalAgent
 from core.execution.tool_registry import ToolRegistry
 from core.execution.tools import BashExecutionTool, PythonExecutionTool
@@ -56,9 +56,9 @@ class AgentRouter:
             ),
             "agent_omega": CodingAgent(agent_id="agent_omega", tool_registry=self.tool_registry),
             "researcher": ResearchAgent(agent_id="researcher", tool_registry=self.tool_registry),
-            "planner": PlannerAgent(agent_id="planner"),
-            "evaluator": EvaluatorAgent(agent_id="evaluator"),
-            "auditor": AuditorAgent(agent_id="auditor"),
+            "planner": PlannerAgent(agent_id="planner", event_bus=self.bus),
+            "evaluator": EvaluatorAgent(agent_id="evaluator", event_bus=self.bus),
+            "auditor": AuditorAgent(agent_id="auditor", event_bus=self.bus),
             # Stewardship Agents
             "kg_steward": Neo4jStewardAgent(
                 agent_id="kg_steward",

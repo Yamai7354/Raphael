@@ -1,11 +1,12 @@
 import logging
+import os
 import uuid
 import asyncio
 from typing import Any, Dict, List, Optional
 from datetime import datetime
 
 from agents.base import BaseAgent
-from event_bus.event_bus import SystemEventBus
+from agents.api import get_event_bus
 from data.schemas import SystemEvent, EventType, LayerContext
 from core.understanding.schemas import Task
 
@@ -15,11 +16,17 @@ logger = logging.getLogger("agents.auditor")
 class AuditorAgent(BaseAgent):
     """
     Agent responsible for auditing code quality and suggesting refactorings.
-    RAPHAEL-503
+    RAPHAEL-503. Uses injected event_bus when provided (e.g. by AgentRouter).
     """
 
-    def __init__(self, agent_id: str = "Auditor", capabilities: List[str] = None):
+    def __init__(
+        self,
+        agent_id: str = "Auditor",
+        capabilities: List[str] = None,
+        event_bus: Any = None,
+    ):
         super().__init__(agent_id, capabilities or ["audit", "qa", "code_review"])
+        self._event_bus = event_bus
 
     async def execute(self, payload: Dict[str, Any]) -> Dict[str, Any]:
         """
@@ -103,7 +110,7 @@ class AuditorAgent(BaseAgent):
 
             task_obj = Task(**new_task)
 
-            bus = SystemEventBus()
+            bus = get_event_bus(self._event_bus)
             event = SystemEvent(
                 event_type=EventType.TASK_CREATED,
                 source_layer=LayerContext(layer_number=9, module_name="auditor_agent"),
