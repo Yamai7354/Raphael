@@ -1,0 +1,66 @@
+{{- if .Values.vectorMemory.enabled }}
+# ─── Vector Memory (Qdrant) ──────────────────────────────────────
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Release.Name }}-vector-memory
+  labels:
+    {{- include "research-habitat.labels" . | nindent 4 }}
+    swarm.raphael.ai/service-type: vector-memory
+spec:
+  serviceName: {{ .Release.Name }}-vector-memory
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "research-habitat.selectorLabels" . | nindent 6 }}
+      swarm.raphael.ai/service-type: vector-memory
+  template:
+    metadata:
+      labels:
+        {{- include "research-habitat.selectorLabels" . | nindent 8 }}
+        swarm.raphael.ai/service-type: vector-memory
+    spec:
+      containers:
+        - name: qdrant
+          image: "{{ .Values.vectorMemory.image.repository }}:{{ .Values.vectorMemory.image.tag }}"
+          imagePullPolicy: {{ .Values.vectorMemory.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.vectorMemory.port }}
+              name: grpc
+            - containerPort: 6334
+              name: http
+          resources:
+            {{- toYaml .Values.vectorMemory.resources | nindent 12 }}
+          volumeMounts:
+            - name: vector-data
+              mountPath: /qdrant/storage
+  volumeClaimTemplates:
+    - metadata:
+        name: vector-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: {{ .Values.vectorMemory.storage }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-vector-memory
+  labels:
+    {{- include "research-habitat.labels" . | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.vectorMemory.port }}
+      targetPort: {{ .Values.vectorMemory.port }}
+      protocol: TCP
+      name: grpc
+    - port: 6334
+      targetPort: 6334
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "research-habitat.selectorLabels" . | nindent 4 }}
+    swarm.raphael.ai/service-type: vector-memory
+{{- end }}

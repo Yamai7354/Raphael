@@ -1,0 +1,29 @@
+name: shell_executor
+description: "Execute shell commands in a sandboxed environment"
+version: "1.0.0"
+tool_type: system
+requires_capabilities:
+  - shell_access
+  - filesystem_read
+  - filesystem_write
+inputs:
+  type: object
+  properties:
+    command:
+      type: string
+      description: "Shell command to execute"
+    timeout_sec:
+      type: number
+      default: 30
+  required: [command]
+outputs:
+  type: object
+  properties:
+    exit_code:
+      type: integer
+    stdout:
+      type: string
+    stderr:
+      type: string
+timeout_sec: 30.0
+allowed_roles: [executor, admin]

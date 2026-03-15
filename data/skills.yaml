@@ -1,0 +1,99 @@
+# Controlled vocabulary for agent skills.
+# Only skills listed here (or their aliases) can create Skill nodes in Neo4j.
+# Maintained by humans; the IntakeGate enforces this as the single source of truth.
+
+skills:
+  - name: code_generation
+    category: development
+    description: "Generate, complete, or refactor code"
+    aliases: [coding, code_gen, code_writing]
+
+  - name: code_review
+    category: development
+    description: "Review code for quality, security, and correctness"
+    aliases: [review]
+
+  - name: system_design
+    category: architecture
+    description: "Design system architecture and component relationships"
+    aliases: [architecture, system_architecture]
+
+  - name: research_analysis
+    category: research
+    description: "Analyze research papers, data, and findings"
+    aliases: [research, analysis]
+
+  - name: task_planning
+    category: planning
+    description: "Decompose goals into executable task plans"
+    aliases: [planning, decomposition]
+
+  - name: knowledge_graph_management
+    category: memory
+    description: "Create, query, and maintain knowledge graphs"
+    aliases: [kg_management, graph_management]
+
+  - name: model_routing
+    category: infrastructure
+    description: "Select optimal LLM model for a given task"
+    aliases: [routing, model_selection]
+
+  - name: tool_orchestration
+    category: execution
+    description: "Coordinate and invoke external tools"
+    aliases: [tool_use, tool_execution]
+
+  - name: web_research
+    category: research
+    description: "Search and synthesize information from the web"
+    aliases: [web_search, browsing]
+
+  - name: document_generation
+    category: content
+    description: "Generate reports, docs, and written content"
+    aliases: [doc_gen, report_writing, portfolio_doc_gen]
+
+  - name: testing
+    category: development
+    description: "Write and execute automated tests"
+    aliases: [test_writing, test_execution]
+
+  - name: debugging
+    category: development
+    description: "Diagnose and fix software bugs"
+    aliases: [troubleshooting, bug_fixing]
+
+  - name: data_analysis
+    category: analytics
+    description: "Analyze datasets and produce insights"
+    aliases: [analytics, data_science]
+
+  - name: embedding_management
+    category: memory
+    description: "Create, store, and search vector embeddings"
+    aliases: [embeddings, vector_search]
+
+  - name: swarm_coordination
+    category: swarm
+    description: "Coordinate multi-agent task execution"
+    aliases: [coordination, orchestration]
+
+  - name: semantic_search
+    category: memory
+    description: "Search knowledge bases using semantic similarity"
+    aliases: [similarity_search]
+
+  - name: portfolio_management
+    category: content
+    description: "Manage and curate project portfolios"
+    aliases: [portfolio]
+
+  - name: network_monitoring
+    category: infrastructure
+    description: "Monitor network health and connectivity"
+    aliases: [network_observatory]
+
+  - name: resource_optimization
+    category: infrastructure
+    description: "Optimize compute, memory, and GPU resource allocation"
+    aliases: [resource_management, cluster_optimization]

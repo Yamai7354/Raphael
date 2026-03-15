@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Any, Dict, List, Optional
 from uuid import UUID
-from ...models.task import Task
+from core.understanding.schemas import Task
 
 
 class EpisodicMemory(ABC):
@@ -23,8 +23,6 @@ class EpisodicMemory(ABC):
         pass
 
     @abstractmethod
-    async def add_log(
-        self, task_id: UUID, message: str, metadata: Optional[Dict[str, Any]] = None
-    ):
+    async def add_log(self, task_id: UUID, message: str, metadata: Optional[Dict[str, Any]] = None):
         """Add a log entry associated with a specific task."""
         pass

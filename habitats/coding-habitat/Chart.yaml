@@ -1,0 +1,6 @@
+apiVersion: v2
+name: coding-habitat
+description: Coding habitat — planner, coding agents, test runner, repo service, vector memory
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

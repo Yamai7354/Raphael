@@ -38,11 +38,16 @@ classifiers = [
 # Phase 1 — Foundation Setup & Scaffold (core dependencies)
 # ──────────────────────────────────────────────────────────────────────────────
 dependencies = [
+    "asyncpg>=0.29.0",
+    "pgvector>=0.2.5",
     "pydantic>=2.0.0",
     "PyYAML",
     "python-dotenv",
     "python-json-logger",
     "httpx>=0.28.1",
+    "requests>=2.32.0",
+    "beautifulsoup4>=4.12.0",
+    "aiofiles>=24.1.0",
     "asyncpg>=0.31.0",
     "pymilvus>=2.6.9",
     "neo4j>=6.1.0",
@@ -50,6 +55,14 @@ dependencies = [
     "lancedb>=0.29.2",
     "redis>=7.2.0",
     "python-multipart>=0.0.22",
+    "litellm>=1.20.0",
+    "instructor>=1.0.0",
+    "nats-py>=2.6.0",
+    "prometheus-client>=0.19.0",
+    "opentelemetry-api>=1.22.0",
+    "opentelemetry-sdk>=1.22.0",
+    "e2b-code-interpreter>=0.0.8",
+    "psutil>=6.0.0",
 ]
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -92,7 +105,7 @@ self-improving = []
 exploration = []
 
 # Phase 13 — Testing / Sandbox Layer
-testing = ["pytest", "pytest-asyncio", "pytest-cov"]
+testing = ["pytest", "pytest-asyncio", "pytest-cov", "pytest-mock"]
 
 # Phase 14 — Research Layer
 research = ["pandas"]
@@ -138,12 +151,21 @@ Issues = "https://github.com/Yamai7354/Raphael/issues"
 # ──────────────────────────────────────────────────────────────────────────────
 
 [tool.hatch.build.targets.wheel]
-packages = ["agents", "ai_router", "core", "data", "event_bus", "spine", "swarm", "tool_router"]
+packages = [
+    "agents",
+    "ai_router",
+    "core",
+    "data",
+    "event_bus",
+    "spine",
+    "swarm",
+    "tool_router",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
-addopts = "-v --tb=short"
+addopts = "-v --tb=short --import-mode=importlib"
 pythonpath = ["."]
 
 [tool.ruff]

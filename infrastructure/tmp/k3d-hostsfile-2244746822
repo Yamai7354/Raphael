@@ -1,0 +1,9 @@
+::1 ip6-localhost ip6-loopback localhost
+127.0.0.1 localhost
+172.20.0.4 k3d-raphael-swarm-agent-0
+192.168.65.254 host.k3d.internal
+fdcd:709:f1b5:1::4 k3d-raphael-swarm-agent-0
+fe00:: ip6-localnet
+ff00:: ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters

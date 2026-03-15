@@ -9,6 +9,13 @@ from event_bus.event_bus import SystemEventBus
 app = FastAPI(title="Raphael OS API")
 bus = None  # To be injected
 
+# Network Observatory: Prometheus /metrics (task success rate, agent response time, memory growth, model usage)
+try:
+    from observability.metrics_endpoint import metrics_router
+    app.include_router(metrics_router(), prefix="")
+except ImportError:
+    pass
+
 
 class CommandRequest(BaseModel):
     command: str

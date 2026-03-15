@@ -2,6 +2,7 @@ import logging
 from typing import Any
 from data.schemas import SystemEvent, EventType, LayerContext
 from event_bus.event_bus import SystemEventBus
+from services.neo4j.graph_client import get_graph_client
 
 from agents.base_agent import BaseAgent
 from agents.system import SystemAgent
@@ -56,9 +57,15 @@ class AgentRouter:
             ),
             "agent_omega": CodingAgent(agent_id="agent_omega", tool_registry=self.tool_registry),
             "researcher": ResearchAgent(agent_id="researcher", tool_registry=self.tool_registry),
-            "planner": PlannerAgent(agent_id="planner", event_bus=self.bus),
-            "evaluator": EvaluatorAgent(agent_id="evaluator", event_bus=self.bus),
-            "auditor": AuditorAgent(agent_id="auditor", event_bus=self.bus),
+            "planner": PlannerAgent(
+                agent_id="planner", event_bus=self.bus, graph_client=get_graph_client()
+            ),
+            "evaluator": EvaluatorAgent(
+                agent_id="evaluator", event_bus=self.bus, graph_client=get_graph_client()
+            ),
+            "auditor": AuditorAgent(
+                agent_id="auditor", event_bus=self.bus, graph_client=get_graph_client()
+            ),
             # Stewardship Agents
             "kg_steward": Neo4jStewardAgent(
                 agent_id="kg_steward",

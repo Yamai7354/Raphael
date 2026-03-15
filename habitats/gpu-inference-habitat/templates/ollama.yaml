@@ -1,0 +1,60 @@
+{{- if .Values.ollama.enabled }}
+# ─── Ollama (LLM Inference Server) ──────────────────────────────
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Release.Name }}-ollama
+  labels:
+    {{- include "gpu-inference-habitat.labels" . | nindent 4 }}
+    swarm.raphael.ai/service-type: ollama
+spec:
+  serviceName: {{ .Release.Name }}-ollama
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "gpu-inference-habitat.selectorLabels" . | nindent 6 }}
+      swarm.raphael.ai/service-type: ollama
+  template:
+    metadata:
+      labels:
+        {{- include "gpu-inference-habitat.selectorLabels" . | nindent 8 }}
+        swarm.raphael.ai/service-type: ollama
+    spec:
+      containers:
+        - name: ollama
+          image: "{{ .Values.ollama.image.repository }}:{{ .Values.ollama.image.tag }}"
+          imagePullPolicy: {{ .Values.ollama.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.ollama.port }}
+              name: http
+          resources:
+            {{- toYaml .Values.ollama.resources | nindent 12 }}
+          volumeMounts:
+            - name: ollama-data
+              mountPath: /root/.ollama
+  volumeClaimTemplates:
+    - metadata:
+        name: ollama-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: {{ .Values.ollama.storage }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-ollama
+  labels:
+    {{- include "gpu-inference-habitat.labels" . | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.ollama.port }}
+      targetPort: {{ .Values.ollama.port }}
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "gpu-inference-habitat.selectorLabels" . | nindent 4 }}
+    swarm.raphael.ai/service-type: ollama
+{{- end }}

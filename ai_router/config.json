@@ -3,7 +3,11 @@
     {
       "id": "mac-local",
       "name": "M4 MacBook",
-      "url": "http://100.125.58.22:5000/v1",
+      "url": "http://localhost:11434/v1",
+      "registry_type": "ollama",
+      "pinned_models": [
+        "vishalraj/nomic-embed-code:latest"
+      ],
       "timeout": 30.0,
       "role": "fast_inference",
       "capabilities": {
@@ -16,13 +20,21 @@
           "q4_only",
           "q8_only"
         ],
-        "concurrent_role_limit": 1
+        "concurrent_role_limit": 1,
+        "memory_budget_mb": 16384,
+        "vram_budget_mb": 12288,
+        "max_model_size_gb": 8
       }
     },
     {
       "id": "win-desktop",
       "name": "R9 Desktop",
       "url": "http://100.125.58.22:5000/v1",
+      "registry_type": "lmstudio",
+      "pinned_models": [
+        "text-embedding-bge-large-en-v1.5",
+        "text-embedding-bge-small-en-v1.5"
+      ],
       "timeout": 30.0,
       "role": "heavy_inference",
       "capabilities": {
@@ -38,7 +50,10 @@
           "q8_or_higher",
           "fp16_only"
         ],
-        "concurrent_role_limit": 2
+        "concurrent_role_limit": 2,
+        "memory_budget_mb": 14336,
+        "vram_budget_mb": 8192,
+        "max_model_size_gb": 8
       }
     }
   ],

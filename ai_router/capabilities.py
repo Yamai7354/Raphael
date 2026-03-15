@@ -26,10 +26,28 @@ class NodeCapabilities:
     supported_quantizations: tuple  # e.g., (Q4_ONLY, Q8_ONLY, Q8_OR_HIGHER)
     concurrent_role_limit: int = 1  # How many roles can run simultaneously
     hosted_models: tuple = ()  # List of model IDs available on the node
+    registry_type: str = "ollama"  # "ollama" or "lmstudio"
+    pinned_models: tuple = ()  # Models that must stay loaded (embeddings)
+    memory_budget_mb: int = 0  # Total system RAM available (MB)
+    vram_budget_mb: int = 0  # Total VRAM available (MB)
+    max_model_size_gb: int = 0  # Largest single model that can be loaded (GB)
 
     def can_host_model(self, model_id: str) -> bool:
         """Check if the node has the specific model available."""
         return model_id in self.hosted_models
+
+    def can_fit_model(self, model_size_gb: float) -> tuple[bool, str]:
+        """Check whether the node has enough VRAM budget for the model."""
+        if self.max_model_size_gb and model_size_gb > self.max_model_size_gb:
+            return (
+                False,
+                f"Model {model_size_gb} GB exceeds node budget ({self.max_model_size_gb} GB max)",
+            )
+        return True, "within_budget"
+
+    def is_model_pinned(self, model_id: str) -> bool:
+        """True if this model must not be unloaded (e.g. embedding model)."""
+        return model_id in self.pinned_models
 
     def can_host_role(self, role: AgentRole) -> tuple[bool, str]:
         """
@@ -111,9 +129,7 @@ class CapabilityRegistry:
             caps_config = node.get("capabilities", {})
 
             if not caps_config:
-                logger.warning(
-                    "node_id=%s has no capabilities defined, using defaults", node_id
-                )
+                logger.warning("node_id=%s has no capabilities defined, using defaults", node_id)
                 caps_config = {}
 
             # Parse quantizations
@@ -126,11 +142,14 @@ class CapabilityRegistry:
             caps = NodeCapabilities(
                 node_id=node_id,
                 max_context_supported=caps_config.get("max_context_supported", 32768),
-                supported_model_sizes=tuple(
-                    caps_config.get("supported_model_sizes", ["7B"])
-                ),
+                supported_model_sizes=tuple(caps_config.get("supported_model_sizes", ["7B"])),
                 supported_quantizations=quants,
                 concurrent_role_limit=caps_config.get("concurrent_role_limit", 1),
+                registry_type=node.get("registry_type", "ollama"),
+                pinned_models=tuple(node.get("pinned_models", [])),
+                memory_budget_mb=caps_config.get("memory_budget_mb", 0),
+                vram_budget_mb=caps_config.get("vram_budget_mb", 0),
+                max_model_size_gb=caps_config.get("max_model_size_gb", 0),
             )
 
             self._capabilities[node_id] = caps
@@ -142,9 +161,7 @@ class CapabilityRegistry:
             )
 
         self._loaded = True
-        logger.info(
-            "capability_registry_loaded total_nodes=%d", len(self._capabilities)
-        )
+        logger.info("capability_registry_loaded total_nodes=%d", len(self._capabilities))
 
     def get_capabilities(self, node_id: str) -> Optional[NodeCapabilities]:
         """Get capabilities for a node, or None if not found."""

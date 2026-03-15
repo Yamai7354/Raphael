@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'swarm_director'
+    static_configs:
+      - targets: ['host.docker.internal:8000'] # Assumes director is running here and exposing /metrics
+
+  - job_name: 'habitats'
+    # In a real k3d environment, we would use kubernetes_sd_configs to automatically
+    # discover and scrape metrics from deployed Habitat pods.
+    static_configs:
+      - targets: ['localhost:8080'] # Placeholder for agent server metrics

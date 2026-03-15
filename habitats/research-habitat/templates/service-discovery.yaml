@@ -1,0 +1,27 @@
+{{- if .Values.serviceDiscovery.enabled }}
+# ─── Service Discovery ConfigMap ─────────────────────────────────
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-service-discovery
+  labels:
+    {{- include "research-habitat.labels" . | nindent 4 }}
+data:
+  services.json: |
+    {
+      "habitat": "{{ .Values.habitat.name }}",
+      "planner": {
+        "host": "{{ .Release.Name }}-planner",
+        "port": 8080
+      },
+      "search_agent": {
+        "host": "{{ .Release.Name }}-search-agent",
+        "port": 8080
+      },
+      "vector_memory": {
+        "host": "{{ .Release.Name }}-vector-memory",
+        "grpc_port": {{ .Values.vectorMemory.port }},
+        "http_port": 6334
+      }
+    }
+{{- end }}

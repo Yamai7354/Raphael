@@ -24,9 +24,11 @@ class AuditorAgent(BaseAgent):
         agent_id: str = "Auditor",
         capabilities: List[str] = None,
         event_bus: Any = None,
+        graph_client: Any = None,
     ):
         super().__init__(agent_id, capabilities or ["audit", "qa", "code_review"])
         self._event_bus = event_bus
+        self._graph_client = graph_client
 
     async def execute(self, payload: Dict[str, Any]) -> Dict[str, Any]:
         """

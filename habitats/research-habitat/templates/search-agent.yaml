@@ -1,0 +1,59 @@
+# ─── Search Agents ────────────────────────────────────────────────
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-search-agent
+  labels:
+    {{- include "research-habitat.labels" . | nindent 4 }}
+    swarm.raphael.ai/agent-type: search-agent
+    swarm.raphael.ai/role: worker
+spec:
+  replicas: {{ .Values.searchAgent.replicas }}
+  selector:
+    matchLabels:
+      {{- include "research-habitat.selectorLabels" . | nindent 6 }}
+      swarm.raphael.ai/agent-type: search-agent
+  template:
+    metadata:
+      labels:
+        {{- include "research-habitat.selectorLabels" . | nindent 8 }}
+        swarm.raphael.ai/agent-type: search-agent
+        swarm.raphael.ai/role: worker
+    spec:
+      containers:
+        - name: search-agent
+          image: "{{ .Values.searchAgent.image.repository }}:{{ .Values.searchAgent.image.tag }}"
+          imagePullPolicy: {{ .Values.searchAgent.image.pullPolicy }}
+          ports:
+            - containerPort: 8080
+              name: http
+          env:
+            - name: AGENT_ROLE
+              value: "worker"
+            - name: HABITAT_NAME
+              value: {{ .Values.habitat.name }}
+            - name: PLANNER_HOST
+              value: "{{ .Release.Name }}-planner"
+            - name: VECTOR_MEMORY_HOST
+              value: "{{ .Release.Name }}-vector-memory"
+            - name: VECTOR_MEMORY_PORT
+              value: "{{ .Values.vectorMemory.port }}"
+          resources:
+            {{- toYaml .Values.searchAgent.resources | nindent 12 }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-search-agent
+  labels:
+    {{- include "research-habitat.labels" . | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "research-habitat.selectorLabels" . | nindent 4 }}
+    swarm.raphael.ai/agent-type: search-agent

@@ -26,6 +26,14 @@ from typing import Any, Dict, List, Optional
 
 from neo4j import GraphDatabase
 
+from core.knowledge_quality.intake_gate import (
+    IntakeGate,
+    NodeProposal,
+    EdgeProposal,
+    Provenance,
+    ProposalVerdict,
+)
+
 logger = logging.getLogger("ai_router.memory_graph")
 
 NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
@@ -50,12 +58,14 @@ class MemoryGraph:
         user: str = None,
         password: str = None,
         database: str = None,
+        gate: IntakeGate = None,
     ):
         self.driver = GraphDatabase.driver(
             uri or NEO4J_URI,
             auth=(user or NEO4J_USER, password or NEO4J_PASSWORD),
         )
         self.database = database or NEO4J_DATABASE
+        self._gate = gate
 
     def close(self):
         self.driver.close()
@@ -199,73 +209,103 @@ class MemoryGraph:
         """Record a task within a session. Returns task ID."""
         task_id = str(uuid.uuid4())[:8]
         tools = tools or []
+        mem_prov = Provenance(source="memory_graph", confidence=0.9)
 
-        with self._session() as s:
-            # Create task
-            s.run(
-                """
-                MATCH (sess:Session {id: $session_id})
-                CREATE (t:Task {
-                    id: $id,
-                    title: $title,
-                    status: $status,
-                    priority: $priority,
-                    started_at: datetime(),
-                    completed_at: CASE WHEN $status = 'completed'
-                                       THEN datetime() ELSE null END,
-                    duration_ms: $duration_ms,
-                    success: $success,
-                    error: $error,
-                    metadata: $metadata
-                })
-                MERGE (sess)-[:CONTAINS]->(t)
-                """,
-                session_id=session_id,
-                id=task_id,
-                title=title,
-                status=status,
-                priority=priority,
-                duration_ms=duration_ms,
-                success=success,
-                error=error,
-                metadata=json.dumps(metadata) if metadata else None,
-            )
-
-            # Link model
+        if self._gate:
+            self._gate.submit_node(NodeProposal(
+                label="Task",
+                match_keys={"id": task_id},
+                properties={
+                    "title": title, "status": status, "priority": priority,
+                    "duration_ms": duration_ms, "success": success,
+                    "error": error,
+                    "metadata": json.dumps(metadata) if metadata else None,
+                },
+                provenance=mem_prov,
+                submitted_by="MemoryGraph",
+            ))
+            self._gate.submit_edge(EdgeProposal(
+                from_label="Session", from_keys={"id": session_id},
+                rel_type="CONTAINS",
+                to_label="Task", to_keys={"id": task_id},
+                provenance=mem_prov, submitted_by="MemoryGraph",
+            ))
             if model:
+                self._gate.submit_node(NodeProposal(
+                    label="ModelRef", match_keys={"name": model},
+                    provenance=mem_prov, submitted_by="MemoryGraph",
+                ))
+                self._gate.submit_edge(EdgeProposal(
+                    from_label="Task", from_keys={"id": task_id},
+                    rel_type="USED_MODEL",
+                    to_label="ModelRef", to_keys={"name": model},
+                    provenance=mem_prov, submitted_by="MemoryGraph",
+                ))
+            for tool_name in tools:
+                self._gate.submit_node(NodeProposal(
+                    label="ToolRef", match_keys={"name": tool_name},
+                    provenance=mem_prov, submitted_by="MemoryGraph",
+                ))
+                self._gate.submit_edge(EdgeProposal(
+                    from_label="Task", from_keys={"id": task_id},
+                    rel_type="USED_TOOL",
+                    to_label="ToolRef", to_keys={"name": tool_name},
+                    provenance=mem_prov, submitted_by="MemoryGraph",
+                ))
+            if task_type:
+                self._gate.submit_node(NodeProposal(
+                    label="TaskType", match_keys={"name": task_type},
+                    provenance=mem_prov, submitted_by="MemoryGraph",
+                ))
+                self._gate.submit_edge(EdgeProposal(
+                    from_label="Task", from_keys={"id": task_id},
+                    rel_type="CATEGORIZED_AS",
+                    to_label="TaskType", to_keys={"name": task_type},
+                    provenance=mem_prov, submitted_by="MemoryGraph",
+                ))
+        else:
+            with self._session() as s:
                 s.run(
                     """
+                    MATCH (sess:Session {id: $session_id})
+                    CREATE (t:Task {
+                        id: $id,
+                        title: $title,
+                        status: $status,
+                        priority: $priority,
+                        started_at: datetime(),
+                        completed_at: CASE WHEN $status = 'completed'
+                                           THEN datetime() ELSE null END,
+                        duration_ms: $duration_ms,
+                        success: $success,
+                        error: $error,
+                        metadata: $metadata
+                    })
+                    MERGE (sess)-[:CONTAINS]->(t)
+                    """,
+                    session_id=session_id, id=task_id, title=title,
+                    status=status, priority=priority, duration_ms=duration_ms,
+                    success=success, error=error,
+                    metadata=json.dumps(metadata) if metadata else None,
+                )
+                if model:
+                    s.run("""
                     MATCH (t:Task {id: $task_id})
                     MERGE (m:ModelRef {name: $model})
                     MERGE (t)-[:USED_MODEL]->(m)
-                    """,
-                    task_id=task_id,
-                    model=model,
-                )
-
-            # Link tools
-            for tool_name in tools:
-                s.run(
-                    """
+                    """, task_id=task_id, model=model)
+                for tool_name in tools:
+                    s.run("""
                     MATCH (t:Task {id: $task_id})
                     MERGE (tl:ToolRef {name: $tool})
                     MERGE (t)-[:USED_TOOL]->(tl)
-                    """,
-                    task_id=task_id,
-                    tool=tool_name,
-                )
-
-            # Link task type
-            if task_type:
-                s.run(
-                    """
+                    """, task_id=task_id, tool=tool_name)
+                if task_type:
+                    s.run("""
                     MATCH (t:Task {id: $task_id})
                     MERGE (tt:TaskType {name: $type})
                     MERGE (t)-[:CATEGORIZED_AS]->(tt)
-                    """,
-                    task_id=task_id,
-                    type=task_type,
-                )
+                    """, task_id=task_id, type=task_type)
 
         logger.info("Recorded task %s: %s (model=%s)", task_id, title, model)
         return task_id
@@ -281,29 +321,49 @@ class MemoryGraph:
     ) -> str:
         """Record the outcome of a task. Returns outcome ID."""
         outcome_id = str(uuid.uuid4())[:8]
-        with self._session() as s:
-            s.run(
-                """
-                MATCH (t:Task {id: $task_id})
-                CREATE (o:Outcome {
-                    id: $id,
-                    result_type: $result_type,
-                    quality_score: $quality_score,
-                    tokens_used: $tokens_used,
-                    latency_ms: $latency_ms,
-                    summary: $summary,
-                    recorded_at: datetime()
-                })
-                MERGE (t)-[:PRODUCED]->(o)
-                """,
-                task_id=task_id,
-                id=outcome_id,
-                result_type=result_type,
-                quality_score=quality_score,
-                tokens_used=tokens_used,
-                latency_ms=latency_ms,
-                summary=summary,
-            )
+        mem_prov = Provenance(source="memory_graph", confidence=0.9)
+
+        if self._gate:
+            self._gate.submit_node(NodeProposal(
+                label="Outcome",
+                match_keys={"id": outcome_id},
+                properties={
+                    "result_type": result_type,
+                    "quality_score": quality_score,
+                    "tokens_used": tokens_used,
+                    "latency_ms": latency_ms,
+                    "summary": summary,
+                },
+                provenance=mem_prov,
+                submitted_by="MemoryGraph",
+            ))
+            self._gate.submit_edge(EdgeProposal(
+                from_label="Task", from_keys={"id": task_id},
+                rel_type="PRODUCED",
+                to_label="Outcome", to_keys={"id": outcome_id},
+                provenance=mem_prov, submitted_by="MemoryGraph",
+            ))
+        else:
+            with self._session() as s:
+                s.run(
+                    """
+                    MATCH (t:Task {id: $task_id})
+                    CREATE (o:Outcome {
+                        id: $id,
+                        result_type: $result_type,
+                        quality_score: $quality_score,
+                        tokens_used: $tokens_used,
+                        latency_ms: $latency_ms,
+                        summary: $summary,
+                        recorded_at: datetime()
+                    })
+                    MERGE (t)-[:PRODUCED]->(o)
+                    """,
+                    task_id=task_id, id=outcome_id,
+                    result_type=result_type, quality_score=quality_score,
+                    tokens_used=tokens_used, latency_ms=latency_ms,
+                    summary=summary,
+                )
         return outcome_id
 
     # ──────────────────────────────────────────────
@@ -321,59 +381,89 @@ class MemoryGraph:
     ) -> str:
         """Record a learned insight. Optionally link to an outcome and skill."""
         insight_id = str(uuid.uuid4())[:8]
-        with self._session() as s:
-            s.run(
-                """
-                CREATE (i:Insight {
-                    id: $id,
-                    content: $content,
-                    confidence: $confidence,
-                    source: $source,
-                    discovered_at: datetime(),
-                    tags: $tags
-                })
-                """,
-                id=insight_id,
-                content=content,
-                confidence=confidence,
-                source=source,
-                tags=tags or [],
-            )
+        ins_prov = Provenance(source=source, confidence=confidence)
 
-            # Link to outcome
+        if self._gate:
+            self._gate.submit_node(NodeProposal(
+                label="Insight",
+                match_keys={"id": insight_id},
+                properties={"content": content, "tags": tags or []},
+                provenance=ins_prov,
+                submitted_by="MemoryGraph",
+            ))
             if outcome_id:
-                s.run(
-                    """
+                self._gate.submit_edge(EdgeProposal(
+                    from_label="Outcome", from_keys={"id": outcome_id},
+                    rel_type="GENERATED",
+                    to_label="Insight", to_keys={"id": insight_id},
+                    provenance=ins_prov, submitted_by="MemoryGraph",
+                ))
+            if related_skill:
+                result = self._gate.submit_node(NodeProposal(
+                    label="Skill",
+                    match_keys={"name": related_skill},
+                    properties={"proficiency": 0.0, "practice_count": 0},
+                    provenance=ins_prov,
+                    submitted_by="MemoryGraph",
+                ))
+                if result.verdict != ProposalVerdict.REJECTED:
+                    self._gate.submit_edge(EdgeProposal(
+                        from_label="Insight", from_keys={"id": insight_id},
+                        rel_type="IMPROVES",
+                        to_label="Skill", to_keys={"name": related_skill},
+                        provenance=ins_prov, submitted_by="MemoryGraph",
+                    ))
+                else:
+                    logger.warning("Skill '%s' rejected by gate: %s", related_skill, result.reason)
+        else:
+            with self._session() as s:
+                s.run("""
+                CREATE (i:Insight {
+                    id: $id, content: $content, confidence: $confidence,
+                    source: $source, discovered_at: datetime(), tags: $tags
+                })
+                """, id=insight_id, content=content, confidence=confidence,
+                    source=source, tags=tags or [])
+                if outcome_id:
+                    s.run("""
                     MATCH (o:Outcome {id: $oid})
                     MATCH (i:Insight {id: $iid})
                     MERGE (o)-[:GENERATED]->(i)
-                    """,
-                    oid=outcome_id,
-                    iid=insight_id,
-                )
-
-            # Link to skill
-            if related_skill:
-                s.run(
-                    """
+                    """, oid=outcome_id, iid=insight_id)
+                if related_skill:
+                    s.run("""
                     MATCH (i:Insight {id: $iid})
                     MERGE (sk:Skill {name: $skill})
-                    ON CREATE SET sk.proficiency = 0.0,
-                                  sk.practice_count = 0
+                    ON CREATE SET sk.proficiency = 0.0, sk.practice_count = 0
                     MERGE (i)-[:IMPROVES]->(sk)
-                    """,
-                    iid=insight_id,
-                    skill=related_skill,
-                )
+                    """, iid=insight_id, skill=related_skill)
 
         logger.info("Recorded insight %s: %s", insight_id, content[:60])
         return insight_id
 
     def update_skill(self, name: str, proficiency_delta: float = 0.1):
         """Increment a skill's proficiency and practice count."""
-        with self._session() as s:
-            s.run(
-                """
+        if self._gate:
+            result = self._gate.submit_node(NodeProposal(
+                label="Skill",
+                match_keys={"name": name},
+                provenance=Provenance(source="memory_graph", confidence=0.85),
+                submitted_by="MemoryGraph",
+            ))
+            if result.verdict == ProposalVerdict.REJECTED:
+                logger.warning("Skill '%s' rejected by gate: %s", name, result.reason)
+                return
+            # Gate ensures the node exists with provenance; do the increment via raw Cypher
+            with self._session() as s:
+                s.run("""
+                MATCH (sk:Skill {name: $name})
+                SET sk.proficiency = coalesce(sk.proficiency, 0) + $delta,
+                    sk.practice_count = coalesce(sk.practice_count, 0) + 1,
+                    sk.last_practiced = datetime()
+                """, name=name, delta=proficiency_delta)
+        else:
+            with self._session() as s:
+                s.run("""
                 MERGE (sk:Skill {name: $name})
                 ON CREATE SET sk.proficiency = $delta,
                               sk.practice_count = 1,
@@ -381,10 +471,7 @@ class MemoryGraph:
                 ON MATCH SET sk.proficiency = sk.proficiency + $delta,
                              sk.practice_count = sk.practice_count + 1,
                              sk.last_practiced = datetime()
-                """,
-                name=name,
-                delta=proficiency_delta,
-            )
+                """, name=name, delta=proficiency_delta)
         logger.debug("Updated skill %s (+%.2f)", name, proficiency_delta)
 
     # ──────────────────────────────────────────────

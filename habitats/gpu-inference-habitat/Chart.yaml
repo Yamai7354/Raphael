@@ -1,0 +1,6 @@
+apiVersion: v2
+name: gpu-inference-habitat
+description: GPU Inference habitat — embedding workers, model cache, ollama/vLLM
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

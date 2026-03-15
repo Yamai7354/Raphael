@@ -1,0 +1,60 @@
+{{- if .Values.repoService.enabled }}
+# ─── Repo Service ────────────────────────────────────────────────
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Release.Name }}-repo-service
+  labels:
+    {{- include "coding-habitat.labels" . | nindent 4 }}
+    swarm.raphael.ai/service-type: repo-service
+spec:
+  serviceName: {{ .Release.Name }}-repo-service
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "coding-habitat.selectorLabels" . | nindent 6 }}
+      swarm.raphael.ai/service-type: repo-service
+  template:
+    metadata:
+      labels:
+        {{- include "coding-habitat.selectorLabels" . | nindent 8 }}
+        swarm.raphael.ai/service-type: repo-service
+    spec:
+      containers:
+        - name: repo-service
+          image: "{{ .Values.repoService.image.repository }}:{{ .Values.repoService.image.tag }}"
+          imagePullPolicy: {{ .Values.repoService.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.repoService.port }}
+              name: http
+          resources:
+            {{- toYaml .Values.repoService.resources | nindent 12 }}
+          volumeMounts:
+            - name: repo-data
+              mountPath: /repos
+  volumeClaimTemplates:
+    - metadata:
+        name: repo-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: {{ .Values.repoService.storage }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-repo-service
+  labels:
+    {{- include "coding-habitat.labels" . | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.repoService.port }}
+      targetPort: {{ .Values.repoService.port }}
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "coding-habitat.selectorLabels" . | nindent 4 }}
+    swarm.raphael.ai/service-type: repo-service
+{{- end }}

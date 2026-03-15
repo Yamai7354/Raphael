@@ -1,0 +1,34 @@
+{
+  "started_at_utc": "2026-02-28T15:40:00.227430+00:00",
+  "params": {
+    "keep_per_source": 200,
+    "source_limit": 1200,
+    "delete_cap": 120000,
+    "timebox_min": 10,
+    "delete_chunk": 2000
+  },
+  "linkedto_pair_profile_top12": [
+    {
+      "from_label": "Memory",
+      "to_label": "Concept",
+      "c": 37915906
+    }
+  ],
+  "finished_at_utc": "2026-02-28T15:50:01.504261+00:00",
+  "stop_reason": "timebox_reached",
+  "before": {
+    "linkedto_total": 37915906,
+    "linkedto_from_memory": 37915906
+  },
+  "after": {
+    "linkedto_total": 37896301,
+    "linkedto_from_memory": 37896301
+  },
+  "deleted_this_run": 19605,
+  "deleted_from_memory_this_run": 19605,
+  "checkpoint_state": {
+    "last_source_eid": "4:3f790724-a5ae-4005-9420-0c70926af54d:100971",
+    "sources_processed_total": 83,
+    "edges_deleted_total": 19605
+  }
+}

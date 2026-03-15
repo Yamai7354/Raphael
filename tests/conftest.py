@@ -1,9 +1,26 @@
 import pytest
+import os
+import sys
 from unittest.mock import AsyncMock, MagicMock
+
+# Ensure local packages (e.g., `agents`) resolve before similarly named site packages.
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+WORKSPACE_PARENT = os.path.dirname(PROJECT_ROOT)
+if PROJECT_ROOT in sys.path:
+    sys.path.remove(PROJECT_ROOT)
+sys.path.insert(0, PROJECT_ROOT)
+while WORKSPACE_PARENT in sys.path:
+    sys.path.remove(WORKSPACE_PARENT)
+
+# Remove preloaded `agents` modules if they came from a different workspace.
+for module_name in list(sys.modules):
+    if module_name == "agents" or module_name.startswith("agents."):
+        del sys.modules[module_name]
+
 from event_bus.event_bus import SystemEventBus
 from data.schemas import SystemEvent, EventType, LayerContext
 from ai_router.working_memory import WorkingMemory
-from core.memory.episodic_memory.episodic_memory import EpisodicMemory
+from core.memory.episodic_memory.base import EpisodicMemory
 from core.memory.knowledge_graph.operational_kg import OperationalKG
 from core.research.research_kg import ResearchKG
 from core.memory.semantic_memory.vector_store import VectorStore

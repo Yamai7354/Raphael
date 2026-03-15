@@ -1,11 +1,12 @@
 import pytest
 import asyncio
-from typing import Dict, Any
 
 from agents.system import SystemAgent
 from agents.coder import CodingAgent
-from agents.research import ResearchAgent
+from agents.researcher import ResearchAgent
 from agents.router import AgentRouter
+from core.execution.tool_registry import ToolRegistry
+from core.execution.tools import BashExecutionTool
 from event_bus.event_bus import SystemEventBus
 from data.schemas import SystemEvent, EventType, LayerContext
 
@@ -13,11 +14,22 @@ from data.schemas import SystemEvent, EventType, LayerContext
 @pytest.mark.asyncio
 async def test_agent_schemas():
     """Ensure all agents return the standard dict schema."""
-    agents = [SystemAgent(), CodingAgent(), ResearchAgent()]
-    dummy_payload = {"sub_task_id": "T_TEST"}
+    registry = ToolRegistry()
+    registry.register_tool(BashExecutionTool())
 
-    for agent in agents:
-        res = await agent.execute(dummy_payload)
+    agents = [
+        SystemAgent(tool_registry=registry),
+        CodingAgent(),
+        ResearchAgent(),
+    ]
+    payloads = [
+        {"sub_task_id": "T_TEST", "command": "echo ok"},
+        {"sub_task_id": "T_TEST"},
+        {"sub_task_id": "T_TEST", "query": "summarize swarm status"},
+    ]
+
+    for agent, payload in zip(agents, payloads):
+        res = await agent.execute(payload)
         assert "success" in res
         assert "logs" in res
         assert "output" in res

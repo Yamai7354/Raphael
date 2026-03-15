@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from 'react';
-import { Terminal, Info, AlertTriangle, Activity } from 'lucide-react';
+import { Terminal, Info, AlertTriangle, Activity, Loader2 } from 'lucide-react';
 
 interface FeedItem {
     time: string;
@@ -66,7 +66,7 @@ export const CognitiveFeed = ({ feed }: { feed: FeedItem[] }) => {
                         </div>
                     </div>
                 ))}
-                {feed.length === 0 && (
+        {feed.length === 0 && (
                     <div className="h-full flex flex-col items-center justify-center opacity-30 gap-4">
                         <Loader2 className="w-8 h-8 animate-spin" />
                         <p className="text-[10px] uppercase tracking-widest">Awaiting Neural Stream...</p>
@@ -83,6 +83,3 @@ export const CognitiveFeed = ({ feed }: { feed: FeedItem[] }) => {
         </div>
     );
 };
-
-// Add Loader2 to imports
-import { Loader2 } from 'lucide-react';

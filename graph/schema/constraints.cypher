@@ -1,0 +1,37 @@
+// Phase 1: Knowledge Graph Core — Schema Constraints
+CREATE CONSTRAINT agent_uuid IF NOT EXISTS
+FOR (a:Agent)
+REQUIRE a.uuid IS UNIQUE;
+CREATE CONSTRAINT concept_uuid IF NOT EXISTS
+FOR (c:Concept)
+REQUIRE c.uuid IS UNIQUE;
+CREATE CONSTRAINT episode_uuid IF NOT EXISTS
+FOR (e:Episode)
+REQUIRE e.uuid IS UNIQUE;
+CREATE CONSTRAINT procedure_uuid IF NOT EXISTS
+FOR (p:Procedure)
+REQUIRE p.uuid IS UNIQUE;
+CREATE CONSTRAINT task_uuid IF NOT EXISTS
+FOR (t:Task)
+REQUIRE t.uuid IS UNIQUE;
+CREATE CONSTRAINT capability_name IF NOT EXISTS
+FOR (c:Capability)
+REQUIRE c.name IS UNIQUE;
+CREATE CONSTRAINT agenttype_name IF NOT EXISTS
+FOR (a:AgentType)
+REQUIRE a.name IS UNIQUE;
+CREATE CONSTRAINT habitat_name IF NOT EXISTS
+FOR (h:HabitatBlueprint)
+REQUIRE h.name IS UNIQUE;
+CREATE CONSTRAINT service_name IF NOT EXISTS
+FOR (s:Service)
+REQUIRE s.name IS UNIQUE;
+CREATE CONSTRAINT machine_hostname IF NOT EXISTS
+FOR (m:Machine)
+REQUIRE m.hostname IS UNIQUE;
+CREATE CONSTRAINT metric_uuid IF NOT EXISTS
+FOR (m:Metric)
+REQUIRE m.uuid IS UNIQUE;
+CREATE CONSTRAINT gpu_uuid IF NOT EXISTS
+FOR (g:GPU)
+REQUIRE g.uuid IS UNIQUE;

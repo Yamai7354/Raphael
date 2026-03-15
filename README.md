@@ -17,18 +17,16 @@ Raphael is a modular AI platform built around the concept of cooperating AI agen
 
 ```text
 raphael/
-├── agents/          # Agent implementations (explorer, factory, caretaker, validator)
-├── ai_router/       # LLM routing, model selection, and request orchestration
-├── core/            # Core brain: reasoning, memory, knowledge graph, world model
-├── event_bus/       # Redis-backed event bus for inter-agent communication
-├── scripts/         # Utility scripts
-├── skills/          # Agent skill definitions
-├── spine/           # System spine: config, health, identity, permissions, telemetry
-├── swarm/           # Swarm coordination and intelligence layer
-├── swarm-dashboard/ # Next.js dashboard for monitoring the swarm
-├── tests/           # Test suite
-├── tool_router/     # Tool routing and execution
-└── docs/            # Documentation and architecture diagrams
+├── director/       # Central nervous system (SwarmDirector, TaskManager, GraphReasoner)
+├── graph/          # Knowledge Graph (schema, seed_data, reasoning queries)
+├── habitats/       # Helm charts for environments (coding, research, gpu)
+├── agents/         # Specialised agent implementations (planner, coder, etc.)
+├── infrastructure/ # Kubernetes and physical setup (k3d, hardware specs)
+├── services/       # Persistent organs (Neo4j, vector stores, etc.)
+├── experiments/    # Sandbox tests for habitat evolution
+├── observability/  # Prometheus/Grafana metrics
+├── scripts/        # Utility deployment and bootstrap scripts
+└── docs/           # Documentation and architecture diagrams
 ```
 
 ## Setup
@@ -48,16 +46,24 @@ raphael/
 git clone https://github.com/Yamai7354/Raphael.git
 cd Raphael
 
-# Create and activate virtual environment
+# Create and activate virtual environment (optional but recommended)
 uv venv
 source .venv/bin/activate
 
-# Install dependencies (dev mode with all optional groups)
-uv pip install -e ".[dev]"
-
 # Copy and configure environment variables
 cp .env.example .env
-# Edit .env with your credentials
+# Edit .env with your Neo4j, LLM, and NATS credentials
+
+# Bootstrap the local environment (installs deps and starts the Director)
+make run-dev
+```
+
+### Building Agents
+
+To build the localized Docker images for the Planner and Coder agents (used by the Habitats):
+
+```bash
+make build-agents
 ```
 
 ### Dashboard Setup
@@ -72,19 +78,18 @@ npm run dev
 
 All secrets and connection strings are configured via environment variables. Copy `.env.example` to `.env` and fill in your values:
 
-| Variable             | Description                         |
-| -------------------- | ----------------------------------- |
-| `NEO4J_URI`          | Neo4j Bolt connection URI           |
-| `NEO4J_PASSWORD`     | Neo4j password                      |
-| `OLLAMA_BASE_URL`    | Ollama API endpoint                 |
-| `OPENROUTER_API_KEY` | OpenRouter API key (for cloud LLMs) |
-| `REDIS_URL`          | Redis connection URL                |
+| Variable                      | Description                         |
+| ----------------------------- | ----------------------------------- |
+| `NEO4J_URI`                   | Neo4j Bolt connection URI           |
+| `NEO4J_PASSWORD`              | Neo4j password                      |
+| `NATS_URL`                    | NATS server connection URL          |
+| `OPENROUTER_API_KEY`          | OpenRouter API key (for cloud LLMs) |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | OpenTelemetry Collector URL         |
 
-## Testing
+## Continuous Integration
 
-```bash
-pytest
-```
+- GitHub Actions (`.github/workflows/helm-lint.yml`) automatically validates all Helm charts in `habitats/` on pushes to `main`.
+- For local testing, use `./scripts/test.sh`.
 
 ## License
 

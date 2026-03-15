@@ -1,0 +1,20 @@
+{
+  "started_at_utc": "2026-02-28T15:36:53.943670+00:00",
+  "finished_at_utc": "2026-02-28T15:37:04.031981+00:00",
+  "params": {
+    "batch_size": 250,
+    "max_minutes": 12,
+    "max_sources": 30000,
+    "max_deletions": 300000
+  },
+  "stop_reason": "source_limit_reached",
+  "before_linkedto": 37915906,
+  "after_linkedto": 37915906,
+  "deleted_this_run": 0,
+  "checkpoint_state": {
+    "last_element_id": "4:3f790724-a5ae-4005-9420-0c70926af54d:23598",
+    "sources_processed_total": 30000,
+    "edges_deleted_total": 0,
+    "runs": 0
+  }
+}

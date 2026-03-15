@@ -1,9 +1,4 @@
 import pytest
-import asyncio
-from typing import Any
-
-from event_bus.event_bus import SystemEventBus
-from data.schemas import SystemEvent, EventType, LayerContext
 from agents.coder import CodingAgent
 from core.execution.tool_registry import ToolRegistry
 from core.execution.tools import BashExecutionTool, PythonExecutionTool
@@ -41,7 +36,7 @@ async def test_layer_8_to_11_execution_sandbox():
     assert any("Executing debugging command" in log for log in logs), (
         "Logs should indicate tool usage."
     )
-    assert any("Successfully linted and tested" in log for log in logs), (
+    assert any("Successfully validated logic via test suite." in log for log in logs), (
         "Logs should indicate success branch."
     )
 

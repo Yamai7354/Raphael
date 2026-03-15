@@ -1,0 +1,42 @@
+# Prometheus + Grafana stack — tuned for local k3d cluster
+# Deployed via: helm install monitoring prometheus-community/kube-prometheus-stack -f prometheus-values.yaml -n monitoring --create-namespace
+
+grafana:
+  adminPassword: raphael-admin
+  service:
+    type: NodePort
+    nodePort: 30300
+  persistence:
+    enabled: false
+  dashboardProviders:
+    dashboardproviders.yaml:
+      apiVersion: 1
+      providers:
+        - name: default
+          orgId: 1
+          folder: ''
+          type: file
+          options:
+            path: /var/lib/grafana/dashboards/default
+
+prometheus:
+  prometheusSpec:
+    retention: 24h
+    resources:
+      requests:
+        cpu: 100m
+        memory: 256Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
+    storageSpec: {}
+
+alertmanager:
+  enabled: false
+
+# Reduce footprint for local dev
+kubeStateMetrics:
+  enabled: true
+
+nodeExporter:
+  enabled: true

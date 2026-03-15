@@ -1,4 +1,13 @@
+"""
+Embedding Router — routes embedding workloads to the correct node.
+
+Layer 1 (ROUTING):   text-embedding-bge-small-en-v1.5  → desktop-node (LM Studio)
+Layer 2 (KNOWLEDGE): text-embedding-bge-large-en-v1.5  → desktop-node (LM Studio)
+Layer 3 (CODE):      vishalraj/nomic-embed-code:latest  → mac-node     (Ollama)
+"""
+
 import logging
+import os
 from enum import Enum
 
 import httpx
@@ -6,41 +15,53 @@ from pydantic import BaseModel
 
 logger = logging.getLogger(__name__)
 
+# ---------------------------------------------------------------------------
+# Node URLs (read from environment, matching .env)
+# ---------------------------------------------------------------------------
+DESKTOP_URL = os.getenv("OLLAMA_DESKTOP_URL", "http://100.125.58.22:5000").rstrip("/")
+MAC_URL = os.getenv("OLLAMA_MAC_URL", "http://localhost:11434").rstrip("/")
+
 
 class EmbeddingLayer(str, Enum):
     ROUTING = "routing"  # text-embedding-bge-small-en-v1.5
     KNOWLEDGE = "knowledge"  # text-embedding-bge-large-en-v1.5
-    CODE = "code"  # text-embedding-bge-large-en-v1.5 (fallback)
+    CODE = "code"  # vishalraj/nomic-embed-code:latest
 
 
 class EmbeddingModelConfig(BaseModel):
     model_name: str
     host_url: str
     dimension: int
+    registry_type: str  # "lmstudio" or "ollama" — determines API shape
 
 
 class EmbeddingRouter:
     """
     Directs semantic embedding workloads across three specialized layers:
-    - Layer 1 (ROUTING): Fast swarm routing caching
-    - Layer 2 (KNOWLEDGE): Deep long-term memory + Neo4j Graph
-    - Layer 3 (CODE): Technical intelligence, syntax matching
+    - Layer 1 (ROUTING): Fast swarm routing caching           → desktop-node
+    - Layer 2 (KNOWLEDGE): Deep long-term memory + Neo4j Graph → desktop-node
+    - Layer 3 (CODE): Technical intelligence, syntax matching  → mac-node
     """
 
-    # Static configuration matching user specifications
+    # Config-driven mappings — BGE on Desktop, nomic on Mac
     LAYER_MAPPINGS: dict[EmbeddingLayer, EmbeddingModelConfig] = {
         EmbeddingLayer.ROUTING: EmbeddingModelConfig(
             model_name="text-embedding-bge-small-en-v1.5",
-            host_url="http://100.125.58.22:5000",
+            host_url=DESKTOP_URL,
             dimension=384,
+            registry_type="lmstudio",
         ),
         EmbeddingLayer.KNOWLEDGE: EmbeddingModelConfig(
-            model_name="text-embedding-bge-large-en-v1.5", host_url="http://100.125.58.22:5000", dimension=1024
+            model_name="text-embedding-bge-large-en-v1.5",
+            host_url=DESKTOP_URL,
+            dimension=1024,
+            registry_type="lmstudio",
         ),
         EmbeddingLayer.CODE: EmbeddingModelConfig(
-            model_name="text-embedding-bge-large-en-v1.5",
-            host_url="http://100.125.58.22:5000",
-            dimension=1024,
+            model_name="vishalraj/nomic-embed-code:latest",
+            host_url=MAC_URL,
+            dimension=768,
+            registry_type="ollama",
         ),
     }
 
@@ -56,9 +77,17 @@ class EmbeddingRouter:
         """
         Embed text(s) using the specified semantic layer model and host.
         Automatically batches large lists.
+        Routes to the correct node based on registry type.
         """
         config = self.get_layer_config(layer)
-        api_url = f"{config.host_url}/api/embeddings"
+
+        # Build the correct API URL based on registry type
+        if config.registry_type == "ollama":
+            # Ollama native batch endpoint
+            api_url = f"{config.host_url}/api/embed"
+        else:
+            # LM Studio — also supports /api/embed (Ollama-compat)
+            api_url = f"{config.host_url}/api/embed"
 
         # Normalize to list for batch processing
         is_single = isinstance(text, str)
@@ -76,8 +105,7 @@ class EmbeddingRouter:
                 for i in range(0, len(texts_to_embed), self.default_batch_size)
             ]
 
-            # We process batches sequentially to avoid overwhelming the Ollama host,
-            # but this could be parallelized with asyncio.gather if desired.
+            # Process batches sequentially to avoid overwhelming the host
             for batch in batches:
                 batch_embeddings = await self._process_batch(
                     client, api_url, config.model_name, batch
@@ -93,17 +121,10 @@ class EmbeddingRouter:
     ) -> list[list[float]]:
 
         embeddings: list[list[float]] = []
-        # Ollama /api/embeddings endpoint accepts one prompt at a time
-        # You could also use /api/embed which takes `input: list[str]` for native batching.
-        # We'll use /api/embed for true batching if Ollama is >= 0.1.33
-
         payload = {"model": model_name, "input": batch}
 
         try:
-            response = await client.post(
-                f"{api_url.replace('/embeddings', '/embed')}",  # enforce native batching
-                json=payload,
-            )
+            response = await client.post(api_url, json=payload)
             response.raise_for_status()
             data = response.json()
 

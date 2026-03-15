@@ -1,0 +1,20 @@
+# Neo4j Community — tuned for local k3d cluster
+neo4j:
+  name: "raphael-graph"
+  password: "raphael-neo4j"
+  edition: "community"
+
+volumes:
+  data:
+    mode: defaultStorageClass
+    defaultStorageClass:
+      requests:
+        storage: 2Gi
+
+services:
+  neo4j:
+    spec:
+      type: NodePort
+
+env:
+  NEO4J_PLUGINS: '["apoc"]'

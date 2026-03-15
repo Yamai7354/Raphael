@@ -11,7 +11,8 @@ from ..contracts.memory_contract import (
     MemoryType,
     MemoryMetadata,
 )
-from ...models.task import Task, TaskStatus, TaskPriority
+from core.understanding.schemas import Task, TaskStatus
+from core.swarm_os.task_manager import TaskPriority
 
 logger = logging.getLogger("sqlite_episodic")
 
@@ -125,9 +126,7 @@ class SQLiteEpisodicStore(MemoryContract, EpisodicMemory):
                 for row in rows
             ]
 
-    async def add_log(
-        self, task_id: UUID, message: str, metadata: Optional[Dict[str, Any]] = None
-    ):
+    async def add_log(self, task_id: UUID, message: str, metadata: Optional[Dict[str, Any]] = None):
         with sqlite3.connect(self.db_path) as conn:
             conn.execute(
                 """
@@ -164,16 +163,12 @@ class SQLiteEpisodicStore(MemoryContract, EpisodicMemory):
             # For now, let's assume content can be dict etc.
             task_id = payload.metadata.correlation_id or str(payload.id)
             await self.add_log(
-                UUID(task_id)
-                if isinstance(task_id, str) and "-" in task_id
-                else payload.id,
+                UUID(task_id) if isinstance(task_id, str) and "-" in task_id else payload.id,
                 str(payload.content),
                 payload.metadata.model_dump(),
             )
 
-    async def retrieve(
-        self, query: str, filters: Dict[str, Any]
-    ) -> List[MemoryPayload]:
+    async def retrieve(self, query: str, filters: Dict[str, Any]) -> List[MemoryPayload]:
         """Cross-project retrieval contract (MEM-1)."""
         tasks = await self.query_tasks(filters)
         results = []
@@ -196,10 +191,6 @@ class SQLiteEpisodicStore(MemoryContract, EpisodicMemory):
         # Simple implementation: delete by task_id if provided
         if "task_id" in policy:
             with sqlite3.connect(self.db_path) as conn:
-                conn.execute(
-                    "DELETE FROM task_logs WHERE task_id = ?", (str(policy["task_id"]),)
-                )
-                conn.execute(
-                    "DELETE FROM tasks WHERE id = ?", (str(policy["task_id"]),)
-                )
+                conn.execute("DELETE FROM task_logs WHERE task_id = ?", (str(policy["task_id"]),))
+                conn.execute("DELETE FROM tasks WHERE id = ?", (str(policy["task_id"]),))
                 conn.commit()

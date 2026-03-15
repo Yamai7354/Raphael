@@ -36,10 +36,11 @@ NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "")
 # Agent_Society Graph for retired agents
 SOCIETY_URI = "bolt://127.0.0.1:7694"
 
-# Ollama / OpenAI Setup
-# Using the local node URL for Ollama
-OLLAMA_LOCAL_URL = os.getenv("OLLAMA_LOCAL_URL", "http://100.125.58.22:5000")
-API_BASE_URL = f"{OLLAMA_LOCAL_URL.rstrip('/')}/v1"
+# LLM Node Configuration (separate registries — no cross-pulls)
+# Desktop: LM Studio | Mac: Ollama
+OLLAMA_DESKTOP_URL = os.getenv("OLLAMA_DESKTOP_URL", "http://100.125.58.22:5000")
+OLLAMA_MAC_URL = os.getenv("OLLAMA_MAC_URL", "http://localhost:11434")
+API_BASE_URL = f"{OLLAMA_DESKTOP_URL.rstrip('/')}/v1"
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 MEMORY_SCRIPT = PROJECT_ROOT / "app" / "memory_system.py"
 PYTHON_BIN = PROJECT_ROOT / ".venv" / "bin" / "python"
@@ -183,25 +184,42 @@ def _load_json(path: Path, fallback):
 
 
 def _list_ollama_models():
+    """Query both nodes via their native registry APIs."""
+    models = []
+
+    # Desktop node (LM Studio) — OpenAI-compatible endpoint
     try:
-        out = subprocess.run(["ollama", "list"], capture_output=True, text=True, check=True)
-        lines = [ln.strip() for ln in out.stdout.splitlines() if ln.strip()]
-        if len(lines) <= 1:
-            return []
-        models = []
-        for ln in lines[1:]:
-            name = ln.split()[0].strip()
-            if name:
-                models.append(name)
-        seen = set()
-        unique = []
-        for m in models:
-            if m not in seen:
-                seen.add(m)
-                unique.append(m)
-        return unique
+        resp = httpx.get(f"{OLLAMA_DESKTOP_URL.rstrip('/')}/v1/models", timeout=8.0)
+        resp.raise_for_status()
+        data = resp.json()
+        rows = data.get("data", []) if isinstance(data, dict) else []
+        for r in rows:
+            mid = str(r.get("id", "")).strip() if isinstance(r, dict) else ""
+            if mid:
+                models.append(mid)
     except Exception:
-        return []
+        pass
+
+    # Mac node (Ollama) — Ollama /api/tags
+    try:
+        resp = httpx.get(f"{OLLAMA_MAC_URL.rstrip('/')}/api/tags", timeout=8.0)
+        resp.raise_for_status()
+        data = resp.json()
+        ml = data.get("models", []) if isinstance(data, dict) else []
+        for m in ml:
+            mid = str(m.get("name", "")).strip() if isinstance(m, dict) else ""
+            if mid:
+                models.append(mid)
+    except Exception:
+        pass
+
+    seen = set()
+    unique = []
+    for m in models:
+        if m not in seen:
+            seen.add(m)
+            unique.append(m)
+    return unique
 
 
 def _pick_by_patterns(candidates, patterns, fallback):
@@ -216,11 +234,19 @@ def load_model_assignments():
     report = _load_json(MODEL_SYNC_REPORT, {})
     assignments = report.get("assignments", {}) if isinstance(report, dict) else {}
     if isinstance(assignments, dict) and assignments:
-        return {str(k).strip(): str(v).strip() for k, v in assignments.items() if str(k).strip() and str(v).strip()}
+        return {
+            str(k).strip(): str(v).strip()
+            for k, v in assignments.items()
+            if str(k).strip() and str(v).strip()
+        }
     registry = _load_json(AGENT_REGISTRY_PATH, {"agents": []})
     mapping = {}
     for agent in registry.get("agents", []):
-        if isinstance(agent, dict) and str(agent.get("name", "")).strip() and str(agent.get("model", "")).strip():
+        if (
+            isinstance(agent, dict)
+            and str(agent.get("name", "")).strip()
+            and str(agent.get("model", "")).strip()
+        ):
             mapping[str(agent["name"]).strip()] = str(agent["model"]).strip()
     return mapping
 
@@ -230,7 +256,14 @@ OLLAMA_MODELS = _list_ollama_models()
 
 
 def pick_task_model(task_type: str, fallback: str):
-    candidates = [m for m in OLLAMA_MODELS if "embedding" not in m.lower() and "embed" not in m.lower() and "whisper" not in m.lower() and "moondream" not in m.lower()]
+    candidates = [
+        m
+        for m in OLLAMA_MODELS
+        if "embedding" not in m.lower()
+        and "embed" not in m.lower()
+        and "whisper" not in m.lower()
+        and "moondream" not in m.lower()
+    ]
     if not candidates:
         return fallback
     task = (task_type or "").lower()
@@ -252,7 +285,9 @@ def _clamp(value, lo, hi):
 
 
 def _token_set(text):
-    return {tok for tok in str(text or "").lower().replace("|", " ").replace("-", " ").split() if tok}
+    return {
+        tok for tok in str(text or "").lower().replace("|", " ").replace("-", " ").split() if tok
+    }
 
 
 def _text_similarity(a, b):
@@ -294,7 +329,11 @@ def _call_memory_action(action: str, payload: dict | None = None):
             timeout=15,
             check=False,
         )
-        return json.loads(result.stdout) if result.stdout.strip() else {"ok": False, "error": "empty memory response"}
+        return (
+            json.loads(result.stdout)
+            if result.stdout.strip()
+            else {"ok": False, "error": "empty memory response"}
+        )
     except Exception as exc:
         return {"ok": False, "error": str(exc)}
 
@@ -416,10 +455,14 @@ class DiscoveryPipeline:
         topic = f"{agent.role}:{task_type}"
         notes = f"{agent.name} observed {concept} with mood={agent.mood} model={agent.model} success={success}"
         sources = [f"agent://{agent.name}", f"model://{agent.model}"]
-        novelty_estimate = _clamp(0.45 + random.random() * 0.5 + (0.1 if success else -0.1), 0.0, 1.0)
+        novelty_estimate = _clamp(
+            0.45 + random.random() * 0.5 + (0.1 if success else -0.1), 0.0, 1.0
+        )
         confidence = _clamp(agent.task_success_rate, 0.0, 1.0)
         return {
-            "id": hashlib.md5(f"{agent.name}|{topic}|{concept}|{_utc_now().isoformat()}".encode("utf-8")).hexdigest()[:16],
+            "id": hashlib.md5(
+                f"{agent.name}|{topic}|{concept}|{_utc_now().isoformat()}".encode("utf-8")
+            ).hexdigest()[:16],
             "agent": agent.name,
             "topic": topic,
             "notes": notes,
@@ -440,7 +483,10 @@ class DiscoveryPipeline:
             for j in range(i + 1, len(events)):
                 if j in used:
                     continue
-                if _text_similarity(event["topic"], events[j]["topic"]) > 0.55 or _text_similarity(event["notes"], events[j]["notes"]) > 0.6:
+                if (
+                    _text_similarity(event["topic"], events[j]["topic"]) > 0.55
+                    or _text_similarity(event["notes"], events[j]["notes"]) > 0.6
+                ):
                     cluster.append(events[j])
                     used.add(j)
             clusters.append(cluster)
@@ -452,10 +498,17 @@ class DiscoveryPipeline:
             usefulness = _clamp(sum(e["confidence"] for e in cluster) / len(cluster), 0.0, 1.0)
             source_quality = _clamp(len({s for e in cluster for s in e["sources"]}) / 4.0, 0.0, 1.0)
             swarm_interest = _clamp(min(1.0, len(cluster) / 4.0), 0.0, 1.0)
-            final_score = (novelty * 0.35) + (usefulness * 0.35) + (source_quality * 0.2) + (swarm_interest * 0.1)
+            final_score = (
+                (novelty * 0.35)
+                + (usefulness * 0.35)
+                + (source_quality * 0.2)
+                + (swarm_interest * 0.1)
+            )
             reviewed.append(
                 {
-                    "cluster_id": hashlib.md5("|".join(sorted(e["id"] for e in cluster)).encode("utf-8")).hexdigest()[:16],
+                    "cluster_id": hashlib.md5(
+                        "|".join(sorted(e["id"] for e in cluster)).encode("utf-8")
+                    ).hexdigest()[:16],
                     "topic": base["topic"],
                     "concept": base["concept"],
                     "cluster_size": len(cluster),
@@ -475,9 +528,13 @@ class DiscoveryPipeline:
             )
         return reviewed
 
-    def _topic_concept_evidence_graph(self, topic, concept, evidence_id, summary, source_agent, score):
+    def _topic_concept_evidence_graph(
+        self, topic, concept, evidence_id, summary, source_agent, score
+    ):
         try:
-            driver = GraphDatabase.driver(self.neo4j_uri, auth=(self.neo4j_user, self.neo4j_password))
+            driver = GraphDatabase.driver(
+                self.neo4j_uri, auth=(self.neo4j_user, self.neo4j_password)
+            )
         except Exception:
             return
         try:
@@ -518,7 +575,9 @@ class DiscoveryPipeline:
         _call_memory_action("retention", {"keep_days": 90, "confidence_threshold": 0.35})
         _call_memory_action("conflicts", {"limit": 20000})
         try:
-            driver = GraphDatabase.driver(self.neo4j_uri, auth=(self.neo4j_user, self.neo4j_password))
+            driver = GraphDatabase.driver(
+                self.neo4j_uri, auth=(self.neo4j_user, self.neo4j_password)
+            )
             with driver.session() as session:
                 session.run(
                     """
@@ -538,7 +597,9 @@ class DiscoveryPipeline:
         self.last_consolidation_at = _utc_now()
 
     def maybe_run_consolidation_cycle(self):
-        if _utc_now() - self.last_consolidation_at >= timedelta(hours=self.consolidation_interval_hours):
+        if _utc_now() - self.last_consolidation_at >= timedelta(
+            hours=self.consolidation_interval_hours
+        ):
             self._consolidate()
             return True
         return False
@@ -574,8 +635,12 @@ class DiscoveryPipeline:
                 break
 
             archivist = archivists[stored % len(archivists)]
-            summary = f"{entry['topic']} :: {entry['concept']} ({entry['cluster_size']} observations)"
-            memory_query = _call_memory_action("query", {"q": f"{entry['topic']} {entry['concept']}", "k": 1})
+            summary = (
+                f"{entry['topic']} :: {entry['concept']} ({entry['cluster_size']} observations)"
+            )
+            memory_query = _call_memory_action(
+                "query", {"q": f"{entry['topic']} {entry['concept']}", "k": 1}
+            )
             supersedes_id = None
             existing_items = memory_query.get("items", []) if isinstance(memory_query, dict) else []
             if existing_items:
@@ -590,7 +655,9 @@ class DiscoveryPipeline:
                 "summary": summary,
                 "content": "\n".join([ev["notes"] for ev in entry["events"]][:6]),
                 "confidence": _clamp(entry["scores"]["final_score"], 0.0, 1.0),
-                "validation_status": "verified" if entry["scores"]["final_score"] >= 0.82 else "unverified",
+                "validation_status": "verified"
+                if entry["scores"]["final_score"] >= 0.82
+                else "unverified",
                 "create_embedding": bool(entry["create_embedding"]),
                 "supersedes_id": supersedes_id,
                 "metadata": {
@@ -746,7 +813,9 @@ class SwarmPriorityEngine:
         now = _utc_now().isoformat()
         active_names = {a.name for a in swarm.agents}
         current_agents = self.missions.get("agents", {})
-        self.missions["agents"] = {name: data for name, data in current_agents.items() if name in active_names}
+        self.missions["agents"] = {
+            name: data for name, data in current_agents.items() if name in active_names
+        }
         feed = []
         for idx, agent in enumerate(swarm.agents):
             if self.missions["agents"].get(agent.name, {}).get("mission"):
@@ -786,7 +855,9 @@ class SwarmPriorityEngine:
 
     def _graph_pressure(self) -> tuple[bool, dict]:
         try:
-            driver = GraphDatabase.driver(self.neo4j_uri, auth=(self.neo4j_user, self.neo4j_password))
+            driver = GraphDatabase.driver(
+                self.neo4j_uri, auth=(self.neo4j_user, self.neo4j_password)
+            )
             with driver.session() as session:
                 nodes = int(session.run("MATCH (n) RETURN count(n) AS c").single()["c"])
                 rels = int(session.run("MATCH ()-[r]->() RETURN count(r) AS c").single()["c"])
@@ -810,7 +881,11 @@ class SwarmPriorityEngine:
             t = trace.get("trace", {})
             hit_rate = float(t.get("hit_rate_pct", 100.0))
         dropping = avg_conf < 0.55 or conflict_items > 1200 or hit_rate < 60.0
-        return dropping, {"avg_confidence": avg_conf, "conflict_items": conflict_items, "hit_rate_pct": hit_rate}
+        return dropping, {
+            "avg_confidence": avg_conf,
+            "conflict_items": conflict_items,
+            "hit_rate_pct": hit_rate,
+        }
 
     def _no_new_features(self, recent_feed: list[dict]) -> bool:
         text = " ".join(str(item.get("summary", "")).lower() for item in recent_feed[-80:])
@@ -853,7 +928,9 @@ class SwarmPriorityEngine:
             elif system_idle:
                 action = "allow_research_mode"
         spawned, details = self._apply_action(swarm, action)
-        mission_updates = self._assign_boredom_missions(swarm, force=(action == "assign_boredom_missions"))
+        mission_updates = self._assign_boredom_missions(
+            swarm, force=(action == "assign_boredom_missions")
+        )
 
         evaluation = {
             "time": now.isoformat(),
@@ -1067,7 +1144,9 @@ class SwarmAgent:
             self.mood = random.choice(["Calm", "Excited"])
         else:
             self.mood = random.choice(["Cautious", "Curious"])
-        self.task_history.append({"time": _utc_now().isoformat(), "task": task_type, "success": bool(success)})
+        self.task_history.append(
+            {"time": _utc_now().isoformat(), "task": task_type, "success": bool(success)}
+        )
         self.task_history = self.task_history[-20:]
 
         return success, memory, concept, task_type
@@ -1166,12 +1245,18 @@ class Raphael_Swarm:
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         stats_path = Path(base_dir) / "public" / "stats.json"
         try:
-            payload = _read_json(stats_path, {"timestamp": 0, "resources": [], "agents": [], "feed": []})
+            payload = _read_json(
+                stats_path, {"timestamp": 0, "resources": [], "agents": [], "feed": []}
+            )
             if not isinstance(payload, dict):
                 payload = {"timestamp": 0, "resources": [], "agents": [], "feed": []}
             payload["timestamp"] = datetime.now().timestamp()
-            payload["resources"] = payload.get("resources") if isinstance(payload.get("resources"), list) else []
-            payload["agents"] = payload.get("agents") if isinstance(payload.get("agents"), list) else []
+            payload["resources"] = (
+                payload.get("resources") if isinstance(payload.get("resources"), list) else []
+            )
+            payload["agents"] = (
+                payload.get("agents") if isinstance(payload.get("agents"), list) else []
+            )
             payload["feed"] = payload.get("feed") if isinstance(payload.get("feed"), list) else []
             _atomic_write_json(stats_path, payload)
         except Exception:
@@ -1268,7 +1353,9 @@ class Raphael_Swarm:
         latest_priority = self.priority_engine.history.get("evaluations", [])
         latest_priority_action = latest_priority[-1]["action"] if latest_priority else "none"
         latest_priority_signals = latest_priority[-1].get("signals", {}) if latest_priority else {}
-        latest_priority_manual = bool(latest_priority[-1].get("manual_override")) if latest_priority else False
+        latest_priority_manual = (
+            bool(latest_priority[-1].get("manual_override")) if latest_priority else False
+        )
         mission_map = self.priority_engine.get_active_missions()
         agent_data = []
         for a in self.agents:
@@ -1373,7 +1460,9 @@ class Raphael_Swarm:
                 recycle_agents(self, self.recycle_threshold)
 
                 if exploration_events:
-                    feed_updates.extend(self.discovery_pipeline.process_discoveries(self.agents, exploration_events))
+                    feed_updates.extend(
+                        self.discovery_pipeline.process_discoveries(self.agents, exploration_events)
+                    )
 
                 if self.discovery_pipeline.maybe_run_consolidation_cycle():
                     feed_updates.append(
@@ -1463,11 +1552,19 @@ if __name__ == "__main__":
                 "timestamp": datetime.now().timestamp(),
                 "resources": [],
                 "agents": [],
-                "feed": [{"time": datetime.now().strftime("%H:%M:%S"), "type": "Observation", "summary": "Swarm bootstrap started"}],
+                "feed": [
+                    {
+                        "time": datetime.now().strftime("%H:%M:%S"),
+                        "type": "Observation",
+                        "summary": "Swarm bootstrap started",
+                    }
+                ],
             },
         )
     else:
-        payload = _read_json(bootstrap_stats, {"timestamp": 0, "resources": [], "agents": [], "feed": []})
+        payload = _read_json(
+            bootstrap_stats, {"timestamp": 0, "resources": [], "agents": [], "feed": []}
+        )
         if not isinstance(payload, dict):
             payload = {"timestamp": 0, "resources": [], "agents": [], "feed": []}
         payload["timestamp"] = datetime.now().timestamp()

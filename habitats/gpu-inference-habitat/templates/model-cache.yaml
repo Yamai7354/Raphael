@@ -1,0 +1,60 @@
+{{- if .Values.modelCache.enabled }}
+# ─── Model Cache ─────────────────────────────────────────────────
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Release.Name }}-model-cache
+  labels:
+    {{- include "gpu-inference-habitat.labels" . | nindent 4 }}
+    swarm.raphael.ai/service-type: model-cache
+spec:
+  serviceName: {{ .Release.Name }}-model-cache
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "gpu-inference-habitat.selectorLabels" . | nindent 6 }}
+      swarm.raphael.ai/service-type: model-cache
+  template:
+    metadata:
+      labels:
+        {{- include "gpu-inference-habitat.selectorLabels" . | nindent 8 }}
+        swarm.raphael.ai/service-type: model-cache
+    spec:
+      containers:
+        - name: model-cache
+          image: "{{ .Values.modelCache.image.repository }}:{{ .Values.modelCache.image.tag }}"
+          imagePullPolicy: {{ .Values.modelCache.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.modelCache.port }}
+              name: http
+          resources:
+            {{- toYaml .Values.modelCache.resources | nindent 12 }}
+          volumeMounts:
+            - name: cache-data
+              mountPath: /cache
+  volumeClaimTemplates:
+    - metadata:
+        name: cache-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: {{ .Values.modelCache.storage }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-model-cache
+  labels:
+    {{- include "gpu-inference-habitat.labels" . | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.modelCache.port }}
+      targetPort: {{ .Values.modelCache.port }}
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "gpu-inference-habitat.selectorLabels" . | nindent 4 }}
+    swarm.raphael.ai/service-type: model-cache
+{{- end }}

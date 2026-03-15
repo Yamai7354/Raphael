@@ -1,0 +1,45 @@
+name: Lint and Test Helm Charts
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'habitats/**'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'habitats/**'
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v3
+        with:
+          version: v3.11.2
+
+      - name: Run Helm Lint
+        run: |
+          for chart in habitats/*-habitat; do
+            if [ -d "$chart" ]; then
+              echo "Linting $chart..."
+              helm lint "$chart"
+            fi
+          done
+
+      - name: Run Helm Template (Dry-run validation)
+        run: |
+          for chart in habitats/*-habitat; do
+            if [ -d "$chart" ]; then
+              echo "Templating $chart..."
+              helm template test-release "$chart" > /dev/null
+            fi
+          done

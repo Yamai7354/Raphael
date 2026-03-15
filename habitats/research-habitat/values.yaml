@@ -1,0 +1,51 @@
+# Research Habitat values
+habitat:
+  name: research-habitat
+  ttlSeconds: 3600  # auto-destroy after 1 hour if unused
+
+planner:
+  replicas: 1
+  image:
+    repository: raphael-registry:5111/planner-agent
+    tag: latest
+    pullPolicy: IfNotPresent
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+searchAgent:
+  replicas: 3
+  image:
+    repository: raphael-registry:5111/search-agent
+    tag: latest
+    pullPolicy: IfNotPresent
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+vectorMemory:
+  enabled: true
+  image:
+    repository: qdrant/qdrant
+    tag: latest
+    pullPolicy: IfNotPresent
+  storage: 1Gi
+  port: 6333
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+serviceDiscovery:
+  enabled: true

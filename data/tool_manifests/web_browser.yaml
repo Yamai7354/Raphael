@@ -1,0 +1,29 @@
+name: web_browser
+description: "Browse and extract content from web pages"
+version: "1.0.0"
+tool_type: api
+requires_capabilities:
+  - network_access
+  - content_extraction
+inputs:
+  type: object
+  properties:
+    url:
+      type: string
+      description: "URL to fetch"
+    extract_mode:
+      type: string
+      enum: [text, markdown, html]
+      default: markdown
+  required: [url]
+outputs:
+  type: object
+  properties:
+    content:
+      type: string
+    status_code:
+      type: integer
+    title:
+      type: string
+timeout_sec: 60.0
+allowed_roles: [researcher, executor]

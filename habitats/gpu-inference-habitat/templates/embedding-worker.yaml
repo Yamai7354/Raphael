@@ -1,0 +1,59 @@
+# ─── Embedding Workers ───────────────────────────────────────────
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-embedding-worker
+  labels:
+    {{- include "gpu-inference-habitat.labels" . | nindent 4 }}
+    swarm.raphael.ai/agent-type: embedding-worker
+    swarm.raphael.ai/role: worker
+spec:
+  replicas: {{ .Values.embeddingWorker.replicas }}
+  selector:
+    matchLabels:
+      {{- include "gpu-inference-habitat.selectorLabels" . | nindent 6 }}
+      swarm.raphael.ai/agent-type: embedding-worker
+  template:
+    metadata:
+      labels:
+        {{- include "gpu-inference-habitat.selectorLabels" . | nindent 8 }}
+        swarm.raphael.ai/agent-type: embedding-worker
+        swarm.raphael.ai/role: worker
+    spec:
+      containers:
+        - name: embedding-worker
+          image: "{{ .Values.embeddingWorker.image.repository }}:{{ .Values.embeddingWorker.image.tag }}"
+          imagePullPolicy: {{ .Values.embeddingWorker.image.pullPolicy }}
+          ports:
+            - containerPort: 8080
+              name: http
+          env:
+            - name: AGENT_ROLE
+              value: "worker"
+            - name: HABITAT_NAME
+              value: {{ .Values.habitat.name }}
+            - name: OLLAMA_HOST
+              value: "{{ .Release.Name }}-ollama"
+            - name: OLLAMA_PORT
+              value: "{{ .Values.ollama.port }}"
+            - name: MODEL_CACHE_HOST
+              value: "{{ .Release.Name }}-model-cache"
+          resources:
+            {{- toYaml .Values.embeddingWorker.resources | nindent 12 }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-embedding-worker
+  labels:
+    {{- include "gpu-inference-habitat.labels" . | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "gpu-inference-habitat.selectorLabels" . | nindent 4 }}
+    swarm.raphael.ai/agent-type: embedding-worker

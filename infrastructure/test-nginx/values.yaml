@@ -1,0 +1,10 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  tag: "1.27-alpine"
+
+service:
+  type: ClusterIP
+  port: 80

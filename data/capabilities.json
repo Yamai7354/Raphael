@@ -1,0 +1,180 @@
+{
+  "_comment": "Router Agent capability map. Generated from config/agents.yaml.",
+  "updated_at": "2026-03-05T20:07:37.939371+00:00",
+  "by_agent": {
+    "planner": [
+      "plan_tasks",
+      "prioritize_work",
+      "task_decomposition",
+      "planning"
+    ],
+    "router": [
+      "route_task",
+      "evaluate_capability"
+    ],
+    "coder": [
+      "generate_code",
+      "fix_bug",
+      "heavy_compute"
+    ],
+    "researcher": [
+      "search_web",
+      "summarize_docs",
+      "gather_info"
+    ],
+    "evaluator": [
+      "evaluation",
+      "qa",
+      "validation"
+    ],
+    "auditor": [
+      "audit",
+      "qa",
+      "code_review"
+    ],
+    "graph_agent": [
+      "sync_nodes",
+      "query_graph",
+      "store_knowledge"
+    ],
+    "kg_optimizer": [
+      "optimize_graph",
+      "graph_health"
+    ],
+    "vector_steward": [
+      "store_embeddings",
+      "semantic_search"
+    ],
+    "db_steward": [
+      "query_sql",
+      "store_structured"
+    ],
+    "portfolio_agent": [
+      "portfolio_report",
+      "portfolio_plan"
+    ],
+    "node_mac": [
+      "generate_code",
+      "fix_bug",
+      "run_bash",
+      "run_python",
+      "browser"
+    ],
+    "node_desktop": [
+      "heavy_compute",
+      "amd_gpu"
+    ],
+    "node_router": [
+      "network_audit",
+      "dns"
+    ]
+  },
+  "by_capability": {
+    "plan_tasks": [
+      "planner"
+    ],
+    "prioritize_work": [
+      "planner"
+    ],
+    "task_decomposition": [
+      "planner"
+    ],
+    "planning": [
+      "planner"
+    ],
+    "route_task": [
+      "router"
+    ],
+    "evaluate_capability": [
+      "router"
+    ],
+    "generate_code": [
+      "coder",
+      "node_mac"
+    ],
+    "fix_bug": [
+      "coder",
+      "node_mac"
+    ],
+    "heavy_compute": [
+      "coder",
+      "node_desktop"
+    ],
+    "search_web": [
+      "researcher"
+    ],
+    "summarize_docs": [
+      "researcher"
+    ],
+    "gather_info": [
+      "researcher"
+    ],
+    "evaluation": [
+      "evaluator"
+    ],
+    "qa": [
+      "evaluator",
+      "auditor"
+    ],
+    "validation": [
+      "evaluator"
+    ],
+    "audit": [
+      "auditor"
+    ],
+    "code_review": [
+      "auditor"
+    ],
+    "sync_nodes": [
+      "graph_agent"
+    ],
+    "query_graph": [
+      "graph_agent"
+    ],
+    "store_knowledge": [
+      "graph_agent"
+    ],
+    "optimize_graph": [
+      "kg_optimizer"
+    ],
+    "graph_health": [
+      "kg_optimizer"
+    ],
+    "store_embeddings": [
+      "vector_steward"
+    ],
+    "semantic_search": [
+      "vector_steward"
+    ],
+    "query_sql": [
+      "db_steward"
+    ],
+    "store_structured": [
+      "db_steward"
+    ],
+    "portfolio_report": [
+      "portfolio_agent"
+    ],
+    "portfolio_plan": [
+      "portfolio_agent"
+    ],
+    "run_bash": [
+      "node_mac"
+    ],
+    "run_python": [
+      "node_mac"
+    ],
+    "browser": [
+      "node_mac"
+    ],
+    "amd_gpu": [
+      "node_desktop"
+    ],
+    "network_audit": [
+      "node_router"
+    ],
+    "dns": [
+      "node_router"
+    ]
+  }
+}

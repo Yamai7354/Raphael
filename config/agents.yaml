@@ -1,0 +1,135 @@
+# Raphael Agent Registry — single source of truth for who exists and what they can do.
+# Sync to Neo4j: (:AGENT)-[:HAS_CAPABILITY]->(:CAPABILITY), (:AGENT)-[:RUNS_ON]->(:MACHINE)
+# Router uses this (or capabilities.json derived from it) for agent selection.
+
+agents:
+  planner:
+    role: task decomposition
+    model: reasoning_llm
+    capabilities:
+      - plan_tasks
+      - prioritize_work
+      - task_decomposition
+      - planning
+    machine_id: null  # runs on coordinator
+
+  router:
+    role: agent selection
+    model: fast_llm
+    capabilities:
+      - route_task
+      - evaluate_capability
+    machine_id: null
+
+  coder:
+    role: write code
+    model: coding_llm
+    capabilities:
+      - generate_code
+      - fix_bug
+      - heavy_compute
+    machine_id: null
+    # Runtime alias: agent_omega
+
+  researcher:
+    role: gather information
+    model: reasoning_llm
+    capabilities:
+      - search_web
+      - summarize_docs
+      - gather_info
+    machine_id: null
+
+  evaluator:
+    role: judge results
+    model: reasoning_llm
+    capabilities:
+      - evaluation
+      - qa
+      - validation
+    machine_id: null
+
+  auditor:
+    role: code quality and refactoring
+    model: reasoning_llm
+    capabilities:
+      - audit
+      - qa
+      - code_review
+    machine_id: null
+
+  # Stewardship / memory
+  graph_agent:
+    role: memory management (Neo4j)
+    model: fast_llm
+    capabilities:
+      - sync_nodes
+      - query_graph
+      - store_knowledge
+    machine_id: null
+    # Runtime alias: kg_steward
+
+  kg_optimizer:
+    role: graph optimization
+    model: fast_llm
+    capabilities:
+      - optimize_graph
+      - graph_health
+    machine_id: null
+
+  vector_steward:
+    role: embedding store (Qdrant)
+    model: fast_llm
+    capabilities:
+      - store_embeddings
+      - semantic_search
+    machine_id: null
+
+  db_steward:
+    role: relational DB
+    model: fast_llm
+    capabilities:
+      - query_sql
+      - store_structured
+    machine_id: null
+
+  portfolio_agent:
+    role: portfolio and reporting
+    model: reasoning_llm
+    capabilities:
+      - portfolio_report
+      - portfolio_plan
+    machine_id: null
+
+  # Execution nodes (optional RUNS_ON)
+  node_mac:
+    role: universal worker
+    model: coding_llm
+    capabilities:
+      - generate_code
+      - fix_bug
+      - run_bash
+      - run_python
+      - browser
+    machine_id: macbook
+
+  node_desktop:
+    role: remote heavy compute
+    model: coding_llm
+    capabilities:
+      - heavy_compute
+      - amd_gpu
+    machine_id: desktop
+
+  node_router:
+    role: network audit
+    model: fast_llm
+    capabilities:
+      - network_audit
+      - dns
+    machine_id: null
+
+# Alias map for runtime dispatch (orchestrator uses these IDs)
+aliases:
+  agent_omega: coder
+  kg_steward: graph_agent

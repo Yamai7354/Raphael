@@ -104,6 +104,26 @@ VALIDATION_QUERIES = {
         WITH type(r) AS rtype, count(r) AS c
         RETURN count(rtype) AS count, collect(rtype + ': ' + toString(c)) AS items
     """,
+    # --- Intake Gate: Quarantine & Provenance ---
+    "quarantined_nodes": """
+        MATCH (n:Quarantine)
+        RETURN count(n) AS count,
+               collect(coalesce(n.name, n.id, 'unnamed'))[..10] AS items
+    """,
+    "nodes_without_provenance": """
+        MATCH (n)
+        WHERE n.source IS NULL AND NOT n:Quarantine
+        WITH labels(n)[0] AS label, count(n) AS c
+        RETURN sum(c) AS count,
+               collect(label + ': ' + toString(c)) AS items
+    """,
+    "low_confidence_nodes": """
+        MATCH (n)
+        WHERE n.confidence IS NOT NULL AND n.confidence < 0.3
+        WITH labels(n)[0] AS label, count(n) AS c
+        RETURN sum(c) AS count,
+               collect(label + ': ' + toString(c)) AS items
+    """,
 }
 
 THRESHOLDS = {
@@ -117,6 +137,9 @@ THRESHOLDS = {
     "duplicate_model_names": 0,
     "duplicate_capability_names": 0,
     "capability_gaps": 0,
+    "quarantined_nodes": 0,
+    "nodes_without_provenance": 0,
+    "low_confidence_nodes": 5,
 }
 
 # ----------------------------

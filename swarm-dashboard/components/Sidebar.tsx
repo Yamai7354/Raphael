@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { 
@@ -33,7 +34,7 @@ const Sidebar = () => {
         { name: 'Network Observatory', href: '/observatory', icon: Globe },
     ];
 
-    const NavLink = ({ item, indent = false }: { item: any, indent?: boolean }) => {
+    const NavLink = ({ item, indent = false }: { item: { name: string; href: string; icon: React.ElementType }; indent?: boolean }) => {
         const active = pathname === item.href;
         return (
             <Link
@@ -118,7 +119,7 @@ const Sidebar = () => {
                 <Link 
                     href="/settings" 
                     className={`flex items-center space-x-3 px-4 py-2.5 rounded-xl transition-all ${
-                        pathname === '/settings' ? 'bg-primary/20 text-primary' : 'hover:bg-white/5 text-muted-foreground'
+                        pathname === '/settings' ? 'bg-primary/20 text-primary border border-primary/20' : 'hover:bg-white/5 hover:text-primary text-muted-foreground'
                     }`}
                 >
                     <Settings className="w-4 h-4" />

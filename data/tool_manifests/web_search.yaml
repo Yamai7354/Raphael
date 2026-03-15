@@ -1,0 +1,33 @@
+name: web_search
+description: "Search the web using DuckDuckGo"
+version: "1.0.0"
+tool_type: api
+requires_capabilities:
+  - network_access
+  - semantic_search
+inputs:
+  type: object
+  properties:
+    query:
+      type: string
+      description: "Search query"
+    max_results:
+      type: integer
+      default: 5
+  required: [query]
+outputs:
+  type: object
+  properties:
+    results:
+      type: array
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+          url:
+            type: string
+          snippet:
+            type: string
+timeout_sec: 30.0
+allowed_roles: [researcher, executor]

@@ -1,25 +1,21 @@
 import asyncio
 import sys
-from agent import AssistantAgent
 
 
 async def main():
-    print("Initializing Agent...")
-    agent = AssistantAgent()
+    from agents.system import SystemAgent
 
-    print("Connecting to Client...")
-    await agent.client.connect()
+    print("Initializing Agent...")
+    agent = SystemAgent()
 
     query = "Run a shell command to echo 'Hello World'"
     print(f"Sending query: {query}")
 
     try:
-        await agent.process_request(query)
+        await agent.execute({"sub_task_id": "manual_test", "query": query})
     except Exception as e:
         print(f"Error: {e}")
-    finally:
-        await agent.client.disconnect()
-        print("Done.")
+    print("Done.")
 
 
 if __name__ == "__main__":

@@ -20,6 +20,13 @@ from datetime import datetime
 from typing import Any, Dict, List, Optional
 from neo4j import AsyncGraphDatabase
 
+from core.knowledge_quality.intake_gate import (
+    IntakeGate,
+    NodeProposal,
+    EdgeProposal,
+    Provenance,
+)
+
 logger = logging.getLogger("raphael.memory.operational_kg")
 
 NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
@@ -35,12 +42,14 @@ class OperationalKG:
         user: str = None,
         password: str = None,
         database: str = None,
+        gate: IntakeGate = None,
     ):
         self.driver = AsyncGraphDatabase.driver(
             uri or NEO4J_URI,
             auth=(user or NEO4J_USER, password or NEO4J_PASSWORD),
         )
         self.database = database or NEO4J_DATABASE
+        self._gate = gate
 
     async def close(self):
         await self.driver.close()
@@ -70,21 +79,39 @@ class OperationalKG:
 
     async def start_session(self, agent: str = "system", summary: str = "") -> str:
         session_id = str(uuid.uuid4())[:8]
+        op_prov = Provenance(source="operational_kg", confidence=0.95)
+
+        if self._gate:
+            await self._gate.asubmit_node(NodeProposal(
+                label="Session",
+                match_keys={"id": session_id},
+                properties={
+                    "agent": agent,
+                    "summary": summary,
+                    "status": "active",
+                },
+                provenance=op_prov,
+                submitted_by="OperationalKG",
+            ))
+        else:
+            async with self._session() as s:
+                await s.run(
+                    """
+                    CREATE (s:Session {
+                        id: $id,
+                        agent: $agent,
+                        summary: $summary,
+                        started_at: datetime(),
+                        status: 'active'
+                    })
+                    """,
+                    id=session_id,
+                    agent=agent,
+                    summary=summary,
+                )
+
+        # Link to previous session (read + write — keep as raw Cypher)
         async with self._session() as s:
-            await s.run(
-                """
-                CREATE (s:Session {
-                    id: $id,
-                    agent: $agent,
-                    summary: $summary,
-                    started_at: datetime(),
-                    status: 'active'
-                })
-                """,
-                id=session_id,
-                agent=agent,
-                summary=summary,
-            )
             await s.run(
                 """
                 MATCH (prev:Session)
@@ -108,45 +135,95 @@ class OperationalKG:
         tools: List[str] = None,
     ):
         tools = tools or []
-        async with self._session() as s:
-            await s.run(
-                """
-                MATCH (sess:Session {id: $session_id})
-                CREATE (t:Task {
-                    id: $id,
-                    title: $title,
-                    status: $status,
-                    started_at: datetime()
-                })
-                MERGE (sess)-[:CONTAINS]->(t)
-                """,
-                session_id=session_id,
-                id=str(task_id),
-                title=title,
-                status=status,
-            )
+        op_prov = Provenance(source="operational_kg", confidence=0.95)
 
+        if self._gate:
+            await self._gate.asubmit_node(NodeProposal(
+                label="Task",
+                match_keys={"id": str(task_id)},
+                properties={"title": title, "status": status},
+                provenance=op_prov,
+                submitted_by="OperationalKG",
+            ))
+            await self._gate.asubmit_edge(EdgeProposal(
+                from_label="Session",
+                from_keys={"id": session_id},
+                rel_type="CONTAINS",
+                to_label="Task",
+                to_keys={"id": str(task_id)},
+                provenance=op_prov,
+                submitted_by="OperationalKG",
+            ))
             if model:
-                await s.run(
-                    """
-                    MATCH (t:Task {id: $task_id})
-                    MERGE (m:ModelRef {name: $model})
-                    MERGE (t)-[:USED_MODEL]->(m)
-                    """,
-                    task_id=str(task_id),
-                    model=model,
-                )
-
+                await self._gate.asubmit_node(NodeProposal(
+                    label="ModelRef",
+                    match_keys={"name": model},
+                    provenance=op_prov,
+                    submitted_by="OperationalKG",
+                ))
+                await self._gate.asubmit_edge(EdgeProposal(
+                    from_label="Task",
+                    from_keys={"id": str(task_id)},
+                    rel_type="USED_MODEL",
+                    to_label="ModelRef",
+                    to_keys={"name": model},
+                    provenance=op_prov,
+                    submitted_by="OperationalKG",
+                ))
             for tool_name in tools:
+                await self._gate.asubmit_node(NodeProposal(
+                    label="ToolRef",
+                    match_keys={"name": tool_name},
+                    provenance=op_prov,
+                    submitted_by="OperationalKG",
+                ))
+                await self._gate.asubmit_edge(EdgeProposal(
+                    from_label="Task",
+                    from_keys={"id": str(task_id)},
+                    rel_type="USED_TOOL",
+                    to_label="ToolRef",
+                    to_keys={"name": tool_name},
+                    provenance=op_prov,
+                    submitted_by="OperationalKG",
+                ))
+        else:
+            async with self._session() as s:
                 await s.run(
                     """
-                    MATCH (t:Task {id: $task_id})
-                    MERGE (tl:ToolRef {name: $tool})
-                    MERGE (t)-[:USED_TOOL]->(tl)
+                    MATCH (sess:Session {id: $session_id})
+                    CREATE (t:Task {
+                        id: $id,
+                        title: $title,
+                        status: $status,
+                        started_at: datetime()
+                    })
+                    MERGE (sess)-[:CONTAINS]->(t)
                     """,
-                    task_id=str(task_id),
-                    tool=tool_name,
+                    session_id=session_id,
+                    id=str(task_id),
+                    title=title,
+                    status=status,
                 )
+                if model:
+                    await s.run(
+                        """
+                        MATCH (t:Task {id: $task_id})
+                        MERGE (m:ModelRef {name: $model})
+                        MERGE (t)-[:USED_MODEL]->(m)
+                        """,
+                        task_id=str(task_id),
+                        model=model,
+                    )
+                for tool_name in tools:
+                    await s.run(
+                        """
+                        MATCH (t:Task {id: $task_id})
+                        MERGE (tl:ToolRef {name: $tool})
+                        MERGE (t)-[:USED_TOOL]->(tl)
+                        """,
+                        task_id=str(task_id),
+                        tool=tool_name,
+                    )
         logger.info("Recorded task node %s: %s", task_id, title)
 
 

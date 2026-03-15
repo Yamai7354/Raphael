@@ -17,7 +17,7 @@ REPORT_PATH = DATA_DIR / "research_hybrid_report.json"
 NEO4J_URI = os.getenv("NEO4J_URI", "bolt://127.0.0.1:7693")
 NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
 NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "")
-OLLAMA_BASE = os.getenv("OLLAMA_LOCAL_URL", "http://100.125.58.22:5000").rstrip("/")
+OLLAMA_BASE = os.getenv("OLLAMA_DESKTOP_URL", "http://100.125.58.22:5000").rstrip("/")
 
 
 def ensure_sqlite(conn: sqlite3.Connection) -> None:

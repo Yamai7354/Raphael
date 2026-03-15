@@ -4,7 +4,8 @@ from uuid import UUID
 
 from ..knowledge.manager import KnowledgeManager
 from ..policy.engine import PolicyEngine
-from ..models.task import Task, TaskPriority
+from core.understanding.schemas import Task
+from core.swarm_os.task_manager import TaskPriority
 
 logger = logging.getLogger("delegation_planner")
 
@@ -14,9 +15,7 @@ class DelegationPlanner:
     Selects the best agent for a task using Knowledge Graph data.
     """
 
-    def __init__(
-        self, knowledge_manager: KnowledgeManager, policy_engine: PolicyEngine
-    ):
+    def __init__(self, knowledge_manager: KnowledgeManager, policy_engine: PolicyEngine):
         self.knowledge = knowledge_manager
         self.policy = policy_engine
 
@@ -39,9 +38,7 @@ class DelegationPlanner:
             if agent_data.get("label") != "Agent":
                 continue
 
-            agent_id = agent_data.get("properties", {}).get(
-                "name"
-            )  # Using name as ID for now
+            agent_id = agent_data.get("properties", {}).get("name")  # Using name as ID for now
             if not agent_id:
                 continue
 
@@ -65,9 +62,7 @@ class DelegationPlanner:
                     }
                 )
             else:
-                logger.debug(
-                    f"Agent {agent_id} rejected by policy: {decision.reasoning}"
-                )
+                logger.debug(f"Agent {agent_id} rejected by policy: {decision.reasoning}")
 
         # Sort by score
         valid_agents.sort(key=lambda x: x["score"], reverse=True)

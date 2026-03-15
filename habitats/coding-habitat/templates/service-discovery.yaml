@@ -1,0 +1,34 @@
+{{- if .Values.serviceDiscovery.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-service-discovery
+  labels:
+    {{- include "coding-habitat.labels" . | nindent 4 }}
+data:
+  services.json: |
+    {
+      "habitat": "{{ .Values.habitat.name }}",
+      "planner": {
+        "host": "{{ .Release.Name }}-planner",
+        "port": 8080
+      },
+      "coding_agent": {
+        "host": "{{ .Release.Name }}-coding-agent",
+        "port": 8080
+      },
+      "test_runner": {
+        "host": "{{ .Release.Name }}-test-runner",
+        "port": 8080
+      },
+      "repo_service": {
+        "host": "{{ .Release.Name }}-repo-service",
+        "port": {{ .Values.repoService.port }}
+      },
+      "vector_memory": {
+        "host": "{{ .Release.Name }}-vector-memory",
+        "grpc_port": {{ .Values.vectorMemory.port }},
+        "http_port": 6334
+      }
+    }
+{{- end }}

@@ -1,8 +1,8 @@
 import pytest
 import asyncio
+from unittest.mock import AsyncMock
 from swarm.scheduler import TaskScheduler
 from swarm.model_router import ModelRouter
-from swarm.orchestrator import SwarmOrchestrator
 from swarm.router import SwarmRouter
 from event_bus.event_bus import SystemEventBus
 from data.schemas import SystemEvent, EventType, LayerContext
@@ -37,25 +37,49 @@ def test_task_scheduler_dependency_chain():
     assert ready_round_two[0]["sub_task_id"] == "T2"
 
 
-def test_model_router_capability_matching():
+@pytest.mark.asyncio
+async def test_model_router_capability_matching(monkeypatch):
     router = ModelRouter()
 
-    # Should match node_mac for bash
-    assert router.find_agent(["bash"]) == "node_mac"
+    class MockResponse:
+        status_code = 200
 
-    # Should match omega for reasoning
-    assert router.find_agent(["reasoning"]) == "agent_omega"
+        @staticmethod
+        def json():
+            return {
+                "nodes": [
+                    {"node_id": "node_mac", "models": ["bash", "python"]},
+                    {"node_id": "agent_omega", "models": ["reasoning", "python"]},
+                ]
+            }
 
-    # Test strict subset enforcement
-    assert (
-        router.find_agent(["bash", "gguf_inference"]) is None
-    )  # No single agent has both in our mock
+    class MockClient:
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, exc_type, exc, tb):
+            return False
+
+        async def get(self, _):
+            return MockResponse()
+
+    monkeypatch.setattr("swarm.model_router.httpx.AsyncClient", lambda: MockClient())
+
+    assert await router.find_agent(["bash"]) == "node_mac"
+    assert await router.find_agent(["reasoning"]) == "agent_omega"
+    assert await router.find_agent(["bash", "gguf_inference"]) is None
 
 
-async def test_swarm_router_dispatch_pipeline():
+@pytest.mark.asyncio
+async def test_swarm_router_dispatch_pipeline(monkeypatch):
     bus = SystemEventBus()
     router = SwarmRouter(bus)
     router.register_subscriptions()
+
+    monkeypatch.setattr(
+        "swarm.orchestrator.ModelRouter.find_agent",
+        AsyncMock(return_value="node_mac"),
+    )
 
     captured_dispatches = []
 
@@ -117,7 +141,7 @@ async def run_all_tests():
     test_task_scheduler_dependency_chain()
     print("test_task_scheduler_dependency_chain: PASSED")
 
-    test_model_router_capability_matching()
+    await test_model_router_capability_matching()
     print("test_model_router_capability_matching: PASSED")
 
     await test_swarm_router_dispatch_pipeline()

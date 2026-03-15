@@ -1,6 +1,6 @@
 import pytest
 import asyncio
-from unittest.mock import MagicMock
+from unittest.mock import AsyncMock, MagicMock
 
 from event_bus.event_bus import SystemEventBus
 from data.schemas import SystemEvent, EventType, LayerContext
@@ -10,34 +10,39 @@ from agents.router import AgentRouter
 
 
 @pytest.mark.asyncio
-async def test_layer_5_to_7_event_flow(mocker):
+async def test_layer_5_to_7_event_flow(monkeypatch):
     """
     Test the cognitive to execution pipeline:
     Layer 5 (Core Cognitive) -> Layer 6 (Swarm Manager) -> Layer 7 (Agent Swarm)
     """
     # Mock LLM calls so tests don't actually hit APIs
-    mocker.patch(
-        "core.cognitive.planner.ExecutionPlanner.generate_plan", return_value=["dummy_step"]
+    monkeypatch.setattr(
+        "core.cognitive.planner.ExecutionPlanner.generate_plan",
+        MagicMock(return_value=["dummy_step"]),
     )
-    mocker.patch(
-        "core.cognitive.validator.ReasoningValidator.validate_plan", return_value=True
+    monkeypatch.setattr(
+        "core.cognitive.validator.ReasoningValidator.validate_plan",
+        MagicMock(return_value=True),
     )
-    mocker.patch(
+    monkeypatch.setattr(
         "core.cognitive.aggregator.ResultAggregator.compile_package",
-        return_value={
-            "plan_metadata": {"id": "test_plan_1"},
-            "sequence": [{"sub_task_id": "sub_1", "required_capabilities": ["coding"]}],
-        },
+        MagicMock(
+            return_value={
+                "plan_metadata": {"id": "test_plan_1"},
+                "sequence": [{"sub_task_id": "sub_1", "required_capabilities": ["coding"]}],
+            }
+        ),
     )
     # Also mock Swarm Orchestrator and ModelRouter to easily route to a fake agent
-    mocker.patch(
-        "swarm.model_router.ModelRouter.find_agent", return_value="agent_omega"
+    monkeypatch.setattr(
+        "swarm.model_router.ModelRouter.find_agent",
+        AsyncMock(return_value="agent_omega"),
     )
 
     # Mock the Agent base execute method so we don't run real code
-    mocker.patch(
+    monkeypatch.setattr(
         "agents.coder.CodingAgent.execute",
-        return_value={"success": True, "result": "code written"},
+        AsyncMock(return_value={"success": True, "result": "code written"}),
     )
 
     bus = SystemEventBus()

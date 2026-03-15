@@ -20,7 +20,7 @@ from event_bus.redis_bus import RedisEventBus
 from event_bus.event_bus import Event
 from . import bus  # Import the singleton module
 from .perception import perception_service  # Import perception service
-from .memory import episodic_memory  # Import episodic memory
+from core.memory.episodic_memory.episodic_memory import episodic_memory  # Import episodic memory
 from .knowledge import knowledge_graph  # Import knowledge graph
 from .working_memory import working_memory  # Import working memory
 from .resource import resource_manager  # Import resource manager
@@ -75,15 +75,9 @@ def load_config():
         with open(config_path, "r") as f:
             config = json.load(f)
 
-        # Allow OLLAMA_BASE_URL env var to override node URLs
-        # Docker/native override example: http://100.125.58.22:5000
-        ollama_override = os.getenv("OLLAMA_BASE_URL")
-        if ollama_override:
-            override_url = f"{ollama_override.rstrip('/')}/v1"
-            for node in config.get("nodes", []):
-                node["url"] = override_url
-            logger.info("Node URLs overridden via OLLAMA_BASE_URL: %s", override_url)
-
+        # Each node now uses its own URL from config.json.
+        # Do NOT override node URLs — desktop (LM Studio) and mac (Ollama)
+        # run separate registries and must not be collapsed.
         logger.info("Config loaded successfully.")
     except Exception as e:
         logger.error("Error loading config: %s", e)

@@ -1,0 +1,33 @@
+name: file_tool
+description: "File operations: read, write, list, delete"
+version: "1.0.0"
+tool_type: filesystem
+requires_capabilities:
+  - filesystem_read
+  - filesystem_write
+inputs:
+  type: object
+  properties:
+    operation:
+      type: string
+      enum: [read, write, list, delete]
+    path:
+      type: string
+      description: "File or directory path"
+    content:
+      type: string
+      description: "Content to write (for write operation)"
+  required: [operation, path]
+outputs:
+  type: object
+  properties:
+    content:
+      type: string
+    entries:
+      type: array
+      items:
+        type: string
+    success:
+      type: boolean
+timeout_sec: 15.0
+allowed_roles: [executor, admin]

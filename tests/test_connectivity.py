@@ -1,11 +1,12 @@
 import asyncio
-from google import genai
-from config import settings
 
 
 async def main():
     print("Listing models...")
     try:
+        from google import genai
+        from spine.config import settings
+
         client = genai.Client(api_key=settings.gemini_api_key)
         # Try waiting for list then iterating
         pager = await client.aio.models.list()

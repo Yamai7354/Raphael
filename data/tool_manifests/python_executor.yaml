@@ -1,0 +1,30 @@
+name: python_executor
+description: "Execute Python scripts in a controlled environment"
+version: "1.0.0"
+tool_type: system
+requires_capabilities:
+  - python_runtime
+  - filesystem_read
+inputs:
+  type: object
+  properties:
+    code:
+      type: string
+      description: "Python code to execute"
+    timeout_sec:
+      type: number
+      default: 60
+  required: [code]
+outputs:
+  type: object
+  properties:
+    exit_code:
+      type: integer
+    stdout:
+      type: string
+    stderr:
+      type: string
+    result:
+      type: string
+timeout_sec: 60.0
+allowed_roles: [executor, researcher, admin]

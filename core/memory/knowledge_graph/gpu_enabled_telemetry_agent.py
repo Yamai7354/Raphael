@@ -14,7 +14,7 @@ NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
 NEO4J_PASS = os.getenv("NEO4J_PASSWORD", "")
 
 NODE_ID = socket.gethostname()
-OLLAMA_URL = "http://100.125.58.22:5000"
+OLLAMA_URL = os.getenv("OLLAMA_DESKTOP_URL", "http://100.125.58.22:5000")
 
 driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASS))
 

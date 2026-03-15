@@ -1,0 +1,25 @@
+{{- if .Values.serviceDiscovery.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-service-discovery
+  labels:
+    {{- include "gpu-inference-habitat.labels" . | nindent 4 }}
+data:
+  services.json: |
+    {
+      "habitat": "{{ .Values.habitat.name }}",
+      "embedding_worker": {
+        "host": "{{ .Release.Name }}-embedding-worker",
+        "port": 8080
+      },
+      "ollama": {
+        "host": "{{ .Release.Name }}-ollama",
+        "port": {{ .Values.ollama.port }}
+      },
+      "model_cache": {
+        "host": "{{ .Release.Name }}-model-cache",
+        "port": {{ .Values.modelCache.port }}
+      }
+    }
+{{- end }}

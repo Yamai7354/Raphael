@@ -1,0 +1,53 @@
+# GPU Inference Habitat values
+habitat:
+  name: gpu-inference-habitat
+  ttlSeconds: 3600
+
+embeddingWorker:
+  replicas: 3
+  image:
+    repository: raphael-registry:5111/embedding-worker
+    tag: latest
+    pullPolicy: IfNotPresent
+  resources:
+    requests:
+      cpu: 200m
+      memory: 512Mi
+    limits:
+      cpu: "1"
+      memory: 2Gi
+
+ollama:
+  enabled: true
+  image:
+    repository: ollama/ollama
+    tag: latest
+    pullPolicy: IfNotPresent
+  port: 11434
+  storage: 5Gi
+  resources:
+    requests:
+      cpu: 500m
+      memory: 1Gi
+    limits:
+      cpu: "2"
+      memory: 4Gi
+
+modelCache:
+  enabled: true
+  image:
+    repository: raphael-registry:5111/model-cache
+    tag: latest
+    pullPolicy: IfNotPresent
+  storage: 10Gi
+  port: 8095
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+serviceDiscovery:
+  enabled: true

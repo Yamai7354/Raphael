@@ -18,6 +18,7 @@ import {
   MessageSquarePlus,
   Hammer,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Line, LineChart, ResponsiveContainer, Scatter, ScatterChart, Tooltip, XAxis, YAxis } from "recharts";
 
 type Agent = {
@@ -678,7 +679,7 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="flex h-screen items-center justify-center bg-black text-primary font-mono animate-pulse">
+      <div className="flex h-full min-h-[60vh] items-center justify-center text-primary font-mono animate-pulse">
         Initializing Swarm Mastery OS...
       </div>
     );
@@ -692,27 +693,33 @@ export default function Home() {
           <p className="text-muted-foreground mt-2 font-mono text-xs opacity-60">RAPHAEL_SWARM_TELEMETRY_v2.2.0</p>
         </div>
         <div className="flex flex-wrap gap-2">
-          <button
+          <Button
             onClick={() => controlSwarm("start")}
             disabled={actionBusy !== null || swarmRunning}
-            className="px-4 py-2 rounded-xl border border-primary/30 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider disabled:opacity-40"
+            variant="outline"
+            size="sm"
+            className="border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary uppercase tracking-wider"
           >
-            {actionBusy === "start" ? <Loader2 className="w-4 h-4 animate-spin inline" /> : <Play className="w-4 h-4 inline" />} Start Swarm
-          </button>
-          <button
+            {actionBusy === "start" ? <Loader2 className="w-4 h-4 animate-spin" /> : <Play className="w-4 h-4" />} Start Swarm
+          </Button>
+          <Button
             onClick={() => controlSwarm("stop")}
             disabled={actionBusy !== null || !swarmRunning}
-            className="px-4 py-2 rounded-xl border border-destructive/40 bg-destructive/10 text-destructive text-xs font-bold uppercase tracking-wider disabled:opacity-40"
+            variant="destructive"
+            size="sm"
+            className="uppercase tracking-wider"
           >
-            {actionBusy === "stop" ? <Loader2 className="w-4 h-4 animate-spin inline" /> : <Square className="w-4 h-4 inline" />} Stop Swarm
-          </button>
-          <button
+            {actionBusy === "stop" ? <Loader2 className="w-4 h-4 animate-spin" /> : <Square className="w-4 h-4" />} Stop Swarm
+          </Button>
+          <Button
             onClick={startAllAgents}
             disabled={actionBusy !== null || data.agents.length === 0}
-            className="px-4 py-2 rounded-xl border border-white/20 bg-white/10 text-white text-xs font-bold uppercase tracking-wider disabled:opacity-40"
+            variant="outline"
+            size="sm"
+            className="border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-white uppercase tracking-wider"
           >
-            {actionBusy === "start-all" ? <Loader2 className="w-4 h-4 animate-spin inline" /> : <Zap className="w-4 h-4 inline" />} Start All Agents
-          </button>
+            {actionBusy === "start-all" ? <Loader2 className="w-4 h-4 animate-spin" /> : <Zap className="w-4 h-4" />} Start All Agents
+          </Button>
         </div>
       </header>
       {toast && (
@@ -729,16 +736,16 @@ export default function Home() {
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mb-8">
-        <div className="glass-card !py-3 !px-6 flex items-center gap-3">
-          <ShieldCheck className="w-5 h-5 text-green-500" />
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="glass-card-sm flex items-center gap-3">
+          <ShieldCheck className="w-5 h-5 text-green-500 shrink-0" />
           <div>
             <p className="text-[10px] uppercase text-muted-foreground tracking-widest">Health</p>
             <p className="text-sm font-bold">{swarmRunning ? "RUNNING" : "IDLE"}</p>
           </div>
         </div>
-        <div className="glass-card !py-3 !px-6 flex items-center gap-3">
-          <Activity className="w-5 h-5 text-amber-500" />
+        <div className="glass-card-sm flex items-center gap-3">
+          <Activity className="w-5 h-5 text-amber-500 shrink-0" />
           <div>
             <p className="text-[10px] uppercase text-muted-foreground tracking-widest">Agents</p>
             <p className="text-sm font-bold tracking-tighter">
@@ -746,15 +753,15 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="glass-card !py-3 !px-6 flex items-center gap-3 border-primary/20 bg-primary/5">
-          <Globe className="w-5 h-5 text-primary" />
+        <div className="glass-card-sm flex items-center gap-3 border-primary/20 bg-primary/5">
+          <Globe className="w-5 h-5 text-primary shrink-0" />
           <div>
             <p className="text-[10px] uppercase text-muted-foreground tracking-widest">Current MVP</p>
             <p className="text-sm font-bold truncate max-w-[120px]">{mvp?.name || "---"}</p>
           </div>
         </div>
-        <div className="glass-card !py-3 !px-6 flex items-center gap-3">
-          <Zap className="w-5 h-5 text-primary" />
+        <div className="glass-card-sm flex items-center gap-3">
+          <Zap className="w-5 h-5 text-primary shrink-0" />
           <div>
             <p className="text-[10px] uppercase text-muted-foreground tracking-widest">Avg Fitness</p>
             <p className="text-sm font-bold tracking-tighter">{analytics.averageFitness.toFixed(1)}%</p>

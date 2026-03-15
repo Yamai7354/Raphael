@@ -27,5 +27,10 @@ async def embed(request: EmbedRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 
+@app.get("/health")
+async def health():
+    return {"status": "ok", "service": "embedding_server"}
+
+
 if __name__ == "__main__":
     uvicorn.run("ai_router.embedding_server:app", host="0.0.0.0", port=9100)
