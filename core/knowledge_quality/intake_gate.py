@@ -14,6 +14,7 @@ Rules enforced:
   6. Confidence clamped to [0.0, 1.0]
 """
 
+import asyncio
 import logging
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -197,13 +198,13 @@ class IntakeGate:
         self, proposals: List[Union[NodeProposal, EdgeProposal]]
     ) -> List[GateResult]:
         """Validate and write a batch of proposals (async)."""
-        results = []
+        tasks = []
         for p in proposals:
             if isinstance(p, NodeProposal):
-                results.append(await self.asubmit_node(p))
+                tasks.append(self.asubmit_node(p))
             else:
-                results.append(await self.asubmit_edge(p))
-        return results
+                tasks.append(self.asubmit_edge(p))
+        return await asyncio.gather(*tasks)
 
     # ── Evaluation logic ──────────────────────────────────────────────────
 
