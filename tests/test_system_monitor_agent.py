@@ -1,8 +1,10 @@
+from unittest.mock import MagicMock
+
 import pytest
-import asyncio
-from unittest.mock import AsyncMock, MagicMock
+
 from agents.system_monitor_agent import SystemMonitorAgent
-from data.schemas import SystemEvent, EventType, LayerContext
+from data.schemas import EventType, LayerContext, SystemEvent
+
 
 @pytest.mark.asyncio
 async def test_system_monitor_agent_subscription():
@@ -17,6 +19,7 @@ async def test_system_monitor_agent_subscription():
     mock_bus.subscribe.assert_any_call(EventType.CRASH_REPORT, agent._handle_crash_report)
     mock_bus.subscribe.assert_any_call(EventType.OBSERVATION, agent._handle_observation)
 
+
 @pytest.mark.asyncio
 async def test_system_monitor_agent_execute():
     agent = SystemMonitorAgent(agent_id="TestMonitor")
@@ -27,13 +30,14 @@ async def test_system_monitor_agent_execute():
     assert "status" in result["output"]
     assert result["output"]["status"] == "monitoring_active"
 
+
 @pytest.mark.asyncio
 async def test_handle_crash_report(caplog):
     agent = SystemMonitorAgent(agent_id="TestMonitor")
     event = SystemEvent(
         event_type=EventType.CRASH_REPORT,
         source_layer=LayerContext(layer_number=1, module_name="Test"),
-        payload={"error": "Something went wrong"}
+        payload={"error": "Something went wrong"},
     )
 
     with caplog.at_level("ERROR"):
@@ -42,13 +46,14 @@ async def test_handle_crash_report(caplog):
     assert "SystemMonitor: Received CRASH_REPORT" in caplog.text
     assert "Something went wrong" in caplog.text
 
+
 @pytest.mark.asyncio
 async def test_handle_observation(caplog):
     agent = SystemMonitorAgent(agent_id="TestMonitor")
     event = SystemEvent(
         event_type=EventType.OBSERVATION,
         source_layer=LayerContext(layer_number=1, module_name="SystemMonitor"),
-        payload={"metric_type": "telemetry", "data": {"cpu": 50}}
+        payload={"metric_type": "telemetry", "data": {"cpu": 50}},
     )
 
     with caplog.at_level("DEBUG"):

@@ -1,7 +1,8 @@
 import logging
-from typing import Any, Dict, List
+from typing import Any
+
 from agents.base_agent import BaseAgent
-from data.schemas import SystemEvent, EventType
+from data.schemas import EventType, SystemEvent
 
 logger = logging.getLogger("system_monitor_agent")
 
@@ -11,7 +12,7 @@ class SystemMonitorAgent(BaseAgent):
     Agent responsible for monitoring the health, uptime, and general status of the system.
     """
 
-    def __init__(self, agent_id: str = "SystemMonitor", capabilities: List[str] = None):
+    def __init__(self, agent_id: str = "SystemMonitor", capabilities: list[str] = None):
         super().__init__(agent_id, capabilities or ["monitoring", "health_check"])
         self.bus = None
 
@@ -32,7 +33,7 @@ class SystemMonitorAgent(BaseAgent):
         if event.payload.get("metric_type") == "telemetry":
             logger.debug(f"SystemMonitor: Received telemetry: {event.payload.get('data')}")
 
-    async def execute(self, payload: Dict[str, Any]) -> Dict[str, Any]:
+    async def execute(self, payload: dict[str, Any]) -> dict[str, Any]:
         """
         Executes a monitoring task.
         """
@@ -40,10 +41,10 @@ class SystemMonitorAgent(BaseAgent):
         # Implementation for specific monitoring tasks can be added here
         return self._standard_response(True, logs, {"status": "monitoring_active"})
 
-    def perceive(self, context: Dict[str, Any]) -> Dict[str, Any]:
+    def perceive(self, context: dict[str, Any]) -> dict[str, Any]:
         return {}
 
-    def plan(self, goal: str) -> List[str]:
+    def plan(self, goal: str) -> list[str]:
         return []
 
     def act(self, action: str) -> str:
