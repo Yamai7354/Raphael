@@ -1,6 +1,7 @@
 import os
 import sys
 import asyncio
+import subprocess
 import logging
 import json
 import time
@@ -114,7 +115,7 @@ class VoiceOrchestrator:
             await self.synthesizer.synthesize(japanese_text, output_wav)
 
             # 4. Playback (afplay is built into macOS)
-            os.system(f"afplay {output_wav}")
+            subprocess.run(["afplay", output_wav], check=True)
         except Exception as e:
             logger.error(f"Synthesis/Playback Error: {e}")
 
@@ -131,8 +132,11 @@ class VoiceOrchestrator:
             logger.info("✨ Raphael is AWAKE.")
             # If they just said the wake word, maybe respond with a short sound or synthesis
             if len(clean_text.split()) <= 2:  # "Hey Raphael"
-                await self.synthesizer.synthesize("はい、なんでしょう？", "wake.wav")
-                os.system("afplay wake.wav")
+                try:
+                    await self.synthesizer.synthesize("はい、なんでしょう？", "wake.wav")
+                    subprocess.run(["afplay", "wake.wav"], check=True)
+                except Exception as e:
+                    logger.error(f"Wake Sound Error: {e}")
                 return
 
         # Regular processing if awake
